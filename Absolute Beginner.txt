@@ -1,0 +1,1211 @@
+1)You are provided with a number check whether its odd or even. 
+
+Print "Odd" or "Even" for the corresponding cases.
+
+Note: In case of a decimal, Round off to nearest integer and then find the output. Incase the input is zero, print "Zero".
+
+Input Description:
+A number is provided as the input.
+
+Output Description:
+Find out whether the number is odd or even. Print "Odd" or "Even" for the corresponding cases. Note: In case of a decimal, Round off to nearest integer and then find the output. In case the input is zero, print "Zero".
+
+Sample Input :
+2
+Sample Output :
+Even
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+
+   let num= +userInput[0];
+   let round=Math.round(num);
+   if(round===0){
+       console.log("Zero");
+   }
+   else if(round%2===0){
+       console.log("Even");
+   }
+   else if(round%2===1){
+       console.log("Odd");
+   }
+});
+---------------------------------------------------------------------------------------------
+
+2)You are given with a number A i.e. the temperature in Celcius. Write a program to convert this into Fahrenheit. 
+
+Note: In case of decimal values, round-off to two decimal places.
+
+Input Description:
+A number is provided in Celcius as the input of the program.
+
+Output Description:
+The output shall be the temperature converted into Fahrenheit corresponding to the input value print up to two decimal places and round off if required.
+
+Sample Input :
+12
+Sample Output :
+53.60
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   //(Temperature in degrees Celsius (°C) * 9/5) + 32
+
+   const celcius=userInput[0];
+   let faran=celcius*(9/5)+32;
+   console.log(faran.toFixed(2));
+});
+---------------------------------------------------------------------------------------------
+
+3)Input Description:
+The inputs are two natural numbers representing the length and the breadth of a rectangle.
+
+Output Description:
+Find the area of the rectangle formed by the provided input. Round off the answer to the first decimal place if required.
+
+Sample Input :
+2
+3
+Sample Output :
+6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+var a=userInput[0].split(" ")
+for(var i=0;i<a.length;i++)
+{
+    a= +userInput[0];
+    b= +userInput[1];
+    c=a*b;
+    console.log(c.toFixed(1));
+}
+});
+---------------------------------------------------------------------------------------------
+
+4)You are given three numbers A, B & C. Print the largest amongst these three numbers.
+
+Input Description:
+Three numbers are provided to you.
+
+Output Description:
+Find and print the largest among the three
+
+Sample Input :
+1
+2
+3
+Sample Output :
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ a= +userInput[0];
+    b= +userInput[1];
+    c= +userInput[2];
+    let largest = a;
+  
+  if (b > largest) {
+    largest = b;
+  }
+  
+  if (c > largest) {
+    largest = c;
+  }
+  
+  console.log(largest);
+});
+---------------------------------------------------------------------------------------------
+
+5)Print the First 3 multiples of the given number "N". (N is a positive integer)
+
+Note: print the characters with a single space between them.
+
+Input Description:
+A positive integer is provided to you as an input.
+
+Output Description:
+Print the First 3 multiples of the number with single spaces between them as an output.
+
+Sample Input :
+2
+Sample Output :
+2 4 6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let num= +userInput[0];
+   let arr=[];
+   for(let i=1;i<=3;i++){
+       let newnum=num*i;
+       arr.push(newnum);
+       
+   }
+   let a= arr.join(" ");
+console.log(a);
+});
+---------------------------------------------------------------------------------------------
+
+6)You are provided with a number, "N". Find its factorial.
+
+Input Description:
+A positive integer is provided as an input.
+
+Output Description:
+Print the factorial of the integer.
+
+Sample Input :
+2
+Sample Output :
+2
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+   let num= +userInput[0];
+   let nums=1;
+   for(let i=1;i<=num;i++){
+   nums= nums*i;
+   }
+   console.log(nums);
+  //end-here
+});
+---------------------------------------------------------------------------------------------
+
+7)You are given a number A in Kilometers. Convert this into B: Meters and C: Centi-Metres.
+
+Input Description:
+A number "A" representing some distance in kilometer is provided to you as the input.
+
+Output Description:
+Convert and print this value in meters and centimeters.
+
+Sample Input :
+2
+Sample Output :
+2000
+200000
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+var a=userInput[0].split(" ")
+for(var i=0;i<a.length;i++)
+{
+    a= +userInput[0];
+    b= a*1000;
+    c=a*100000;
+    console.log(b);
+    console.log(c);
+}
+});
+---------------------------------------------------------------------------------------------
+
+8)Using the method of looping, write a program to print the table of 9 till N in the format as follows:
+(N is input by the user)
+
+9 18 27...
+
+Print NULL if 0 is input
+
+Input Description:
+A positive integer is provided as an input.
+
+Output Description:
+Print the table of nine with single space between the elements till the number that is input.
+
+Sample Input :
+3
+Sample Output :
+9 18 27
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n = +userInput[0];
+  let res=[];
+    if(n===0){
+        conssole.log("NULL");
+    }
+    else{
+        for(i=1;i<=n;i++){
+            res.push(i*9);
+        } 
+    }
+console.log(res.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+9)You are provided with the radius of a circle "A". Find the length of its circumference.
+
+Note: In case the output is coming in decimal, roundoff to 2nd decimal place. In case the input is a negative number, print "Error".
+
+Input Description:
+The Radius of a circle is provided as the input of the program.
+
+Output Description:
+Calculate and print the Circumference of the circle corresponding to the input radius up to two decimal places.
+
+Sample Input :
+2
+Sample Output :
+12.57
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=(userInput[0]);
+ 
+     if(a>0){
+        let b=(2*Math.PI*a).toFixed(2);
+        console.log(b);
+     }else{
+         console.log("Error");
+     }
+});
+---------------------------------------------------------------------------------------------
+
+10)Let "A" be a year, write a program to check whether this year is a leap year or not.
+
+Print "Y" if its a leap year and "N" if its a common year.
+
+Input Description:
+A Year is the input in the form of a positive integer.
+
+Output Description:
+Print "Y" if its a leap year and "N" if its a common year.
+
+Sample Input :
+2020
+Sample Output :
+Y
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   if(a%4===0){
+       console.log("Y");
+   }else{
+       console.log("N");
+   }
+});
+---------------------------------------------------------------------------------------------
+
+11)The area of an equilateral triangle is ¼(√3a2) where "a" represents a side of the triangle. You are provided with the side "a". Find the area of the equilateral triangle.
+
+Input Description:
+The side of an equilateral triangle is provided as the input.
+
+Output Description:
+Find the area of the equilateral triangle and print the answer up to 2 decimal places after rounding off.
+
+Sample Input :
+20
+Sample Output :
+173.21
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+    let a= +userInput[0];
+    let b=(Math.sqrt(3)*Math.pow(a,2))/4 ;
+    console.log(b.toFixed(2));
+});
+---------------------------------------------------------------------------------------------
+
+12)You are given the coefficients of a quadratic equation in order A, B & C.
+
+Where A is the coefficient of X2,  B is the coefficient of X and C is the constant term in the most simplified form.
+
+Example: For  X2 + 5X + 6 = 0, you are given the input as: 1 5 6.
+
+Write a program to find all of the roots of the quadratic.
+
+Note: The output should be up to 2nd decimal place (round off if needed) and in case of a recurring decimal use braces i.e. for eg: 0.33333..... => 0.33.
+
+Note: Use Shri Dharacharya's Method to solve i.e. X = {-b + √(b² - 4ac) } / 2a & {-b-√(b² -4ac)} / 2a
+
+Input Description:
+Three numbers corresponding to the coefficients of x(squared), x and constant are given as an input in that particular order
+
+Output Description:
+Print the two values of X after rounding off to 2 decimal places if required.
+
+Sample Input :
+1 5 6
+Sample Output :
+-2.00
+-3.00
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let val=userInput[0].split(" ");
+  let a= val[0];
+  let b= val[1];
+  let c= val[2];
+ function findRoots(a,b,c){
+     let discriminant= b*b-4*a*c;
+     let sqrtdiscriminant = Math.sqrt(discriminant);
+     let root1=(-b + sqrtdiscriminant)/(2 * a);
+     let root2=(-b - sqrtdiscriminant)/(2 * a)
+     root1 = root1.toFixed(2);
+    root2 = root2.toFixed(2);
+    console.log(root1);
+    console.log(root2);
+ }
+findRoots(a,b,c);
+});
+---------------------------------------------------------------------------------------------
+
+13)Write a code to get 2 integers A and N. Print the integer A, N times in separate line.
+
+Input Description:
+First line contains an integer A. Second line contains an Integer N.
+
+Output Description:
+Print the integer A, N times in a separate line.
+
+Sample Input :
+2 3
+Sample Output :
+2
+2
+2
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+   let arr=userInput[0];
+   let input=arr.split(" ")
+   let a = input[0];
+   let n = input[1];
+   for(let i=1;i<=n;i++){
+       console.log(a);
+   } 
+
+});
+---------------------------------------------------------------------------------------------
+
+14)Write a code to get the input and print it 5 times.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Output contains 5 lines with each line having the value N.
+
+Sample Input :
+4
+Sample Output :
+4
+4
+4
+4
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   for(let i=1;i<=5;i++){
+       console.log(a);
+   } 
+});
+---------------------------------------------------------------------------------------------
+
+15)You are provided with a number "N", Find the Nth term of the series: 1, 4, 9, 16, 25, 36, 49, 64, 81, .......
+
+(Print "Error" if N = negative value and 0 if N = 0).
+
+Input Description:
+An integer N is provided to you as the input.
+
+Output Description:
+Find the Nth term in the provided series.
+
+Sample Input :
+18
+Sample Output :
+324
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = +userInput[0];
+    if(a<0){
+        console.log("Error");
+    }
+   else if(a===0){
+       console.log("0");
+   }
+   else{
+       console.log(Math.pow(a,2));
+   }
+});
+---------------------------------------------------------------------------------------------
+
+16)Write a code to get an integer N and print the sum of  values from 1 to N.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the sum of values from 1 to N.
+
+Sample Input :
+10
+Sample Output :
+55
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+   let a=userInput[0];
+   let sum=0
+   for(let i=1;i<=a;i++){
+       sum+=i;
+    
+   }
+   console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
+17)You are given with a number "N", find its cube.
+
+Input Description:
+A positive integer is provided.
+
+Output Description:
+Find the cube of the number.
+
+Sample Input :
+2
+Sample Output :
+8
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  a=userInput[0];
+console.log(Math.pow(a,3));
+});
+---------------------------------------------------------------------------------------------
+
+18)You are provided with two numbers. Find and print the smaller number.
+
+Input Description:
+You are provided with two numbers as input.
+
+Output Description:
+Print the small number out of the two numbers.
+
+Sample Input :
+23 1
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   let value=a.split(" ");
+   value[0],value[1];
+   if(value[0]<value[1]){
+       console.log(value[0]);
+   }else{
+    console.log(value[1]);
+   }
+});
+---------------------------------------------------------------------------------------------
+
+19)Write a code to get 2 integers as input and find the HCF of the 2 integer without using recursion or Euclidean algorithm.
+
+Input Description:
+A single line containing 2 integers separated by space.
+
+Output Description:
+Print the HCF of the integers.
+
+Sample Input :
+2 3
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let value = userInput[0].split(" ");
+ let a = value[0];
+ let b = value[1];
+ 
+ function hcf(a,b){
+     let smallest=Math.min(a,b);
+     let hcf=1;
+     for(let i=smallest;i>0;i--){
+         if(a%i===0 && b%i===0){
+             hcf = i;
+             break;
+         }
+     }
+     return hcf;
+ }
+ console.log(hcf(a,b))
+
+});
+---------------------------------------------------------------------------------------------
+
+20)Write a code to get an integer N and print the values from N to 1.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the values from N to 1 in a separate line.
+
+Sample Input :
+10
+Sample Output :
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   for(a;a>0;a--){
+       console.log(a);
+   }
+});
+---------------------------------------------------------------------------------------------
+
+21)You are given Two Numbers, A and B. If C = A + B. Find C.
+
+Note: Round off the output to a single decimal place.
+
+Input Description:
+You are provided with two numbers A and B.
+
+Output Description:
+Find the sum of the two numbers (A + B)
+
+Sample Input :
+1
+1
+Sample Output :
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+var a=userInput[0].split(" ")
+for(var i=0;i<a.length;i++)
+{
+    a= +userInput[0];
+    b= +userInput[1];
+    c=a+b;
+    console.log(c.toFixed(1));
+}
+});
+---------------------------------------------------------------------------------------------
+
+22)Write a code get an integer number as input and print the sum of the digits.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the sum of the digits of the integer.
+
+Sample Input :
+124
+Sample Output :
+7
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+  let value=a.split("");
+  let sum=0;
+  for(let i=0;i<value.length;i++){
+      sum+= parseInt(value[i]);
+  }
+  console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
+23)Write a program to get a string as input and reverse the string without using temporary variable.
+
+Input Description:
+A single line containing a string.
+
+Output Description:
+Print the reversed string.
+
+Sample Input :
+GUVI
+Sample Output :
+IVUG
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+     let a=(userInput[0]);
+     let word=a.split("");
+     let len=word.length;
+    let rev=[];
+    for(let i=0;i<word.length;i++){
+        len-=1;
+        rev.push(word[len]);
+    }
+    console.log(rev.join(""));
+});
+---------------------------------------------------------------------------------------------
+
+24)Write a code to get an integer N and print the digits of the integer.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the digits of the integer in a single line separated by space,
+
+Sample Input :
+348
+Sample Output :
+3 4 8
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+  
+  let value=a.split("");
+  console.log(value.join(" "));
+  
+});
+---------------------------------------------------------------------------------------------
+
+25)Write a code to get an integer N and print the even values from 1 till N in a separate line.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the even values from 1 to N in a separate line.
+
+Sample Input :
+6
+Sample Output :
+2
+4
+6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=parseInt(userInput[0]);
+  let value=1
+  for(let i=1;value!=a;i++){
+      console.log(value=i*2);
+  }
+});
+---------------------------------------------------------------------------------------------
+
+26)Write a code to get an integer N and print values from 1 till N in a separate line.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the values from 1 to N in a separate line.
+
+Sample Input :
+5
+Sample Output :
+1
+2
+3
+4
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=parseInt(userInput[0]);
+  for(let i=1;i<=a;i++){
+      console.log(i);
+  }
+});
+---------------------------------------------------------------------------------------------
+
+27)Note: In case the input is February, print 28 days. If the Input is not in valid range print "Error".
+
+Input Description:
+The input is in the form of a number.
+
+Output Description:
+Find the days in the month corresponding to the input number. Print Error if the input is not in a valid range.
+
+Sample Input :
+8
+Sample Output :
+31
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=(userInput[0]);
+ 
+     if(a<=12&&a>0){
+         
+         if(a%2==1){
+             console.log("31");
+         }else{
+             console.log("30");
+         }
+     }else{
+         console.log("Error");
+     }
+});
+---------------------------------------------------------------------------------------------
+
+28)Write a code get an integer number as input and print the odd and even digits of the number separately.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the even and odd integers of the integer in a separate line.
+
+Sample Input :
+1234
+Sample Output :
+2 4
+1 3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+     let a=(userInput[0]);
+     let value=a.split("");
+     let odd=[],even=[];
+     for(let i=0;i<value.length;i++){
+         if(value[i]%2===0){
+             even.push(value[i]);
+         }
+         else if(value[i]%2===1){
+             odd.push(value[i]);
+         }
+     }
+console.log(even.sort().join(" "));
+console.log(odd.sort().join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+29)Let "A"  be a string. Remove all the whitespaces and find it's length.
+
+Input Description:
+A string is provide as an input
+
+Output Description:
+Remove all the whitespaces and then print the length of the remaining string.
+
+Sample Input :
+Lorem Ipsum
+Sample Output :
+10
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+     let a=(userInput[0]);
+  let splits = a.split(" ");
+  splits=splits.join("");
+  console.log(splits.length);
+});
+---------------------------------------------------------------------------------------------
+
+30)You are given with Principle amount($), Interest Rate(%) and Time (years) in that order. Find Simple Interest.
+
+Print the output up to two decimal places (Round-off if necessary).
+
+(S.I. = P*T*R/100)
+
+Input Description:
+Three values are given to you as the input. these values correspond to Principle amount, Interest Rate and Time in that particular order.
+
+Output Description:
+Find the Simple interest and print it up to two decimal places. Round off if required.
+
+Sample Input :
+1000 2 5
+Sample Output :
+100.00
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=(userInput[0]);
+ let value=a.split(" ");
+ let p=(value[0]);
+ let t=(value[1]);
+ let r=(value[2]);
+let si=(p*t*r)/100;
+console.log(si.toFixed(2));
+});
+
+---------------------------------------------------------------------------------------------
