@@ -1,5 +1,5 @@
 CodeKata Practice
-This repository contains my solutions to various coding problems from the CodeKata platform on Guvi.
+This repository contains my solutions to various coding problems from the [CodeKata](https://www.guvi.in/code-kata/) platform on Guvi.
 Each file represents a specific topic or problem, including both the question and the code solution.
 
 Structure
