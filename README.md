@@ -18,6 +18,9 @@ How to Navigate
 2) Question: The problem statement is provided at the top of the file, giving context to the solution.
 3) Code: The code implementation follows immediately after the problem statement.
 
+Current Number of Code Solutions
+• Total number of coding problems solved: [61]
+
 Contributions
 This repository serves as a personal practice log, but if you find any issues or improvements, feel free to open an issue or submit a pull request.
 
