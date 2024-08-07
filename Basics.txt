@@ -1,0 +1,909 @@
+1)Given 2 numbers N,M. Print 'yes' if their product is a perfect square else print 'no'.
+Sample Testcase :
+INPUT
+5 5
+OUTPUT
+yes
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0].split(" ")
+  let N=a[0];
+  let M=a[1];
+  let product=N*M;
+  let square=Math.sqrt(product);
+  if(Number.isInteger(square)){
+      console.log("yes");
+  }else{
+      console.log("no");
+  }
+});
+---------------------------------------------------------------------------------------------
+
+2)Write a program to print the sum of the first K natural numbers.
+Input Size : n <= 100000
+Sample Testcase :
+INPUT
+3
+OUTPUT
+6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let k=(userInput[0]);
+ let val=0;
+   for(i=0;i<=k;i++){
+       val+=i;
+   }
+   console.log(val)
+});
+
+---------------------------------------------------------------------------------------------
+
+3)Given 3 numbers N , L and R. Print 'yes' if N is between L and R else print 'no'.
+Sample Testcase :
+INPUT
+3
+2 6
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let n=(userInput[0]);
+ let value=userInput[1];
+ let values=value.split(" ");
+ let l=values[0];
+ let r=values[1];
+ if(n>l && n<r){
+     console.log("yes");
+ }
+ else{
+     console.log("no");
+ }
+});
+
+---------------------------------------------------------------------------------------------
+
+4)Write a code to get an integer N and print values from 1 till N in a separate line.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the values from 1 to N in a separate line.
+
+Sample Input :
+5
+Sample Output :
+1
+2
+3
+4
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=parseInt(userInput[0]);
+  for(let i=1;i<=a;i++){
+      console.log(i);
+  }
+});
+---------------------------------------------------------------------------------------------
+
+5)Given 2 numbers N and K followed by elements of N .Print 'yes' if K exists else print 'no'.
+Sample Testcase :
+INPUT
+4 2
+1 2 3 3
+OUTPUT
+yes
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+
+  let a = userInput[0].split(" ");
+  let N=a[0];
+  let K=a[1];
+  let b = userInput[1].split(" ");
+let count =0;
+  for(let i=0;i<b.length;i++){
+      if(b[i]===K){
+          count=1;
+          break;
+      }
+  }
+  if(count!==0){
+      console.log("yes");
+  }else{
+      console.log("no");
+  }
+});
+---------------------------------------------------------------------------------------------
+
+6)Write a code to get 2 integers A and N. Print the integer A, N times in separate line.
+
+Input Description:
+First line contains an integer A. Second line contains an Integer N.
+
+Output Description:
+Print the integer A, N times in a separate line.
+
+Sample Input :
+2 3
+Sample Output :
+2
+2
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let arr=userInput[0];
+   let input=arr.split(" ")
+   let a = input[0];
+   let n = input[1];
+   for(let i=1;i<=n;i++){
+       console.log(a);
+   } 
+});
+---------------------------------------------------------------------------------------------
+
+7)Write a code to get the input and print it 5 times.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Output contains 5 lines with each line having the value N.
+
+Sample Input :
+4
+Sample Output :
+4
+4
+4
+4
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   for(let i=1;i<=5;i++){
+       console.log(a);
+   } 
+});
+---------------------------------------------------------------------------------------------
+
+8)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+9)Find the minimum among 10 numbers.
+Sample Testcase :
+INPUT
+5 4 3 2 1 7 6 10 8 9
+OUTPUT
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0].split(" ");
+   let length=a.length;
+   let min=a[0];
+   for(i=0;i<length;i++){
+       if(min>a[i]){
+           min=a[i];
+       }
+   }
+   console.log(min);
+});
+---------------------------------------------------------------------------------------------
+
+10)Write a code to get an integer N and print the even values from 1 till N in a separate line.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the even values from 1 to N in a separate line.
+
+Sample Input :
+6
+Sample Output :
+2
+4
+6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=parseInt(userInput[0]);
+  let value=1
+  for(let i=1;value!=a;i++){
+      console.log(value=i*2);
+  }
+});
+---------------------------------------------------------------------------------------------
+
+11)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+12)Given numbers A,B find A^B.
+Input Size : 1 <= A <= 5 <= B <= 50
+Sample Testcase :
+INPUT
+3 4
+OUTPUT
+81
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+
+  let a = userInput[0].split(" ");
+  let A = a[0];
+  let B = a[1];
+  console.log(Math.pow(A,B));
+});
+---------------------------------------------------------------------------------------------
+
+13)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+14)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+15)Write a code to get an integer N and print the digits of the integer.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the digits of the integer in a single line separated by space,
+
+Sample Input :
+348
+Sample Output :
+3 4 8
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+  
+  let value=a.split("");
+  console.log(value.join(" ")); 
+});
+---------------------------------------------------------------------------------------------
+
+16)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+17)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+18)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+19)Write a code to get an integer N and print the sum of  values from 1 to N.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the sum of values from 1 to N.
+
+Sample Input :
+10
+Sample Output :
+55
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   let sum=0
+   for(let i=1;i<=a;i++){
+       sum+=i;
+    
+   }
+   console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
+20)Write a code get an integer number as input and print the sum of the digits.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the sum of the digits of the integer.
+
+Sample Input :
+124
+Sample Output :
+7
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+  let value=a.split("");
+  let sum=0;
+  for(let i=0;i<value.length;i++){
+      sum+= parseInt(value[i]);
+  }
+  console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
+21)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+22)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+23)Given 2 numbers N and M add both the numbers and check whether the sum is odd or even.
+Sample Testcase :
+INPUT
+9 2
+OUTPUT
+odd
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let l=userInput[0].split(" ");
+
+let n=l[0];
+let m=l[1];
+let a=n+m
+if(a%2===0){
+    console.log("even");
+}
+else{
+    console.log("odd");
+}
+});
+---------------------------------------------------------------------------------------------
+
+24)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+25)Write a code to get 2 integers as input and find the HCF of the 2 integer without using recursion or Euclidean algorithm.
+
+Input Description:
+A single line containing 2 integers separated by space.
+
+Output Description:
+Print the HCF of the integers.
+
+Sample Input :
+2 3
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let value = userInput[0].split(" ");
+ let a = value[0];
+ let b = value[1];
+ 
+ function hcf(a,b){
+     let smallest=Math.min(a,b);
+     let hcf=1;
+     for(let i=smallest;i>0;i--){
+         if(a%i===0 && b%i===0){
+             hcf = i;
+             break;
+         }
+     }
+     return hcf;
+ }
+ console.log(hcf(a,b))
+
+});
+---------------------------------------------------------------------------------------------
+
+26)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+27)Write a program to get a string as input and reverse the string without using temporary variable.
+
+Input Description:
+A single line containing a string.
+
+Output Description:
+Print the reversed string.
+
+Sample Input :
+GUVI
+Sample Output :
+IVUG
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+     let a=(userInput[0]);
+     let word=a.split("");
+     let len=word.length;
+    let rev=[];
+    for(let i=0;i<word.length;i++){
+        len-=1;
+        rev.push(word[len]);
+    }
+    console.log(rev.join(""));
+});
+---------------------------------------------------------------------------------------------
+
+28)Write a code to get an integer N and print the values from N to 1.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the values from N to 1 in a separate line.
+
+Sample Input :
+10
+Sample Output :
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   for(a;a>0;a--){
+       console.log(a);
+   }
+});
+---------------------------------------------------------------------------------------------
+
+29)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+30)Given a number N followed by N numbers.Find the smallest number and largest number and print both the indices(1 based indexing).
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5
+1 2 3 4 5
+OUTPUT
+1 5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0];
+   let b= userInput[1].split(" ");
+   small=b[0];
+   large=b[0];
+   for(let i=1;i<b.length;i++)
+   {
+       if(small>b[i]){
+           small=b[i];
+       }
+       if(large<b[i]){
+           large=b[i];
+       }
+   }
+   console.log(b.indexOf(small)+1, b.indexOf(large)+1);
+});
+---------------------------------------------------------------------------------------------
+
+31)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+32)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+33)Given a string S consisting of 2 words reverse the order of two words .
+Input Size : |S| <= 10000000
+Sample Testcase :
+INPUT
+hello world
+OUTPUT
+world hello
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let l=userInput[0].split(" ");
+let temp;
+temp=l[0];
+l[0]=l[1];
+l[1]=temp;
+console.log(l.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+34)Write a code get an integer number as input and print the odd and even digits of the number separately.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the even and odd integers of the integer in a separate line.
+
+Sample Input :
+1234
+Sample Output :
+2 4
+1 3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+     let a=(userInput[0]);
+     let value=a.split("");
+     let odd=[],even=[];
+     for(let i=0;i<value.length;i++){
+         if(value[i]%2===0){
+             even.push(value[i]);
+         }
+         else if(value[i]%2===1){
+             odd.push(value[i]);
+         }
+     }
+console.log(even.sort().join(" "));
+console.log(odd.sort().join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+35)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+36)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+37)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+38)Let P represent Paper, R represent Rock and S represent Scissors. Given 2 out of the 3 determine which one wins. If its a draw print 'D'.
+Sample Testcase :
+INPUT
+R P
+OUTPUT
+P
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0].split(" ");
+   let R,P,S;
+   if(a[0]===a[1]){
+       console.log("D");
+   }
+   else if(a[0]==='R' && a[1]==='P' || a[0]==='P' && a[1]==='R')
+   {
+       console.log("P");
+   }
+    else if(a[0]==='R' && a[1]==='S' || a[0]==='S' && a[1]==='R')
+   {
+       console.log("R");
+   }
+    else if(a[0]==='R' && a[1]==='P' || a[0]==='P' && a[1]==='R')
+   {
+       console.log("P");
+   }
+    else if(a[0]==='S' && a[1]==='P' || a[0]==='P' && a[1]==='S')
+   {
+       console.log("S");
+   }
+});
+---------------------------------------------------------------------------------------------
+
+39)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+40)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
