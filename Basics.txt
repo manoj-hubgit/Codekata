@@ -336,10 +336,41 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-11)
+11)Write a code to get a integer n as input and calculate the smallest perfect power of 2 greater than n.
+
+Input Description:
+A single line containing an integer,n.
+
+Output Description:
+Print the smallest perfect power of 2 greater than n.
+
+Sample Input :
+48
+Sample Output :
+64
 
 CODE:
 
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0];
+  let a=1;
+  while(a<=n){
+      a*=2;
+  }
+  console.log(a);
+});
 ---------------------------------------------------------------------------------------------
 
 12)Given numbers A,B find A^B.
@@ -419,10 +450,33 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-16)
+16)Given base(B) and height(H) of a triangle find its area.
+Input Size : N <= 1000000
+Sample Testcase :
+INPUT
+2 4
+OUTPUT
+4
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a= userInput[0].split(" ");
+  let b=a[0];
+  let h=a[1];
+  console.log(1/2*b*h);
+});
 ---------------------------------------------------------------------------------------------
 
 17)
