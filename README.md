@@ -19,7 +19,7 @@ How to Navigate
 3) Code: The code implementation follows immediately after the problem statement.
 
 Current Number of Code Solutions
-• Total number of coding problems solved: 63
+• Total number of coding problems solved: 75
 
 Contributions
 This repository serves as a personal practice log, but if you find any issues or improvements, feel free to open an issue or submit a pull request.
