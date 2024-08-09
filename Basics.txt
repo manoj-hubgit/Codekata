@@ -898,10 +898,34 @@ CODE:
 
 ---------------------------------------------------------------------------------------------
 
-37)
+37)Kabali is a brave warrior who with his group of young ninjas moves from one place to another to fight against his opponents. Before Fighting he just calculates one thing, the difference between his ninja number and the opponent's ninja number. From this difference he decides whether to fight or not. Kabali's ninja number is never greater than his opponent.
+Input
+The input contains two numbers in every line. These two numbers in each line denotes the number ninjas in Kabali's clan and his opponent's clan . print the absolute difference of number of ninjas between Kabali's clan and his opponent's clan. Each output should be in seperate line.
+Sample Testcase :
+INPUT
+100 200
+OUTPUT
+100
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0].split(" ");
+  let a=n[0];
+  let b=n[1];
+ console.log(Math.abs(a-b))
+});
 ---------------------------------------------------------------------------------------------
 
 38)Let P represent Paper, R represent Rock and S represent Scissors. Given 2 out of the 3 determine which one wins. If its a draw print 'D'.
@@ -955,9 +979,30 @@ CODE:
 
 ---------------------------------------------------------------------------------------------
 
-40)
+40)Given a number N, print the Bitwise NOT of that number.
+Input Size : 1 <= N <= 10000
+Sample Testcase :
+INPUT
+5
+OUTPUT
+-6
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0];
+  console.log((~n))
+});
 ---------------------------------------------------------------------------------------------
 
