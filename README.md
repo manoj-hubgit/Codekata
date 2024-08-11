@@ -4,7 +4,7 @@ Each file represents a specific topic or problem, including both the question an
 
 
 Current Number of Code Solutions
-• Total number of coding problems solved: 86
+• Total number of coding problems solved: 88
 
 
 Structure
