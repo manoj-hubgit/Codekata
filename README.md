@@ -27,4 +27,4 @@ Contributions
 This repository serves as a personal practice log, but if you find any issues or improvements, feel free to open an issue or submit a pull request.
 
 Contact
-For any questions or suggestions, you can reach me at [manojannadurai2265@gmail.com](manojannadurai2265@gmail.com).
+For any questions or suggestions, you can reach me at [manojannadurai2265@gmail.com](mailto:manojannadurai2265@gmail.com).
