@@ -1,4 +1,4 @@
-1)Given 2 numbers N,M. Print 'yes' if their product is a perfect square else print 'no'.
+1) Given 2 numbers N,M. Print 'yes' if their product is a perfect square else print 'no'.
 Sample Testcase :
 INPUT
 5 5
@@ -33,7 +33,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-2)Write a program to print the sum of the first K natural numbers.
+2) Write a program to print the sum of the first K natural numbers.
 Input Size : n <= 100000
 Sample Testcase :
 INPUT
@@ -65,7 +65,7 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
-3)Given 3 numbers N , L and R. Print 'yes' if N is between L and R else print 'no'.
+3) Given 3 numbers N , L and R. Print 'yes' if N is between L and R else print 'no'.
 Sample Testcase :
 INPUT
 3
@@ -102,7 +102,7 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
-4)Write a code to get an integer N and print values from 1 till N in a separate line.
+4) Write a code to get an integer N and print values from 1 till N in a separate line.
 
 Input Description:
 A single line contains an integer N.
@@ -140,7 +140,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-5)Given 2 numbers N and K followed by elements of N .Print 'yes' if K exists else print 'no'.
+5) Given 2 numbers N and K followed by elements of N .Print 'yes' if K exists else print 'no'.
 Sample Testcase :
 INPUT
 4 2
@@ -183,7 +183,7 @@ let count =0;
 });
 ---------------------------------------------------------------------------------------------
 
-6)Write a code to get 2 integers A and N. Print the integer A, N times in separate line.
+6) Write a code to get 2 integers A and N. Print the integer A, N times in separate line.
 
 Input Description:
 First line contains an integer A. Second line contains an Integer N.
@@ -222,7 +222,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-7)Write a code to get the input and print it 5 times.
+7) Write a code to get the input and print it 5 times.
 
 Input Description:
 A single line contains an integer N.
@@ -266,7 +266,7 @@ CODE:
 
 ---------------------------------------------------------------------------------------------
 
-9)Find the minimum among 10 numbers.
+9) Find the minimum among 10 numbers.
 Sample Testcase :
 INPUT
 5 4 3 2 1 7 6 10 8 9
@@ -299,7 +299,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-10)Write a code to get an integer N and print the even values from 1 till N in a separate line.
+10) Write a code to get an integer N and print the even values from 1 till N in a separate line.
 
 Input Description:
 A single line contains an integer N.
@@ -336,7 +336,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-11)Write a code to get a integer n as input and calculate the smallest perfect power of 2 greater than n.
+11) Write a code to get a integer n as input and calculate the smallest perfect power of 2 greater than n.
 
 Input Description:
 A single line containing an integer,n.
@@ -373,7 +373,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-12)Given numbers A,B find A^B.
+12) Given numbers A,B find A^B.
 Input Size : 1 <= A <= 5 <= B <= 50
 Sample Testcase :
 INPUT
@@ -410,7 +410,7 @@ CODE:
 
 ---------------------------------------------------------------------------------------------
 
-14)Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
+14) Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
 Input Size : |s| <= 10000000(complexity O(n))
 Sample Testcase :
 INPUT
@@ -443,7 +443,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-15)Write a code to get an integer N and print the digits of the integer.
+15) Write a code to get an integer N and print the digits of the integer.
 
 Input Description:
 A single line contains an integer N.
@@ -477,7 +477,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-16)Given base(B) and height(H) of a triangle find its area.
+16) Given base(B) and height(H) of a triangle find its area.
 Input Size : N <= 1000000
 Sample Testcase :
 INPUT
@@ -506,7 +506,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-17)Given an array of N elements switch(swap) the element with the adjacent element and print the output.
+17) Given an array of N elements switch(swap) the element with the adjacent element and print the output.
 Sample Testcase :
 INPUT
 5
@@ -540,7 +540,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-18)Given 3 numbers A,B,C print 'yes' if they can form the sides of a right angled triangle,otherwise 'no'.
+18) Given 3 numbers A,B,C print 'yes' if they can form the sides of a right angled triangle,otherwise 'no'.
 Input Size : A,B,C <= 100000
 Sample Testcase :
 INPUT
@@ -574,7 +574,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-19)Write a code to get an integer N and print the sum of  values from 1 to N.
+19) Write a code to get an integer N and print the sum of  values from 1 to N.
 
 Input Description:
 A single line contains an integer N.
@@ -611,7 +611,7 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-20)Write a code get an integer number as input and print the sum of the digits.
+20) Write a code get an integer number as input and print the sum of the digits.
 
 Input Description:
 A single line containing an integer.
@@ -654,10 +654,44 @@ CODE:
 
 ---------------------------------------------------------------------------------------------
 
-22)
+22) Given 3 numbers A,B,C print 'yes' if they can form the sides of a scalene triangle else print 'no'.
+Input Size : A,B,C <= 100000
+Sample Testcase :
+INPUT
+3 4 5
+OUTPUT
+yes
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0].split(" ");
+  let a=parseInt(n[0]);
+  let b=parseInt(n[1]);
+  let c=parseInt(n[2]);
+  if((a+b>c)&& (b+c>a) && (c+a>b))
+  {
+      if(a !==b && b!==c && c!==a){
+          console.log("yes")
+      }else{
+         console.log("no") 
+      }
+  }
+  else{
+      console.log("no")
+  }
+});
 ---------------------------------------------------------------------------------------------
 
 23)Given 2 numbers N and M add both the numbers and check whether the sum is odd or even.
@@ -836,10 +870,39 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-29)
+29)Given 3 numbers A,B,C process and print 'yes' if they can form the sides of a triangle otherwise print 'no'.
+Input Size : A,B,C <= 100000
+Sample Testcase :
+INPUT
+3 4 5
+OUTPUT
+yes
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0].split(" ");
+  let a=parseInt(n[0]);
+  let b=parseInt(n[1]);
+  let c=parseInt(n[2]);
+  if((a+b>c)&& (b+c>a) && (c+a>b))
+  {
+     console.log("yes")
+  }else{
+     console.log("no")
+  }
+});
 ---------------------------------------------------------------------------------------------
 
 30)Given a number N followed by N numbers.Find the smallest number and largest number and print both the indices(1 based indexing).
