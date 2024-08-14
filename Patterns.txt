@@ -288,9 +288,58 @@ let star=[];
 });
 ---------------------------------------------------------------------------------------------
 
-9)
+9)Write a code to generate a hollow rectangle using stars. 
+
+Input Description:
+Given an integer R indicates no of rows and an integer C indicates no of columns.
+
+Where 1<=R<=100 and Where 1<=C<=100.
+
+Output Description:
+Print the hollow rectangle using stars with R rows and C columns.
+
+Sample Input :
+3 5
+Sample Output :
+* * * * *
+*       *
+* * * * *
 
 CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a= userInput[0].split(" ");
+ 
+  let row=parseInt(a[0]);
+  let column=parseInt(a[1]);
+  for(let i=1;i<=row;i++){
+      let star=[];
+      for(let j=1;j<=column;j++){
+          if(i === 1 || i === row){
+              star.push("*");
+          }
+          else if (j === 1 || j === column) {
+        star.push("*");
+      }
+      else {
+        star.push(" ");
+      }
+      }
+      console.log(star.join(" "));
+  }
+});
 
 ---------------------------------------------------------------------------------------------
 
@@ -435,3 +484,175 @@ for(let i=1;i<=a;i++){
   }
 });
 ---------------------------------------------------------------------------------------------
+
+14) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+15) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+16) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+17) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+18) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+19) Write a code to generate a inverted half pyramid pattern using numbers.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100
+
+Output Description:
+Print the number half pyramid pattern with the size R.
+
+Sample Input :
+5
+Sample Output :
+12345
+1234
+123
+12
+1
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let star=[];
+   let a= userInput[0];
+  for(let i=a;i>0;i--){
+      for(let j=1;j<=i;j++){
+          star.push(j);   
+      }
+     console.log(star.join(""));
+      star=[];
+  }
+});
+---------------------------------------------------------------------------------------------
+
+20) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+21) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+22) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+23) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+24) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+25) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+26) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+27) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+28)Write a code to generate a half pyramid number pattern.
+
+Input Description:
+Given an even integer R indicates number of rows.
+
+Where 1<=R<=100
+
+Output Description:
+Print the number pattern based on the given integer R.
+
+Sample Input :
+5
+Sample Output :
+12345
+1234
+123
+12
+1
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let star=[];
+   let a= userInput[0];
+  for(let i=a;i>0;i--){
+      for(let j=1;j<=i;j++){
+          star.push(j);   
+      }
+     console.log(star.join(""));
+      star=[];
+  }
+});
+---------------------------------------------------------------------------------------------
+
+
