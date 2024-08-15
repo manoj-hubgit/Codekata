@@ -1,0 +1,406 @@
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+2) Jennyfer is fond of strings. She wants to read the character from right to left (reverse the string), so she wants you to design a suitable algorithm which satisfy her desire.
+
+Input Description:
+Enter the string ‘s’
+
+Output Description:
+Print the string from characters right to left.
+
+Sample Input :
+jennyfer
+Sample Output :
+Refynnej
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0].split("");
+   let b=a.reverse().join("");
+   let rev=b.charAt(0).toUpperCase();
+   c=rev+b.slice(1);
+   console.log(c);
+});
+---------------------------------------------------------------------------------------------
+3)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+4)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+5) Given a string S, print it without using semicolon in your program.
+Sample Testcase :
+INPUT
+hello world
+OUTPUT
+hello world
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  console.log(a);
+});
+---------------------------------------------------------------------------------------------
+
+6) Radha newly learnt about palindromic strings.A palindromic string is a string which is same when read from left to right and also from right to left.Help her in implementing the logic.
+
+ 
+
+Input Description:
+You are given a String ‘s’
+
+Output Description:
+Print 1 if String is palindrome or 0 if not
+
+Sample Input :
+NITIN
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  b=a.split("").reverse().join("");
+ if(a===b){
+     console.log("1"); 
+ }
+ else{
+     console.log("0");
+ }
+});
+---------------------------------------------------------------------------------------------
+
+7) Given a string 'S' print the sum of weight of the String. A weight of character is defined as the ASCII value of corresponding character.
+
+Input Description:
+You are given a string ‘s’
+
+Output Description:
+Print weight
+
+Sample Input :
+abc
+Sample Output :
+294
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let val = userInput[0];
+let total=0;
+for(let i=0;i<val.length;i++){
+   total+= val.charCodeAt(i)
+}
+console.log(total);
+});
+---------------------------------------------------------------------------------------------
+
+8)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+9)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+10)Given a string S, print 'yes' if it has a vowel in it else print 'no'.
+Sample Testcase :
+INPUT
+codekata
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+  let a=userInput[0].toLowerCase();
+  let istrue=false;
+  let arr= a.split("");
+
+  for(let i=0;i<arr.length;i++){
+      if(arr[i]==="a"||arr[i]==="e"||arr[i]==="i"||arr[i]==="o"||arr[i]==="u"){
+          istrue=true;
+         
+      }
+      if(istrue===true){
+           break;
+      }
+  }
+  if(istrue===true){
+      console.log("yes");
+  }else console.log("no");
+});
+---------------------------------------------------------------------------------------------
+
+11)You are given a paragraph.Your task is to print the words that come just after articles.
+
+Input Description:
+You are given a string ‘s’
+
+Output Description:
+print the words that come just after articles and -1 if there are no articles
+
+Sample Input :
+The sun rises in the east
+
+Sample Output :
+sun east
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+ 
+  let arr= a.split(" ");
+  let aftarti=[];
+  for(let i=0;i<arr.length;i++){
+     if(arr[i]==="an"||arr[i]==="a"||arr[i]==="the"||arr[i]==="The"||arr[i]==="An"||arr[i]==="A"){
+         aftarti.push(arr[i+1]);
+     } 
+  }
+console.log(aftarti.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+12)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+13) You are given two numbers. Your task is to multiply the two numbers and print the answer.
+
+Input Description:
+You are given two numbers ‘n’ and ‘m’.
+
+Output Description:
+Print the multiplied answer
+
+Sample Input :
+99999 99998
+Sample Output :
+9999700002
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ");
+let val1=a[0];
+let val2=a[1];
+console.log(val1*val2);
+});
+---------------------------------------------------------------------------------------------
+
+14)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+46) Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
+Input Size : |s| <= 10000000(complexity O(n))
+Sample Testcase :
+INPUT
+codekata
+OUTPUT
+ocedakat
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let s = userInput[0].split("");
+  let arr=s
+  for(let i=0;i<arr.length-1;i+=2){
+    let temp=arr[i];
+    arr[i]=arr[i+1];
+    arr[i+1]=temp;
+  }
+  console.log(arr.join(""))
+});
+---------------------------------------------------------------------------------------------
+
+101) Let P represent Paper, R represent Rock and S represent Scissors. Given 2 out of the 3 determine which one wins. If its a draw print 'D'.
+Sample Testcase :
+INPUT
+R P
+OUTPUT
+P
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0].split(" ");
+   let R,P,S;
+   if(a[0]===a[1]){
+       console.log("D");
+   }
+   else if(a[0]==='R' && a[1]==='P' || a[0]==='P' && a[1]==='R')
+   {
+       console.log("P");
+   }
+    else if(a[0]==='R' && a[1]==='S' || a[0]==='S' && a[1]==='R')
+   {
+       console.log("R");
+   }
+    else if(a[0]==='R' && a[1]==='P' || a[0]==='P' && a[1]==='R')
+   {
+       console.log("P");
+   }
+    else if(a[0]==='S' && a[1]==='P' || a[0]==='P' && a[1]==='S')
+   {
+       console.log("S");
+   }
+});
+---------------------------------------------------------------------------------------------
+
+157) Given a string S consisting of 2 words reverse the order of two words .
+Input Size : |S| <= 10000000
+Sample Testcase :
+INPUT
+hello world
+OUTPUT
+world hello
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let l=userInput[0].split(" ");
+let temp;
+temp=l[0];
+l[0]=l[1];
+l[1]=temp;
+console.log(l.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+14)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
