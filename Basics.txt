@@ -729,10 +729,45 @@ else{
 });
 ---------------------------------------------------------------------------------------------
 
-24)
+24) Write a code to get 2 integers as input and add the integers without any carry.
+
+Input Description:
+A single line containing 2 integers.
+
+Output Description:
+Print sum of the 2 integers without carry
+
+Sample Input :
+44 66
+Sample Output :
+0
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let c=userInput[0].split(" ").sort();
+  let a = c[0];
+  let b = c[1];
+  let result='';
+  while(a>0 || b>0){
+      let sum=(a%10)+(b%10);
+      result=sum%10 + result;
+      a=Math.floor(a/10);
+      b=Math.floor(b/10);
+  }
+  console.log(parseInt(result,10));
+});
 ---------------------------------------------------------------------------------------------
 
 25)Write a code to get 2 integers as input and find the HCF of the 2 integer without using recursion or Euclidean algorithm.
