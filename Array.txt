@@ -1,0 +1,509 @@
+7) Pk finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
+
+Note:Don’t use sorting
+
+Input Description:
+You are given ‘n’ number of elements. Next line contains n space separated numbers.
+
+Output Description:
+Print the minimum element
+
+Sample Input :
+5
+3 4 9 1 6
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  let val=userInput[1].split(" ").map(Number);
+  let small=val[0];
+  for(let i=1;i<a;i++){
+      if(small>val[i]){
+          small=val[i];
+      }
+  }
+  console.log(small);
+});
+---------------------------------------------------------------------------------------------
+
+9) Given a number N, print the odd digits in the number(space seperated) or print -1 if there is no odd digit in the given number.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+2143
+OUTPUT
+1 3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0].split("");
+   let odd=[];
+   for(let i=0;i<a.length;i++){
+    if(a[i]%2===1){
+        odd.push(a[i]);
+    }   
+   }
+if(odd.length===0){
+    console.log("-1");
+}
+ console.log(odd.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+13) Rajesh and Ram are having a conflict on the maximum marks that they have scored in all the exams conducted in the past year. The one having scored the maximum gets a treat from the other. They decide to go through their test papers and record their highest marks. You are Rajesh’s best friend and as he has tutions to attend, he gives you all his test papers and asks you to find out the maximum marks that he has scored among all the marks in all exams. He promises you a treat if he wins the bet with Ram. Help Rajesh find out his highest marks.
+
+Constraints:
+
+1 <= N <= 10
+
+0 <= A[] <= 100
+
+Input Description:
+First line contains count of marks. Next line is the list of marks obtained by Rajesh.
+
+Output Description:
+Highest marks obtained by Rajesh.
+
+Sample Input :
+3
+82 96 72
+Sample Output :
+96
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= parseInt(userInput[0]);
+let arr=userInput[1].split(" ").map(Number);
+  let big=arr[0];
+  for(let i=1;i<=arr.length-1;i++){
+      if(big<arr[i]){
+          big=arr[i];
+      }
+  }
+console.log(big);
+});
+---------------------------------------------------------------------------------------------
+
+16)Ria is a 5 year old girl. Her mother wants to teach her how to sort words in the same order that they appear in a dictionary. She decides to write a program to sort a given set of strings based on their alphabetical order. Help Ria’s mother to complete the program.
+
+Input Description:
+A set of N strings
+
+Output Description:
+Alphabetically sorted set of strings
+
+Sample Input :
+3
+InfinityWar EndGame Avengers
+Sample Output :
+Avengers EndGame InfinityWar
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let num=userInput[0];
+let word=userInput[1].split(" ").sort().join(" ");
+  console.log(word);
+});
+---------------------------------------------------------------------------------------------
+
+20) You are given two arrays of equal length. Your task is to merge the two arrays then sort them too and then find the sum of two middlemost elements.
+
+Input Description:
+You are given a number ‘n’. Then Next line contains first list of 'n' separated numbers.Third line contains second list of 'n' space separated numbers.
+
+Output Description:
+Print the sum of two middle elements
+
+Sample Input :
+5
+1 9 16 25 46
+2 3 4 5 6
+Sample Output :
+11
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= parseInt(userInput[0]);
+let arr1= userInput[1].split(" ").map(Number);
+let arr2=userInput[2].split(" ").map(Number);
+let arr3=[...arr1,...arr2];
+arr3=arr3.sort((a,b)=>a-b);
+let center=arr3.length/2;
+let val1=arr3[Math.floor(center)];
+let val2=arr3[Math.floor(center)-1];
+console.log(val1+val2);
+});
+---------------------------------------------------------------------------------------------
+
+25) Given 2 numbers N and K followed by elements of N .Print 'yes' if K exists else print 'no'.
+Sample Testcase :
+INPUT
+4 2
+1 2 3 3
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+
+  let a = userInput[0].split(" ");
+  let N=a[0];
+  let K=a[1];
+  let b = userInput[1].split(" ");
+let count =0;
+  for(let i=0;i<b.length;i++){
+      if(b[i]===K){
+          count=1;
+          break;
+      }
+  }
+  if(count!==0){
+      console.log("yes");
+  }else{
+      console.log("no");
+  }
+});
+---------------------------------------------------------------------------------------------
+
+28) Given a string S, print it without using semicolon in your program.
+Sample Testcase :
+INPUT
+hello world
+OUTPUT
+hello world
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  console.log(a);
+});
+---------------------------------------------------------------------------------------------
+
+49) Given numbers A,B find A^B.
+Input Size : 1 <= A <= 5 <= B <= 50
+Sample Testcase :
+INPUT
+3 4
+OUTPUT
+81
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0].split(" ");
+  let A = a[0];
+  let B = a[1];
+  console.log(Math.pow(A,B));
+});
+---------------------------------------------------------------------------------------------
+
+66) Ram is the CEO of an MNC. He wants to order the employee salaries in ascending order so that he can do a salary hike based on the salary values of employees. He selects you to do the task of sorting the salaries. Sort the salaries in ascending order and pass on the information to Ram.
+ 
+
+Input Description:
+Number of employees followed by the salaries of employees.
+
+Output Description:
+Salaries sorted in ascending order.
+
+Sample Input :
+8
+7000 8000 6500 1200 4000 2800 3000 5230
+Sample Output :
+1200 2800 3000 4000 5230 6500 7000 8000
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+  let a = userInput[0];
+  let b =userInput[1].split(" ").sort(" ").join(" ");
+  console.log(b);
+});
+---------------------------------------------------------------------------------------------
+
+71) Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
+Input Size : |s| <= 10000000(complexity O(n))
+Sample Testcase :
+INPUT
+codekata
+OUTPUT
+ocedakat
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let s = userInput[0].split("");
+  let arr=s
+  for(let i=0;i<arr.length-1;i+=2){
+    let temp=arr[i];
+    arr[i]=arr[i+1];
+    arr[i+1]=temp;
+  }
+  console.log(arr.join(""))
+});
+---------------------------------------------------------------------------------------------
+
+74) Given an array of N elements switch(swap) the element with the adjacent element and print the output.
+Sample Testcase :
+INPUT
+5
+3 2 1 2 3
+OUTPUT
+2 3 2 1 3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0]
+  let s = userInput[1].split(" ");
+  let arr=s
+  for(let i=0;i<a-1;i+=2){
+    let temp=arr[i];
+    arr[i]=arr[i+1];
+    arr[i+1]=temp;
+  }
+  console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+157) Given k sorted arrays of possibly different sizes, merge them and print the sorted output.
+Input Size : N<=100
+Example:
+INPUT
+k = 3
+1 3
+2 4 6
+0 9 10 11
+OUTPUT
+0 1 2 3 4 6 9 10 11
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = parseInt(userInput[0]);
+  let arr=[]
+  for(let i=1;i<=a;i++){
+      arr.push(...userInput[i].split(" "))
+  }
+arr.sort((a, b) => a - b);
+   console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+194) Given a number N followed by N numbers.Find the smallest number and largest number and print both the indices(1 based indexing).
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5
+1 2 3 4 5
+OUTPUT
+1 5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0];
+   let b= userInput[1].split(" ");
+   small=b[0];
+   large=b[0];
+   for(let i=1;i<b.length;i++)
+   {
+       if(small>b[i]){
+           small=b[i];
+       }
+       if(large<b[i]){
+           large=b[i];
+       }
+   }
+   console.log(b.indexOf(small)+1, b.indexOf(large)+1);
+});
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
