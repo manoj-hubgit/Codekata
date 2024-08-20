@@ -360,6 +360,46 @@ console.log(a.sort().join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
+14)  You are given a string ‘s’.Your task is to print the string in alternate lowercase and uppercase order.
+
+Input Description:
+You are given a string
+
+Output Description:
+Print the string according to given criteria
+
+Sample Input :
+abcd efgh ijkl
+Sample Output :
+ABCD efgh IJKL
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split(" ");
+  let arr=[];
+  for(let i=0;i<a.length;i++){
+      if(i%2===0){
+          arr.push(a[i].toUpperCase());
+      }else{
+          arr.push(a[i].toLowerCase());
+      }
+  }
+  console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 29) Given a string S, find its length(including the spaces)without using any pre-defined functions.
 Sample Testcase :
 INPUT

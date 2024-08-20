@@ -705,4 +705,50 @@ let star=[];
 });
 ---------------------------------------------------------------------------------------------
 
+38) Generate a number pyramid pattern.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100
+
+Output Description:
+Print the number half pyramid pattern with the size R.
+
+Sample Input :
+4
+Sample Output :
+1234567
+12345
+123
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  let num=a*2
+  let arr=[]
+  for(let i=0;i<a;i++)
+  {
+      for(let j=1;j<num;j++){
+          arr.push(j);
+      }
+      console.log(arr.join(""))
+      num-=2;
+      arr=[];
+  }
+});
+---------------------------------------------------------------------------------------------
 
