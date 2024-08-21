@@ -1,0 +1,653 @@
+1) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+4) Given a number N, print yes if the number is a multiple of 7 else print no.
+Sample Testcase :
+INPUT
+49
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+ if(a%7===0){
+     console.log("yes");
+ }else{
+     console.log("no");
+ }
+});
+---------------------------------------------------------------------------------------------
+
+14) Find the minimum among 10 numbers.
+Sample Testcase :
+INPUT
+5 4 3 2 1 7 6 10 8 9
+OUTPUT
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0].split(" ");
+   let length=a.length;
+   let min=a[0];
+   for(i=0;i<length;i++){
+       if(min>a[i]){
+           min=a[i];
+       }
+   }
+   console.log(min);
+});
+---------------------------------------------------------------------------------------------
+
+15) Pk finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
+Note:Don’t use sorting
+ 
+
+Input Description:
+You are given ‘n’ number of elements. Next line contains n space separated numbers.
+
+Output Description:
+Print the minimum element
+
+Sample Input :
+5
+3 4 9 1 6
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  let val=userInput[1].split(" ").map(Number);
+  let small=val[0];
+  for(let i=1;i<a;i++){
+      if(small>val[i]){
+          small=val[i];
+      }
+  }
+  console.log(small);
+});
+---------------------------------------------------------------------------------------------
+
+16) Given 2 numbers N,M. Print 'yes' if their product is a perfect square else print 'no'.
+Sample Testcase :
+INPUT
+5 5
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0].split(" ")
+  let N=a[0];
+  let M=a[1];
+  let product=N*M;
+  let square=Math.sqrt(product);
+  if(Number.isInteger(square)){
+      console.log("yes");
+  }else{
+      console.log("no");
+  }
+});
+---------------------------------------------------------------------------------------------
+
+17) Given a number N, print 'yes' if it is a multiple of 13 else print 'no'.
+Sample Testcase :
+INPUT
+26
+OUTPUT
+yes 
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   if(a%13===0){
+      console.log("yes");
+   }else{
+       console.log("no");
+   }
+});
+---------------------------------------------------------------------------------------------
+
+18) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+19) Given 3 numbers N , L and R. Print 'yes' if N is between L and R else print 'no'.
+Sample Testcase :
+INPUT
+3
+2 6
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let n=(userInput[0]);
+ let value=userInput[1];
+ let values=value.split(" ");
+ let l=values[0];
+ let r=values[1];
+ if(n>l && n<r){
+     console.log("yes");
+ }else{
+     console.log("no");
+ }
+});
+
+---------------------------------------------------------------------------------------------
+
+24) Count the number of digits of a given number N.Size of the integer ranges from 1Sample Testcases :
+INPUT
+548
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0].split("");
+   console.log(a.length);
+});
+---------------------------------------------------------------------------------------------
+
+27) Ajay is given a series(In example).he gone through the series but unable to understand it properly,he has hired you.Your task is to understand the series and print the series 2,6,12,20,30... .You are given with a number ‘n’. Find the nth number of series.
+
+Input Description:
+You are given a number ‘n’.
+
+Output Description:
+Print the nth number of series
+
+Sample Input :
+5
+Sample Output :
+30
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   let increment=0;
+   let ans=0
+   for(let i=1;i<=a;i++){
+       increment+=2;
+       ans+=increment;
+   }
+   console.log(ans);
+});
+---------------------------------------------------------------------------------------------
+
+31) Write a program to print the sum of the first K natural numbers.
+Input Size : n <= 100000
+Sample Testcase :
+INPUT
+3
+OUTPUT
+6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let k=(userInput[0]);
+ let val=0;
+   for(i=0;i<=k;i++){
+       val+=i;
+   }
+   console.log(val)
+});
+
+---------------------------------------------------------------------------------------------
+
+32) Kabali is a brave warrior who with his group of young ninjas moves from one place to another to fight against his opponents. Before Fighting he just calculates one thing, the difference between his ninja number and the opponent's ninja number. From this difference he decides whether to fight or not. Kabali's ninja number is never greater than his opponent.
+Input
+The input contains two numbers in every line. These two numbers in each line denotes the number ninjas in Kabali's clan and his opponent's clan . print the absolute difference of number of ninjas between Kabali's clan and his opponent's clan. Each output should be in seperate line.
+Sample Testcase :
+INPUT
+100 200
+OUTPUT
+100 
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0].split(" ");
+  let a=n[0];
+  let b=n[1];
+ console.log(Math.abs(a-b))
+});
+---------------------------------------------------------------------------------------------
+
+39) Given a number N, print the odd digits in the number(space seperated) or print -1 if there is no odd digit in the given number.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+2143
+OUTPUT
+1 3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0].split("");
+   let odd=[];
+   for(let i=0;i<a.length;i++){
+    if(a[i]%2===1){
+        odd.push(a[i]);
+    }   
+   }
+if(odd.length===0){
+    console.log("-1");
+}
+ console.log(odd.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+40) Given 3 numbers a,b,c print a*b mod c.
+Sample Testcase :
+INPUT
+5 3 2
+OUTPUT
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0].split(" ");
+   let b=a[0];
+   let c=a[1];
+   let d=a[2];
+   console.log((b*c)%d);
+});
+
+---------------------------------------------------------------------------------------------
+
+44) Given base(B) and height(H) of a triangle find its area.
+Input Size : N <= 1000000
+Sample Testcase :
+INPUT
+2 4
+OUTPUT
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a= userInput[0].split(" ");
+  let b=a[0];
+  let h=a[1];
+  console.log(1/2*b*h);
+});
+---------------------------------------------------------------------------------------------
+
+48) Given numbers A,B find A^B.
+Input Size : 1 <= A <= 5 <= B <= 50
+Sample Testcase :
+INPUT
+3 4
+OUTPUT
+81
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0].split(" ");
+  let A = a[0];
+  let B = a[1];
+  console.log(Math.pow(A,B));
+});
+---------------------------------------------------------------------------------------------
+
+51) Given 2 numbers N and M add both the numbers and check whether the sum is odd or even.
+Sample Testcase :
+INPUT
+9 2
+OUTPUT
+odd
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let l=userInput[0].split(" ");
+
+let n=l[0];
+let m=l[1];
+let a=n+m
+if(a%2===0){
+    console.log("even");
+}else{
+    console.log("odd");
+}
+});
+---------------------------------------------------------------------------------------------
+
+78) Given an array of N elements switch(swap) the element with the adjacent element and print the output.
+Sample Testcase :
+INPUT
+5
+3 2 1 2 3
+OUTPUT
+2 3 2 1 3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0]
+  let s = userInput[1].split(" ");
+  let arr=s
+  for(let i=0;i<a-1;i+=2){
+    let temp=arr[i];
+    arr[i]=arr[i+1];
+    arr[i+1]=temp;
+  }
+  console.log(arr.join(" "))
+});
+---------------------------------------------------------------------------------------------
+
+80) Given 3 numbers A,B,C process and print 'yes' if they can form the sides of a triangle otherwise print 'no'.
+Input Size : A,B,C <= 100000
+Sample Testcase :
+INPUT
+3 4 5
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0].split(" ");
+  let a=parseInt(n[0]);
+  let b=parseInt(n[1]);
+  let c=parseInt(n[2]);
+  if((a+b>c)&& (b+c>a) && (c+a>b))
+  {
+     console.log("yes")
+  }else{
+     console.log("no")
+  }
+});
+---------------------------------------------------------------------------------------------
+
+82) Given 3 numbers A,B,C print 'yes' if they can form the sides of a scalene triangle else print 'no'.
+Input Size : A,B,C <= 100000
+Sample Testcase :
+INPUT
+3 4 5
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0].split(" ");
+  let a=parseInt(n[0]);
+  let b=parseInt(n[1]);
+  let c=parseInt(n[2]);
+  if((a+b>c)&& (b+c>a) && (c+a>b))
+  {
+      if(a !==b && b!==c && c!==a){
+          console.log("yes")
+      }else{
+         console.log("no") 
+      }
+  }else{
+      console.log("no")
+  }
+});
+---------------------------------------------------------------------------------------------
+
+86) Given 3 numbers A,B,C print 'yes' if they can form the sides of a right angled triangle,otherwise 'no'.
+Input Size : A,B,C <= 100000
+Sample Testcase :
+INPUT
+3 4 5
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n= userInput[0].split(" ").sort((a,b)=>a-b);
+  let a=n[0];
+  let b=n[1];
+  let c=n[2];
+  if(a*a + b*b ===c*c){
+      console.log("yes")
+  }else{
+      console.log("no")
+  }
+});
+---------------------------------------------------------------------------------------------
+
+1) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+1) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
