@@ -215,6 +215,37 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+20) Given 2 numbers N,M. Find their difference and check whether it is even or odd.
+Sample Testcase :
+INPUT
+5 5
+OUTPUT
+even
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split(" ");
+   a=a[0]-a[1];
+  if(a%2===0){
+      console.log("even");
+  }else{
+      console.log("odd");
+  }
+});
+---------------------------------------------------------------------------------------------
+
 24) Count the number of digits of a given number N.Size of the integer ranges from 1Sample Testcases :
 INPUT
 548
@@ -275,6 +306,36 @@ inp.on("close", () => {
        ans+=increment;
    }
    console.log(ans);
+});
+---------------------------------------------------------------------------------------------
+
+29) Given a number N, print the product of the digits.
+Input Size : N <= 100000000000
+Sample Testcase :
+INPUT
+2143
+OUTPUT
+24
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split("");
+   let sum=a[0];
+   for(let i=1;i<a.length;i++){
+       sum*=a[i];
+   }
+   console.log(sum);
 });
 ---------------------------------------------------------------------------------------------
 
