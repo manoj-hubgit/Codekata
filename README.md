@@ -8,12 +8,19 @@ Current Number of Code Solutions
 • Total number of coding problems solved: 148
 
 • Total number of coding problems solved in InputOutput       : 10
+
 • Total number of coding problems solved in Absolute Biginner : 30
+
 • Total number of coding problems solved in Array             : 15
+
 • Total number of coding problems solved in Mathematics       : 19
+
 • Total number of coding problems solved in Strings           : 16
+
 • Total number of coding problems solved in Basics            : 31
+
 • Total number of coding problems solved in Looping           : 13
+
 • Total number of coding problems solved in Patterns          : 14
 
 
