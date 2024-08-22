@@ -339,6 +339,56 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+30) Assume that you are ticket verifier at a club. Your club has decided to give a special discount to the person(s) who are satisfying the following condition
+
+ 
+
+Condition:-
+
+If ticket number is divisible by date of month. You are eligible for a discount.
+
+Input Description:
+First line contains input ‘n’.Next line contains n space separated numbers denoting ticket numbers .Next line contains ‘k’ date of the month.
+
+Output Description:
+Print 1 if the ticket is eligible for discount else 0
+
+Sample Input :
+6
+112 139 165 175 262 130
+22
+Sample Output :
+0 0 0 0 0 0
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a= userInput[0];
+ let b=userInput[1].split(" ");
+ let c=userInput[2];
+ let arr=[];
+ for(let i=0;i<a;i++){
+     if(b[i]%c===0){
+         arr.push(1);
+     }else{
+         arr.push(0);
+     }
+ }
+ console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 31) Write a program to print the sum of the first K natural numbers.
 Input Size : n <= 100000
 Sample Testcase :
@@ -465,6 +515,35 @@ inp.on("close", () => {
    console.log((b*c)%d);
 });
 
+---------------------------------------------------------------------------------------------
+
+41) Given the values of a,b and x in the equation ax + b = y. Find the value of y.
+Sample Testcase :
+INPUT
+3 5 2
+OUTPUT
+11
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let d=userInput[0].split(" ");
+ let a= parseInt(d[0]);
+ let b= parseInt(d[1]);
+ let x= parseInt(d[2]);
+ console.log((a*x)+b);
+});
 ---------------------------------------------------------------------------------------------
 
 44) Given base(B) and height(H) of a triangle find its area.
