@@ -573,10 +573,50 @@ CODE:
 
 ---------------------------------------------------------------------------------------------
 
-22) 
+22) Write a code to generate a half pyramid pattern using numbers.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100
+
+Output Description:
+Print the number half pyramid pattern with the size R.
+
+Sample Input :
+5
+Sample Output :
+12345
+2345
+345
+45
+5
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+let arr=[];
+for(let i=1;i<=a;i++){
+    for(let j=i;j<=a;j++){
+        arr.push(j);
+        
+    }
+    console.log(arr.join(""))
+    arr=[];
+}
+});
 ---------------------------------------------------------------------------------------------
 
 23) Write a code to generate a solid half diamond pattern using stars.
@@ -641,9 +681,49 @@ CODE:
 
 ---------------------------------------------------------------------------------------------
 
-25) 
+25) Write a code to generate a half pyramid pattern using numbers.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100
+
+Output Description:
+Print the number half pyramid pattern with the size R.
+
+Sample Input :
+5
+Sample Output :
+54321
+4321
+321
+21
+1
 
 CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+let arr=[];
+for(let i=a;i>=1;i--){
+    for(let j=i;j>=1;j--){
+        arr.push(j);  
+    }
+    console.log(arr.join(""));
+    arr=[];
+}
+});
 
 ---------------------------------------------------------------------------------------------
 

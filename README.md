@@ -5,7 +5,7 @@ Each file represents a specific topic or problem, including both the question an
 
 Current Number of Code Solutions
 
-• Total number of coding problems solved: 152
+• Total number of coding problems solved: 154
 
 • Total number of coding problems solved in InputOutput       : 10
 
@@ -21,7 +21,7 @@ Current Number of Code Solutions
 
 • Total number of coding problems solved in Looping           : 13
 
-• Total number of coding problems solved in Patterns          : 14
+• Total number of coding problems solved in Patterns          : 16
 
 
 Structure
