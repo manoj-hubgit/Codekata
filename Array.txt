@@ -341,6 +341,77 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+45) Given a string S, print 2 strings such that first string containing all characters in odd position(s) and other containing all characters in even position(s).
+Sample Testcase :
+INPUT
+XCODE
+OUTPUT
+XOE CD
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+let odd=[];
+let even=[];
+for (let i=0;i<a.length;i++){
+    if(i%2===0){
+        odd.push(a[i]);
+    }else{
+        even.push(a[i]);
+    }
+}
+console.log(odd.join("")+" "+even.join(""));
+});
+
+---------------------------------------------------------------------------------------------
+
+46) Ria is always fascinated by the number 2. She always wants to know who came second in a race, the second person to set foot on the moon and so on. She is given a list of numbers and asked to find the maximum. As always, she reports the second highest number as the maximum because according to her, 2 is higher than 1. Find out which was the number that Ria would have reported, given a list of N numbers.
+ 
+
+Input Description:
+Size of the array followed by the elements of the array.
+
+Output Description:
+Second largest element of the array.
+
+Sample Input :
+10
+1 9 8 7 6 5 2 3 4 10
+Sample Output :
+9
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+let b=userInput[1].split(" ").sort((a,b)=>a-b);
+console.log(b[a-2]);
+});
+---------------------------------------------------------------------------------------------
+
 49) Given numbers A,B find A^B.
 Input Size : 1 <= A <= 5 <= B <= 50
 Sample Testcase :
