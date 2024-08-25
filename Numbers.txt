@@ -1,0 +1,133 @@
+12) Prateek finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
+
+Input Description:
+You are given ‘n’ number of elements. Next line contains n space separated numbers.
+
+Output Description:
+Print the minimum element
+
+Sample Input :
+5
+3 4 9 1 6
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let total=userInput[0];
+let a = userInput[1].split(" ").sort();
+console.log(a[0]);
+
+});
+---------------------------------------------------------------------------------------------
+
+16)Assume that you are ticket verifier at a club. Your club has decided to give a special discount to the person(s) who are satisfying the following condition
+
+ 
+
+Condition:-
+
+If ticket number is divisible by date of month. You are eligible for a discount.
+
+Input Description:
+First line contains input ‘n’.Next line contains n space separated numbers denoting ticket numbers .Next line contains ‘k’ date of the month.
+
+Output Description:
+Print 1 if the ticket is eligible for discount else 0
+
+Sample Input :
+6
+112 139 165 175 262 130
+22
+Sample Output :
+0 0 0 0 0 0
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a= userInput[0];
+ let b=userInput[1].split(" ");
+ let c=userInput[2];
+ let arr=[];
+ for(let i=0;i<a;i++){
+     if(b[i]%c===0){
+         arr.push(1);
+     }else{
+         arr.push(0);
+     }
+ }
+ console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+22) You are given a number ‘n’. You have to tell whether a number is great or not. A great number is a number whose sum of digits let (m) and product of digits let(j) when summed together gives the number back
+
+m+j=n
+
+Input Description:
+You are given a number n;
+
+Output Description:
+Print Great if a number is great else print the no
+
+Sample Input :
+59
+Sample Output :
+Great
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a = userInput[0].split("");
+let val1=parseInt(a[0]);
+let val2=parseInt(a[1]);
+let add=val1+val2;
+let product=val1*val2;
+let both=add+product;
+if(both==a.join("")){
+    console.log("Great");
+}else{
+    console.log("no")
+}
+});
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
