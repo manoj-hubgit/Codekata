@@ -1,0 +1,89 @@
+1) You are given with a queue. Your task is to reverse the queue elements and print it.
+
+Input Description:
+You are given a number ‘n’,denoting size of queue, Next line contains s space separated numbers
+
+Output Description:
+Print the reversed queue.
+
+Sample Input :
+6
+1 2 3 4 5 6
+Sample Output :
+6 5 4 3 2 1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0];
+   let q=userInput[1].split(" ");
+   q=q.reverse();
+   console.log(q.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+8) Given 2 numbers N,K and an array of N integers, find if the element K exists in the array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5 2
+1 2 3 4 5
+OUTPUT
+yes
+HINT: Read about Binary Search
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=userInput[0].split(" ");
+ let total=a[0];
+ let check=a[1];
+ let val=userInput[1].split(" ");
+ let count=0;
+ for(let i=0;i<total;i++){
+     if(check==val[i]){
+         console.log("yes");
+         count+=1;
+         break;
+     }
+ }
+ if(count===0){
+     console.log("no")
+ }
+
+});
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
+
+1)
+
+CODE:
+
+---------------------------------------------------------------------------------------------
