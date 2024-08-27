@@ -442,6 +442,41 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+56) Prateek finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
+
+Input Description:
+You are given ‘n’ number of elements. Next line contains n space separated numbers.
+
+Output Description:
+Print the minimum element
+
+Sample Input :
+5
+3 4 9 1 6
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let total=userInput[0];
+let a = userInput[1].split(" ").sort();
+console.log(a[0]);
+
+});
+---------------------------------------------------------------------------------------------
+
 66) Ram is the CEO of an MNC. He wants to order the employee salaries in ascending order so that he can do a salary hike based on the salary values of employees. He selects you to do the task of sorting the salaries. Sort the salaries in ascending order and pass on the information to Ram.
  
 
@@ -544,6 +579,43 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+102) Given 2 arrays print 'yes' if they are mirror images of each other,otherwise 'no'.
+Input Size : N <= 1000000
+Sample Testcase :
+INPUT
+4
+1 2 3 4
+4 3 2 1
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let total=userInput[0];
+ let a=userInput[1].split(" ").join("");
+ let b=userInput[2].split(" ").reverse().join("");
+ if(a.length==b.length){
+     if(a==b){
+         console.log("yes");
+     }else{
+         console.log("no");
+     }
+ }
+});
+---------------------------------------------------------------------------------------------
+
 157) Given k sorted arrays of possibly different sizes, merge them and print the sorted output.
 Input Size : N<=100
 Example:
@@ -576,6 +648,48 @@ inp.on("close", () => {
   }
 arr.sort((a, b) => a - b);
    console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+166) You are given a number n,ranging from 1 to n. Out of which one number is missing. Your task is to print that missing number.
+
+Input Description:
+You are given a number ‘n’.
+
+Output Description:
+Print the missing number.
+
+Sample Input :
+5
+1 3 5 2
+Sample Output :
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let b=userInput[1].split(" ").map(Number);
+    b=b.sort();
+    let val=1;
+    for(let i=0;i<a;i++){
+        if(b[i]!==val){
+            console.log(val);
+            break;
+        }
+        val+=1;
+    }
 });
 ---------------------------------------------------------------------------------------------
 
@@ -619,10 +733,42 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-1)
+213) Given a number N print the right-angled triangle with the top level having N 1's followed by each level with is one 1 lesser.
+Input Size : N <= 1000
+Sample Testcase :
+INPUT
+3
+OUTPUT
+1 1 1
+1 1
+1
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0];
+   let arr=[];
+   let b=a;
+   for(let i=0;i<a;i++){
+       for(let j=0;j<b;j++){
+           arr.push(1);
+       }
+       console.log(arr.join(" "));
+       arr=[];
+       b-=1;
+   }
+});
 ---------------------------------------------------------------------------------------------
 
 1)

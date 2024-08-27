@@ -433,6 +433,41 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+28) Given a string S, print 2 strings such that first string containing all characters in odd position(s) and other containing all characters in even position(s).
+Sample Testcase :
+INPUT
+XCODE
+OUTPUT
+XOE CD
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+let odd=[];
+let even=[];
+for (let i=0;i<a.length;i++){
+    if(i%2===0){
+        odd.push(a[i]);
+    }else{
+        even.push(a[i]);
+    }
+}
+console.log(odd.join("")+" "+even.join(""));
+});
+---------------------------------------------------------------------------------------------
+
 29) Given a string S, find its length(including the spaces)without using any pre-defined functions.
 Sample Testcase :
 INPUT
@@ -526,6 +561,48 @@ inp.on("close", () => {
     arr[i+1]=temp;
   }
   console.log(arr.join(""))
+});
+---------------------------------------------------------------------------------------------
+
+59) Given 2 numbers N,K and an array of N integers, find if the element K exists in the array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5 2
+1 2 3 4 5
+OUTPUT
+yes
+HINT: Read about Binary Search
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=userInput[0].split(" ");
+ let total=a[0];
+ let check=a[1];
+ let val=userInput[1].split(" ");
+ let count=0;
+ for(let i=0;i<total;i++){
+     if(check==val[i]){
+         console.log("yes");
+         count+=1;
+         break;
+     }
+ }
+ if(count===0){
+     console.log("no")
+ }
 });
 ---------------------------------------------------------------------------------------------
 
