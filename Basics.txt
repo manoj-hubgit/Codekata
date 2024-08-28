@@ -404,10 +404,40 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-13)
+13) Given 2 numbers N and K followed by N elements,print the number of repetition of K otherwise print '-1' if the element not found.
+Sample Testcase :
+INPUT
+6 2
+1 2 3 5 7 8
+OUTPUT
+0
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a = userInput[0].split(" ");
+    let len = a[0];
+    let check =parseInt(a[1]);
+    let b= userInput[1].split(" ").map(Number);
+    count= -1;
+    for(let i=0;i<len;i++){
+        if(b[i]===check){
+            count+=1;
+        }
+    }
+    console.log(count);
+});
 ---------------------------------------------------------------------------------------------
 
 14) Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
