@@ -693,6 +693,47 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+169)Given a number N and an array of N integers, predict if the product of all elements would be even or odd(actual multiplication may lead to overflows ai <= 100000000).If there is only one element present in the array print whether that number is odd or even.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+4
+2 4 4 2
+OUTPUT
+even
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=parseInt(userInput[0]);
+ let b= userInput[1].split(" ").map(Number);
+ let isEven=false;
+ for(let i=0;i<a;i++){
+     if(b[i]%2===0){
+         isEven=true;
+         break;
+     }
+ }
+ if(isEven){
+     console.log("even")
+ }else{
+     console.log("odd")
+ }
+
+});
+---------------------------------------------------------------------------------------------
+
 194) Given a number N followed by N numbers.Find the smallest number and largest number and print both the indices(1 based indexing).
 Input Size : N <= 100000
 Sample Testcase :
