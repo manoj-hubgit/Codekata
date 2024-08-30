@@ -606,6 +606,80 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+60) Given a string and a number K, change every kth character to uppercase from beginning in string.
+Sample Testcase :
+INPUT
+string 2
+OUTPUT
+sTrInG
+
+CODE: 
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split(" ");
+let a=n[0].split("");
+let val=n[1];
+let ans=[]
+let num=0;
+for(let i=0;i<a.length;i++){
+    num+=1;
+    if(num%val===0){
+       ans.push(a[i].toUpperCase()) ;
+    }else{
+       ans.push(a[i]) 
+    } 
+}
+  console.log(ans.join(""));
+});
+---------------------------------------------------------------------------------------------
+
+62) Given a string and a number K.Print every kth character from the beginning.
+Sample Testcase :
+INPUT
+string 3
+OUTPUT
+r g
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split(" ");
+let a=n[0].split("");
+let val=n[1];
+let ans=[]
+let num=0;
+for(let i=0;i<a.length;i++){
+    num+=1;
+    if(num%val===0){
+       ans.push(a[i]) ;
+    }
+}
+  console.log(ans.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 101) Let P represent Paper, R represent Rock and S represent Scissors. Given 2 out of the 3 determine which one wins. If its a draw print 'D'.
 Sample Testcase :
 INPUT
