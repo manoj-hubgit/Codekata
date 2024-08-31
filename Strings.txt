@@ -679,6 +679,67 @@ for(let i=0;i<a.length;i++){
   console.log(ans.join(" "));
 });
 ---------------------------------------------------------------------------------------------
+70) Given a string print reverse all words except the first and last words.
+Sample Testcase :
+INPUT
+Hi how are you
+OUTPUT
+Hi woh era you
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split(" ");
+let arr=[]
+for(let i=0;i<n.length;i++){
+    if(i!==0 && i!==n.length-1){
+        n[i]=n[i].split("").reverse().join("");
+        arr.push(n[i]);
+    }else{
+        arr.push(n[i]);
+    }
+}
+console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+71) A number is given as input.Find the maximum number that can be formed using the digits.
+Input Size : N <= 10000000
+Sample Testcase :
+INPUT
+4123
+OUTPUT
+4321
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split("").sort((a,b)=>(b-a)).join("");
+console.log(n);
+});
+---------------------------------------------------------------------------------------------
 
 101) Let P represent Paper, R represent Rock and S represent Scissors. Given 2 out of the 3 determine which one wins. If its a draw print 'D'.
 Sample Testcase :
