@@ -34,6 +34,48 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+10) You are given a task to tell whether the number is pure or not. A pure number is a number whose sum of digits is multiple of 3.
+
+O(1) time and O(1) space
+
+Input Description:
+You are given a number n.
+
+Output Description:
+Print yes if it is pure else not
+
+Sample Input :
+13
+Sample Output :
+not
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("").map(Number);
+let n=0;
+for(let i=0;i<a.length;i++){
+  n+=a[i];  
+}
+if(n%3===0){
+    console.log("yes");
+}else{
+    console.log("not");
+}
+});
+---------------------------------------------------------------------------------------------
+
 12) You are given a number ‘n’. You have to tell whether a number is great or not. A great number is a number whose sum of digits let (m) and product of digits let(j) when summed together gives the number back
 
 m+j=n
@@ -614,6 +656,32 @@ inp.on("close", () => {
   let b=a[0];
   let h=a[1];
   console.log(1/2*b*h);
+});
+---------------------------------------------------------------------------------------------
+
+47) Given a floating point number with 1 decimal place round it off to nearest greater integer and print it.
+Sample Testcase :
+INPUT
+2.6
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+console.log(Math.ceil(a));
 });
 ---------------------------------------------------------------------------------------------
 
