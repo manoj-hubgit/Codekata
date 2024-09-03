@@ -122,6 +122,62 @@ console.log(big);
 });
 ---------------------------------------------------------------------------------------------
 
+14) Mr.Stark wants to order the employee ids, which are recorded in a 2D matrix, in ascending order. He wants to do it so as to allot a new id to a person who joins as a fresher. You are the CTO of the Stark industries and you are asked by Mr.Stark to sort the data.
+ 
+
+Input Description:
+Dimensions of the matrix m and n, followed by the elements of the matrix.
+
+Output Description:
+Matrix sorted in ascending order
+
+Sample Input :
+3 3
+87 21 34
+89 32 78
+12 23 45
+Sample Output :
+12 21 23
+32 34 45
+78 87 89
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ").map(Number);
+let row=a[0];
+let col=a[1];
+let arr=[];
+let ans=[];
+let k=0;
+for(let i=1;i<=row;i++){
+arr.push(...userInput[i].split(" "));
+}
+arr.sort();
+for(let i=0;i<row;i++){
+    for(let j=0;j<col;j++){
+        ans.push(arr[k]);
+       k++; 
+    }
+    
+    console.log(ans.join(" "));
+    ans=[];
+}
+});
+---------------------------------------------------------------------------------------------
+
 16)Ria is a 5 year old girl. Her mother wants to teach her how to sort words in the same order that they appear in a dictionary. She decides to write a program to sort a given set of strings based on their alphabetical order. Help Ria’s mother to complete the program.
 
 Input Description:
@@ -153,6 +209,37 @@ inp.on("close", () => {
 let num=userInput[0];
 let word=userInput[1].split(" ").sort().join(" ");
   console.log(word);
+});
+---------------------------------------------------------------------------------------------
+
+19) Given a string S, print it after changing the middle element to * (if the length of the string is even, change the 2 middle elements to *).
+Sample Testcase :
+INPUT
+hello
+OUTPUT
+he*lo
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+if(a.length%2===1){
+    a.splice(a.length/2,1,"*")
+}else{
+    a.splice(a.length/2-1,2,"*","*");
+}
+console.log(a.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
