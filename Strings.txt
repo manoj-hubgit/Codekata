@@ -740,6 +740,44 @@ let n=userInput[0].split("").sort((a,b)=>(b-a)).join("");
 console.log(n);
 });
 ---------------------------------------------------------------------------------------------
+74) Given a string 'S' and a character 'K', find how many times 'K' got repeated in 'S'.If 'K' is not found in 'S' print -1
+Input Size : |s| <= 100000
+Sample Testcase :
+INPUT
+codekata a
+OUTPUT
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ");
+let b=a[0].split("");
+let val=a[1];
+let count=0;
+for(let i=0;i<b.length;i++){
+    if(b[i]==val){
+        count+=1
+    }
+}
+if(count===0){
+    console.log(-1);
+}else{
+    console.log(count);
+}
+});
+---------------------------------------------------------------------------------------------
 
 101) Let P represent Paper, R represent Rock and S represent Scissors. Given 2 out of the 3 determine which one wins. If its a draw print 'D'.
 Sample Testcase :
