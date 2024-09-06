@@ -365,6 +365,53 @@ let count =0;
 });
 ---------------------------------------------------------------------------------------------
 
+27) Ramesh is a student and wants to find out if there is any other student in his class who has got the same marks as his, in maths. Help him to find out.
+ 
+
+Input Description:
+First line contains the number of students in the class followed by Ramesh’s mark. Second line contains the marks of all students in the class.
+
+Output Description:
+Index of student who got mark same as Ramesh’s mark. If no such mark exists, return -1.
+
+Sample Input :
+2 10
+1 2
+Sample Output :
+-1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ").map(Number);
+let stu=a[0];
+let mark=a[1];
+let b=userInput[1].split(" ").map(Number);
+let count=0;
+for(let i=0;i<stu;i++){
+    if(b[i]===mark){
+        count++;
+    }
+}
+if(count===0){
+    console.log(-1);
+}else{
+    console.log(count);
+}
+});
+---------------------------------------------------------------------------------------------
+
 28) Given a string S, print it without using semicolon in your program.
 Sample Testcase :
 INPUT
