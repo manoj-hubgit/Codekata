@@ -361,6 +361,37 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+21) Given a string S, print it after changing the middle element to * (if the length of the string is even, change the 2 middle elements to *).
+Sample Testcase :
+INPUT
+hello
+OUTPUT
+he*lo
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+if(a.length%2===1){
+    a.splice(a.length/2,1,"*")
+}else{
+    a.splice(a.length/2-1,2,"*","*");
+}
+console.log(a.join(""));
+});
+---------------------------------------------------------------------------------------------
+
 23)You are given some words all in lower case letters your task is to print them in sorted order.
 
 Input Description:
@@ -899,6 +930,33 @@ inp.on("close", () => {
    {
        console.log("S");
    }
+});
+---------------------------------------------------------------------------------------------
+
+151) Given a string 'S', sort the characters based on the frequency(highest and lowest) and print the resultant string.(Note:If the frequency of different character is same then sort based on alphabetical order).
+Input Size : 1 <= S <= 100000
+Sample Testcases :
+INPUT
+aabbba
+OUTPUT
+aaabbb
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("").sort("");
+console.log(a.join(""));
 });
 ---------------------------------------------------------------------------------------------
 

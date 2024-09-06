@@ -323,6 +323,48 @@ console.log(a.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
+24) you are given with array of numbers.you have to find whether array is beautiful or not. A beautiful array is an array whose sum of all numbers is divisible by 2, 3 and 5
+
+Input Description:
+You are given a number ‘n’ denoting the size of array.Next line contains n space separated numbers.
+
+Output Description:
+Print 1 if array is beautiful and 0 if it is not
+
+Sample Input :
+5
+5 25 35 -5 30
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let b= userInput[1].split(" ").map(Number);
+    let c=0;
+    for(let i=0;i<a;i++){
+        c+=b[i];
+    }
+    if(c%2 === 0 && c%3 === 0 && c%5 === 0){
+        console.log(1);
+    }else{
+        console.log(0);
+    }
+});
+---------------------------------------------------------------------------------------------
+
 25) Given 2 numbers N and K followed by elements of N .Print 'yes' if K exists else print 'no'.
 Sample Testcase :
 INPUT
@@ -437,6 +479,45 @@ inp.on("close", () => {
   console.log(a);
 });
 ---------------------------------------------------------------------------------------------
+
+32) Given a number N print a right angled traingle structure with the starting level as single 1 and every immediate proceeding level with 2 more additional ones than the previous level .Repeat the pattern for N levels.
+Input Size : N <= 1000
+Sample Testcase :
+INPUT
+3
+OUTPUT
+1
+1 1 1
+1 1 1 1 1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0];
+  let arr=[];
+  let num=1;
+  for(let i=0;i<a;i++){
+      for(j=1;j<=num;j++){
+          arr.push(1);
+      }
+      console.log(arr.join(" "));
+      num+=2;
+      arr=[];
+  }
+});
+---------------------------------------------------------------------------------------------
+
 34) Given a number N print a right angled traingle structure with the starting level as single 1 and every immediate proceeding level with 2 more additional ones than the previous level .Repeat the pattern for N levels.
 Input Size : N <= 1000
 Sample Testcase :
@@ -511,6 +592,47 @@ inp.on("close", () => {
   }else{
       console.log(count);
   }
+});
+---------------------------------------------------------------------------------------------
+
+37) You are given given task is to print whether array is ‘majestic’ or not.A ‘majsetic’ array is an array whose sum of first three number is equal to last three number.
+
+Input Description:
+You are given a number ‘n’,Next line contains ‘n’ space separated
+
+Output Description:
+Print 1 if array is majestic and 0 if it is not
+
+Sample Input :
+7
+1 2 3 4 6 0 0
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n=userInput[0];
+let a=userInput[1].split(" ").map(Number);
+
+let last=a[n-1]+a[n-2]+a[n-3];
+let first=a[0]+a[1]+a[2];
+if(first===last){
+    console.log(1);
+}else{
+    console.log(0);
+}
 });
 ---------------------------------------------------------------------------------------------
 
@@ -752,6 +874,33 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+92) A number is given as input.Find the maximum number that can be formed using the digits.
+Input Size : N <= 10000000
+Sample Testcase :
+INPUT
+4123
+OUTPUT
+4321
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split("").sort((a,b)=>(b-a)).join("");
+console.log(n);
+});
+---------------------------------------------------------------------------------------------
+
 102) Given 2 arrays print 'yes' if they are mirror images of each other,otherwise 'no'.
 Input Size : N <= 1000000
 Sample Testcase :
@@ -789,6 +938,161 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+108) Given a string and a number K, change every kth character to uppercase from beginning in string.
+Sample Testcase :
+INPUT
+string 2
+OUTPUT
+sTrInG
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split(" ");
+let a=n[0].split("");
+let val=n[1];
+let ans=[]
+let num=0;
+for(let i=0;i<a.length;i++){
+    num+=1;
+    if(num%val===0){
+       ans.push(a[i].toUpperCase()) ;
+    }else{
+       ans.push(a[i]) 
+    }
+    
+}
+  console.log(ans.join(""));
+});
+---------------------------------------------------------------------------------------------
+
+109) Given a string and a number K.Print every kth character from the beginning.
+Sample Testcase :
+INPUT
+string 3
+OUTPUT
+r g
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split(" ");
+let a=n[0].split("");
+let val=n[1];
+let ans=[]
+let num=0;
+for(let i=0;i<a.length;i++){
+    num+=1;
+    if(num%val===0){
+       ans.push(a[i]) ;
+    }
+}
+  console.log(ans.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+133) Given 2 strings and a number K, check whether they differ exactly by K characters.
+Input Size : |s| <= 100000(complexity O(nlogn) or O(n))
+Sample Testcase :
+INPUT
+codekata codeguvi 4
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ");
+let first=a[0].split("");
+let sec=a[1].split("");
+let k=parseInt(a[2]);
+let count=0;
+for(let i=0;i<first.length;i++){
+    if(first[i]!==sec[i]){
+        count+=1;
+    }
+}
+if(count===k){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
+139) Given a string S consisting of only '(' and ')', print 'yes' if it is balanced otherwise print 'no'.
+Sample Testcase :
+INPUT
+(())
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+let last=a.length-1;
+let ispal=true;
+let val=0;
+   for(let i=0;i<a.length/2;i++){
+       if(a[i]!=="("  || a[last-i] !==")"){
+          ispal=false;
+          break;
+       }
+       }
+   if(ispal){
+       console.log("yes");
+   }else{
+       console.log("no");
+   }
+
+});
+---------------------------------------------------------------------------------------------
+
 157) Given k sorted arrays of possibly different sizes, merge them and print the sorted output.
 Input Size : N<=100
 Example:
@@ -821,6 +1125,41 @@ inp.on("close", () => {
   }
 arr.sort((a, b) => a - b);
    console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+163) Iron Man wants to extract an infinity stone from a safe. The safe is protected by a password and Iron Man knows the clue to the password which is “sum one and two when sorted they are true”. Decode the clue from the test case and help Iron Man open the safe.
+
+Input Description:
+Size of the array followed by the elements of the array
+
+Output Description:
+Sum of 2 specific elements in the array.
+
+Sample Input :
+5
+9 8 3 2 1
+Sample Output :
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+    let a=userInput[0];
+    let b=userInput[1].split(" ").map(Number);
+    b.sort((a,b)=>a-b);
+    console.log(b[0]+b[1]);
 });
 ---------------------------------------------------------------------------------------------
 

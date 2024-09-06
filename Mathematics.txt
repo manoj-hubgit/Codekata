@@ -425,8 +425,6 @@ inp.on("close", () => {
 
 30) Assume that you are ticket verifier at a club. Your club has decided to give a special discount to the person(s) who are satisfying the following condition
 
- 
-
 Condition:-
 
 If ticket number is divisible by date of month. You are eligible for a discount.
@@ -659,6 +657,53 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+46) Given a range of 2 numbers (i.e) L and R count the number of prime numbers in the range (inclusive of L and R ).
+Input Size : L <= R <= 100000(complexity O(n) read about Sieve of Eratosthenes)
+Sample Testcase :
+INPUT
+2 5
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+function primeCheck(val){
+      if(val<2){
+          return false;
+      }
+      for(let j=2;j<=Math.sqrt(val);j++){
+          if(val%j===0){
+              return false;
+          }
+      }
+              return true;
+      }
+let a=userInput[0].split(" ").map(Number);
+let start=a[0];
+let end=a[1];
+let count=0;
+for(let i=start;i<=end;i++){
+    if(primeCheck(i)){
+        count++;
+    }
+    
+}
+console.log(count);
+});
+---------------------------------------------------------------------------------------------
+
 47) Given a floating point number with 1 decimal place round it off to nearest greater integer and print it.
 Sample Testcase :
 INPUT
@@ -789,6 +834,42 @@ if(a%2===0){
 });
 ---------------------------------------------------------------------------------------------
 
+53) Given 2 numbers N and K followed by N elements,print the number of repetition of K otherwise print '-1' if the element not found.
+Sample Testcase :
+INPUT
+6 2
+1 2 3 5 7 8
+OUTPUT
+0
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a = userInput[0].split(" ");
+    let len = a[0];
+    let check =parseInt(a[1]);
+    let b= userInput[1].split(" ").map(Number);
+    count= -1;
+    for(let i=0;i<len;i++){
+        if(b[i]===check){
+            count+=1;
+        }
+    }
+    console.log(count);
+});
+
+---------------------------------------------------------------------------------------------
 54) Prateek finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
 
 Input Description:
@@ -882,6 +963,33 @@ inp.on("close", () => {
     arr[i+1]=temp;
   }
   console.log(arr.join(" "))
+});
+---------------------------------------------------------------------------------------------
+
+79) A number is given as input.Find the maximum number that can be formed using the digits.
+Input Size : N <= 10000000
+Sample Testcase :
+INPUT
+4123
+OUTPUT
+4321
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split("").sort((a,b)=>(b-a)).join("");
+console.log(n);
 });
 ---------------------------------------------------------------------------------------------
 

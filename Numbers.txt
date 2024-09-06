@@ -75,6 +75,60 @@ console.log(a[0]);
 });
 ---------------------------------------------------------------------------------------------
 
+10) Rampal is a number in which the sum of last two digits of that number is multiple of 4.Your teacher has given you the task to make a list of rampal numbers.Your task is to tell whether the number is rampal or not.
+
+Note : if the number is negative than rampal is a number which has sum of first and last digit as multiple of 4  
+
+Input Description:
+First line contains an input n
+
+Output Description:
+Print yes or no
+
+Sample Input :
+20
+
+Sample Output :
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n=userInput[0]
+    let a = n.split("");
+    
+    if(n>=0){
+    let num1= parseInt(a[a.length-1]);
+    let num2=parseInt(a[a.length-2]);
+        if((num1+num2) % 4 ===0){
+        console.log("yes");
+    }else{
+        console.log("no");
+    }
+    }else{
+        let num1=parseInt(a[1]);
+    let num2=parseInt(a[a.length-1]);
+     if((num1+num2) % 4 ===0){
+        console.log("yes");
+    }else{
+        console.log("no");
+    }
+    }
+});
+
+---------------------------------------------------------------------------------------------
+
 16)Assume that you are ticket verifier at a club. Your club has decided to give a special discount to the person(s) who are satisfying the following condition
 
  

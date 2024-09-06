@@ -5,17 +5,17 @@ Each file represents a specific topic or problem, including both the question an
 
 Current Number of Code Solutions
 
-• Total number of coding problems solved: 190
+• Total number of coding problems solved: 205
 
 • Total number of coding problems solved in InputOutput       : 10
 
 • Total number of coding problems solved in Absolute Biginner : 30
 
-• Total number of coding problems solved in Array             : 26
+• Total number of coding problems solved in Array             : 35
 
-• Total number of coding problems solved in Mathematics       : 31
+• Total number of coding problems solved in Mathematics       : 34
 
-• Total number of coding problems solved in Strings           : 25
+• Total number of coding problems solved in Strings           : 27
 
 • Total number of coding problems solved in Basics            : 33
 
@@ -23,7 +23,7 @@ Current Number of Code Solutions
 
 • Total number of coding problems solved in Guvi-Learning-Path: 2
 
-• Total number of coding problems solved in Numbers           : 4
+• Total number of coding problems solved in Numbers           : 5
 
 • Total number of coding problems solved in Patterns          : 16
 
