@@ -1013,6 +1013,37 @@ for(let i=0;i<a.length;i++){
 });
 ---------------------------------------------------------------------------------------------
 
+210) Given a string S convert each characters of the string into ASCII values and print the sum of the numbers.
+Input Size : |s| <= 100000
+Sample Testcase :
+INPUT
+guvi
+OUTPUT
+443
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+let a=userInput[0];
+let val=0;
+for(let i=0;i<a.length;i++){
+   val+=a.charCodeAt(i);
+}
+console.log(val);
+});
+---------------------------------------------------------------------------------------------
+
 133) Given 2 strings and a number K, check whether they differ exactly by K characters.
 Input Size : |s| <= 100000(complexity O(nlogn) or O(n))
 Sample Testcase :
