@@ -33,6 +33,46 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+2) You are given given task is to print whether array is ‘majestic’ or not.A ‘majsetic’ array is an array whose sum of first three number is equal to last three number.
+
+Input Description:
+You are given a number ‘n’,Next line contains ‘n’ space separated
+
+Output Description:
+Print 1 if array is majestic and 0 if it is not
+
+Sample Input :
+7
+1 2 3 4 6 0 0
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n=userInput[0];
+let a=userInput[1].split(" ").map(Number);
+let last=a[n-1]+a[n-2]+a[n-3];
+let first=a[0]+a[1]+a[2];
+if(first===last){
+    console.log(1);
+}else{
+    console.log(0);
+}
+});
+---------------------------------------------------------------------------------------------
+
 8) Given 2 numbers N,K and an array of N integers, find if the element K exists in the array.
 Input Size : N <= 100000
 Sample Testcase :
