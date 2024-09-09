@@ -556,10 +556,31 @@ if(rev===a){
 });
 ---------------------------------------------------------------------------------------------
 
-14)
+42) Given a string/sentence remove all the spaces and print the result.
+Input Size : |s| <= 1000000(complexity O(n))
+Sample Testcase :
+INPUT
+guvi geeks
+OUTPUT
+guvigeek
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ").join("");
+  console.log(a);
+});
 ---------------------------------------------------------------------------------------------
 
 46) Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
