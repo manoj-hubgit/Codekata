@@ -583,6 +583,37 @@ let a=userInput[0].split(" ").join("");
 });
 ---------------------------------------------------------------------------------------------
 
+44) Given 2 strings S1 and s2, check whether they are case senitively equal without using any predefined function(case sensitive).If they are not same print 'no'
+Sample Testcase :
+INPUT
+guvi guvi
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ");
+let b=a[0];
+let c=a[1];
+if(b===c){
+    console.log("yes");
+}else{
+    console.log("no")
+}
+});
+---------------------------------------------------------------------------------------------
 46) Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
 Input Size : |s| <= 10000000(complexity O(n))
 Sample Testcase :
