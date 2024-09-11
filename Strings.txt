@@ -614,6 +614,33 @@ if(b===c){
 }
 });
 ---------------------------------------------------------------------------------------------
+
+45) Given a string S, print the reverse of the string.
+Input Size : |s| <= 100000 (ie do it in O(n) or O(log n) time complexity)
+Sample Testcase :
+INPUT
+codekata
+OUTPUT
+atakedoc
+
+CODE: 
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("").reverse();
+    console.log(a.join(""));
+});
+---------------------------------------------------------------------------------------------
 46) Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
 Input Size : |s| <= 10000000(complexity O(n))
 Sample Testcase :
