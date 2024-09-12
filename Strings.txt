@@ -674,6 +674,43 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+52) Given a string S, print the reverse of the string after removing the vowels.If the resulting string is empty print '-1'.
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+codekata
+OUTPUT
+tkdc
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+let arr=[];
+for(let i=0;i<a.length;i++){
+    if(a[i] !== "a" && a[i] !== "e" && a[i] !== "i" && a[i] !== "o" && a[i] !== "u" && a[i] !== "A" &&a[i] !== "E" &&a[0] !== "I" && a[0] !== "O" && a[0] !== "U" ){
+        arr.push(a[i]);
+    }  
+}
+if(arr.length===0){
+    console.log("-1");
+}else{
+    console.log(arr.reverse().join(""));
+}
+});
+---------------------------------------------------------------------------------------------
+
 59) Given 2 numbers N,K and an array of N integers, find if the element K exists in the array.
 Input Size : N <= 100000
 Sample Testcase :
