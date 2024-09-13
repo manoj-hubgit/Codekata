@@ -826,6 +826,43 @@ for(let i=0;i<a.length;i++){
   console.log(ans.join(" "));
 });
 ---------------------------------------------------------------------------------------------
+
+63) Given a string S of length N, reverse the case of each letter.
+Input Size : N <= 100
+Sample Testcase :
+INPUT
+HeLlo
+OUTPUT
+hElLO
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= userInput[0].split("");
+let arr=[];
+for(let i=0;i<a.length;i++){
+    if(a[i]==a[i].toUpperCase()){
+        arr.push(a[i].toLowerCase());
+    }
+    else if(a[i]==a[i].toLowerCase()){
+        arr.push(a[i].toUpperCase());
+    }
+}
+  console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+
 70) Given a string print reverse all words except the first and last words.
 Sample Testcase :
 INPUT
