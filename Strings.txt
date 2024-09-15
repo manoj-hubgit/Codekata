@@ -702,6 +702,32 @@ let arr=[];
  console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
+50) Given a sentence S take out the extra spaces.If no extra space is present print the same as output.
+Input Size : |s| <= 100000(complexity O(n))
+Sample Testcase :
+INPUT
+codekata challenge
+OUTPUT
+codekata challenge
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+    console.log(a.trim().replace(/\s+/g,' '));
+});
+---------------------------------------------------------------------------------------------
 52) Given a string S, print the reverse of the string after removing the vowels.If the resulting string is empty print '-1'.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
