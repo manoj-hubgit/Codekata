@@ -765,6 +765,41 @@ if(arr.length===0){
 });
 ---------------------------------------------------------------------------------------------
 
+57) Given 2 strings S,X. Print the string after deleting X.If X not found print the same string.
+Input Size : 1 <= |s|, |x| <= 1000
+Sample Testcase :
+INPUT
+Happy Birthday
+Happy
+OUTPUT
+Birthday
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ");
+let b=userInput[1];
+let arr=[];
+for(let i=0;i<a.length;i++){
+    if(a[i]!==b){
+        arr.push(a[i]);
+    }
+}
+console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 59) Given 2 numbers N,K and an array of N integers, find if the element K exists in the array.
 Input Size : N <= 100000
 Sample Testcase :
