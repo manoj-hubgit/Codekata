@@ -1130,6 +1130,45 @@ let val=0;
 });
 ---------------------------------------------------------------------------------------------
 
+85) Given 2 strings S and X print the word position of X in S.(word count starts from 1).If the given word doesn't exists in S print '-1'.
+Input Size : 1 <= |s|, |x| <= 1000
+Sample Testcase :
+INPUT
+codekata coding challenge
+coding
+OUTPUT
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a= userInput[0].split(" ");
+ let b= userInput[1];
+ let count=0;
+for(let i=0;i<a.length;i++){
+    if(a[i]===b){
+        console.log(i+1);
+        count++;
+        break;
+    }
+}
+if(count===0){
+    console.log(-1);
+}
+});
+---------------------------------------------------------------------------------------------
+
 101) Let P represent Paper, R represent Rock and S represent Scissors. Given 2 out of the 3 determine which one wins. If its a draw print 'D'.
 Sample Testcase :
 INPUT
