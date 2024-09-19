@@ -1199,6 +1199,43 @@ if(count===0){
 });
 ---------------------------------------------------------------------------------------------
 
+98) Given a string S change upper case to lowercase and lowercase to uppercase.
+Input Size : |s| <= 10000000(complexity O(n))
+Sample Testcase :
+INPUT
+CodEkaTa
+OUTPUT
+cODeKAtA
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0].split("");
+    let arr=[];
+    for(let i=0;i<a.length;i++){
+        if(a[i]===a[i].toUpperCase()){
+            let b=a[i].toLowerCase();
+            arr.push(b);
+        }else{
+            let b=a[i].toUpperCase();
+            arr.push(b);
+        }
+    }
+console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+
 101) Let P represent Paper, R represent Rock and S represent Scissors. Given 2 out of the 3 determine which one wins. If its a draw print 'D'.
 Sample Testcase :
 INPUT
