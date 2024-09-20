@@ -1281,6 +1281,43 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+102) You are given with string of words,we have to arrange them in reverse saturated order.
+
+Input Description:
+You are given a string ‘s’.
+
+Output Description:
+Print the reverse saturated order
+
+Sample Input :
+I am kohli fan
+Sample Output :
+I ma ilhok naf
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+    let a= userInput[0].split(" ");
+    let arr=[];
+    for(let i=0;i<a.length;i++){
+        let val=a[i].split("")
+        arr.push(val.reverse().join(""));
+    }
+    console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 151) Given a string 'S', sort the characters based on the frequency(highest and lowest) and print the resultant string.(Note:If the frequency of different character is same then sort based on alphabetical order).
 Input Size : 1 <= S <= 100000
 Sample Testcases :
