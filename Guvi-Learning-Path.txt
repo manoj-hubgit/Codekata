@@ -116,10 +116,38 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-1)
+9) Mr. Kanga had a PhD in Heap Algorithms. Today, he was given a list of strings in random order. Help him sort the list in increasing order(lexicographically increasing) using heap sort.
+
+Input Description:
+The first line is an integer N denoting the number of strings. The next line contains N space separated strings containing lower case English Alphabets.
+
+Output Description:
+Print N space separated strings in increasing order.
+
+Sample Input :
+2
+bag axe
+Sample Output :
+axe bag
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let b=userInput[1].split(" ").sort();
+    console.log(b.join(" "));
+});
 ---------------------------------------------------------------------------------------------
 
 1)
