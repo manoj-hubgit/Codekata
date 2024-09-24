@@ -1199,6 +1199,43 @@ if(count===0){
 });
 ---------------------------------------------------------------------------------------------
 
+90) Find the word having maximum length in a given sentence and print it. If two words are of same length return the first occuring word of max-length.
+Input Size : |s| <= 100000
+Sample Testcase :
+INPUT
+guvi geek
+OUTPUT
+guvi
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n= userInput[0].split(" ");
+let a= n[0].split("");
+let b= n[1].split("");
+if(a.length>b.length){
+    console.log(a.join(""));
+}
+else if(a.length<b.length){
+     console.log(b.join(""));
+}
+else{
+    console.log(a.join(""));
+}
+});
+---------------------------------------------------------------------------------------------
+
 98) Given a string S change upper case to lowercase and lowercase to uppercase.
 Input Size : |s| <= 10000000(complexity O(n))
 Sample Testcase :
