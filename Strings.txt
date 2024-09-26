@@ -1236,6 +1236,41 @@ else{
 });
 ---------------------------------------------------------------------------------------------
 
+94) Given a number N and an array of N elements, print the prefix sum array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+4
+2 4 4 2
+OUTPUT
+2 6 10 12
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+  let a=parseInt(userInput[0]);
+  let b=userInput[1].split(" ").map(Number);
+  let pre=b[0];
+  let arr=[];
+  for(let i=1;i<=b.length;i++){
+      arr.push(pre);
+      pre=pre+b[i];
+  }
+console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 98) Given a string S change upper case to lowercase and lowercase to uppercase.
 Input Size : |s| <= 10000000(complexity O(n))
 Sample Testcase :
