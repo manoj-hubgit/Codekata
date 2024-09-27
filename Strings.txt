@@ -1271,6 +1271,44 @@ console.log(arr.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
+95) Given a string/sentence print its corresponding camelcase convention.
+Input Size : |s| <= 1000000(complexity O(n))
+Sample Testcase :
+INPUT
+guvi geeks
+OUTPUT
+GuviGeeks
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0].split(" ");
+    let arr=[];
+    for(let i=0;i<a.length;i++){
+        b=a[i].split("")
+       for(let j=0;j<b.length;j++){
+           if(j===0){
+               let c=b[j].toUpperCase();
+               arr.push(c);
+           }else{
+               let c=b[j];
+               arr.push(c);
+           }}}
+  console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+
 98) Given a string S change upper case to lowercase and lowercase to uppercase.
 Input Size : |s| <= 10000000(complexity O(n))
 Sample Testcase :
