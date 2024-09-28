@@ -34,3 +34,36 @@ if(a%4===0){
 }
 });
 ---------------------------------------------------------------------------------------------
+
+2) Given a string convert string into upper case
+
+
+Input Description:
+Given a string
+
+Output Description:
+print the string into uppercase
+
+Sample Input :
+guvi geek
+Sample Output :
+GUVI GEEK
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a= userInput[0].toUpperCase();
+    console.log(a);
+});
+---------------------------------------------------------------------------------------------

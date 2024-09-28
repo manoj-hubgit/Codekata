@@ -27,7 +27,7 @@ Current Number of Code Solutions
 
 • Total number of coding problems solved in Patterns          : 16
 
-• Total number of coding problems solved in Zen               : 1
+• Total number of coding problems solved in Zen               : 2
 
 
 Structure
