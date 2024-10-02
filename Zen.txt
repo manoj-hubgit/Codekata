@@ -145,3 +145,42 @@ inp.on("close", () => {
     console.log(arr.join(" "));
 });
 ---------------------------------------------------------------------------------------------
+
+5) Given a number m and k separated by a space print the numbers between m and k
+
+
+Input Description:
+number m and n separated by a space 0<m<1000 0<n<1000 m<n
+
+Output Description:
+print the numbers between this two numbers
+
+Sample Input :
+5 8
+Sample Output :
+6 7
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0].split(" ").map(Number);
+    let b=a[0];
+    let c=a[1];
+    let result=[];
+    
+    for(let i=b+1;i<c;i++){
+        result.push(i);
+    }
+console.log(result.join(" "));
+});
