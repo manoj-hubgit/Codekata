@@ -184,3 +184,37 @@ inp.on("close", () => {
     }
 console.log(result.join(" "));
 });
+---------------------------------------------------------------------------------------------
+
+7)  Given a two number n and m find the Quotient and remainder
+Input Description:
+0<n<10000 0<m<10000 Given two number separated by a space
+
+Output Description:
+Need to print Quotient and remainder separated by a space
+
+Sample Input :
+6 3
+Sample Output :
+2 0
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a= userInput[0].split(" ").map(Number);
+    let b=a[0];
+    let c=a[1];
+    console.log(`${Math.floor(b/c)} ${b%c}`);
+});
+---------------------------------------------------------------------------------------------
