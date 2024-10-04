@@ -807,6 +807,44 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+68) Given a string S, print the reverse of the string after removing the vowels.If the resulting string is empty print '-1'.
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+codekata
+OUTPUT
+tkdc
+
+code:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+let arr=[];
+for(let i=0;i<a.length;i++){
+    if(a[i] !== "a" && a[i] !== "e" && a[i] !== "i" && a[i] !== "o" && a[i] !== "u" && a[i] !== "A" &&a[i] !== "E" &&a[0] !== "I" && a[0] !== "O" && a[0] !== "U" ){
+        arr.push(a[i]);
+    }
+    
+}
+if(arr.length===0){
+    console.log("-1");
+}else{
+    console.log(arr.reverse().join(""));
+}
+});
+---------------------------------------------------------------------------------------------
+
 71) Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
 Input Size : |s| <= 10000000(complexity O(n))
 Sample Testcase :
@@ -874,6 +912,65 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+78) Given 2 strings S1 and s2, check whether they are case senitively equal without using any predefined function(case sensitive).If they are not same print 'no'
+Sample Testcase :
+INPUT
+guvi guvi
+OUTPUT
+yes
+
+code:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ");
+let b=a[0];
+let c=a[1];
+if(b===c){
+    console.log("yes");
+}else{
+    console.log("no")
+}
+});
+---------------------------------------------------------------------------------------------
+
+80) Given a sentence S take out the extra spaces.If no extra space is present print the same as output.
+Input Size : |s| <= 100000(complexity O(n))
+Sample Testcase :
+INPUT
+codekata challenge
+OUTPUT
+codekata challenge
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+    console.log(a.trim().replace(/\s+/g,' '));
+});
+---------------------------------------------------------------------------------------------
+
 92) A number is given as input.Find the maximum number that can be formed using the digits.
 Input Size : N <= 10000000
 Sample Testcase :
@@ -898,6 +995,37 @@ inp.on("line", (data) => {
 inp.on("close", () => {
 let n=userInput[0].split("").sort((a,b)=>(b-a)).join("");
 console.log(n);
+});
+---------------------------------------------------------------------------------------------
+
+98) Given a string S, print 'yes' if the strings 'GUVI' and 'GEEK' is present case-sensitively in the string else print 'no'.
+Input Size : 1 <= 100
+Sample Testcase :
+INPUT
+Vishal_Sundar prepared this question
+OUTPUT
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a = userInput[0];
+ if(a.includes("GUVI") && a.includes("GEEK")){
+    console.log("yes");
+ }else{
+     console.log("no");
+ }
 });
 ---------------------------------------------------------------------------------------------
 
@@ -1013,13 +1141,17 @@ for(let i=0;i<a.length;i++){
 });
 ---------------------------------------------------------------------------------------------
 
-210) Given a string S convert each characters of the string into ASCII values and print the sum of the numbers.
-Input Size : |s| <= 100000
-Sample Testcase :
-INPUT
-guvi
-OUTPUT
-443
+126) You are given with string of words,we have to arrange them in reverse saturated order.
+Input Description:
+You are given a string ‘s’.
+
+Output Description:
+Print the reverse saturated order
+
+Sample Input :
+I am kohli fan
+Sample Output :
+I ma ilhok naf
 
 CODE:
 const readline = require("readline");
@@ -1035,12 +1167,13 @@ inp.on("line", (data) => {
 });
 
 inp.on("close", () => { 
-let a=userInput[0];
-let val=0;
-for(let i=0;i<a.length;i++){
-   val+=a.charCodeAt(i);
-}
-console.log(val);
+    let a= userInput[0].split(" ");
+    let arr=[];
+    for(let i=0;i<a.length;i++){
+        let val=a[i].split("")
+        arr.push(val.reverse().join(""));
+    }
+    console.log(arr.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
@@ -1081,6 +1214,41 @@ if(count===k){
 }else{
     console.log("no");
 }
+});
+---------------------------------------------------------------------------------------------
+
+135) Given a number N and an array of N elements, print the prefix sum array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+4
+2 4 4 2
+OUTPUT
+2 6 10 12
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  let b=userInput[1].split(" ").map(Number);
+  let pre=b[0];
+  let arr=[];
+  for(let i=1;i<=b.length;i++){
+      arr.push(pre);
+      pre=pre+b[i];
+  }
+console.log(arr.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
@@ -1314,6 +1482,37 @@ inp.on("close", () => {
        }
    }
    console.log(b.indexOf(small)+1, b.indexOf(large)+1);
+});
+---------------------------------------------------------------------------------------------
+
+210) Given a string S convert each characters of the string into ASCII values and print the sum of the numbers.
+Input Size : |s| <= 100000
+Sample Testcase :
+INPUT
+guvi
+OUTPUT
+443
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+let a=userInput[0];
+let val=0;
+for(let i=0;i<a.length;i++){
+   val+=a.charCodeAt(i);
+}
+console.log(val);
 });
 ---------------------------------------------------------------------------------------------
 
