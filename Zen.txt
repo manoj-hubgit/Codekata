@@ -257,3 +257,45 @@ inp.on("close", () => {
    console.log(ans);
 });
 ------------------------------------------------------------------------------------
+
+9) Given a number n followed by n numbers print the number less than 15 if there is no number exits print -1
+Input Description:
+0<n<100 Given a number n Followed by n number in next line
+
+Output Description:
+Print the number which is less than 15 if there is no number exits print -1
+
+Sample Input :
+3
+5 7 4
+Sample Output :
+5 7 4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  let b=userInput[1].split(" ").map(Number);
+  let arr=[];
+  for(let i=0;i<a;i++){
+      if(b[i]<15){
+          arr.push(b[i]);
+      }}
+  if(arr.length===0){
+      console.log(-1);
+  }else{
+      console.log(arr.join(" "));
+  }
+});
+------------------------------------------------------------------------------------
