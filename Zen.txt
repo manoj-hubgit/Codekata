@@ -375,3 +375,38 @@ inp.on("close", () => {
   console.log(ans);
 });
 ------------------------------------------------------------------------------------
+
+14) Given a number n Find the sum of the digits of number n
+Input Description:
+0<n<1000 Given number n
+
+Output Description:
+Print the sum of the digits of number n
+
+Sample Input :
+3589
+Sample Output :
+25
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0].split("").map(Number);
+   let b=0;
+   for(let i=0;i<a.length;i++){
+       b+=a[i];
+   }
+   console.log(b);
+});
+------------------------------------------------------------------------------------
