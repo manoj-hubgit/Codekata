@@ -454,3 +454,76 @@ inp.on("close", () => {
   }
 });
 ------------------------------------------------------------------------------------
+
+16) Given a number  n Find the number of the digits of number n
+
+
+Input Description:
+0<n<10000 Given number n
+
+Output Description:
+Print the number of the digits of number n
+
+Sample Input :
+3589
+Sample Output :
+4
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+   let a= userInput[0].split("");
+   console.log(a.length);
+});
+------------------------------------------------------------------------------------
+
+17) Given a number n followed by n numbers Find the sum of the elements in an array and print sum of number is odd or even
+Input Description:
+0<n<100 Given a number n Followed by n number in next line
+
+Output Description:
+print sum of number is odd or even
+
+Sample Input :
+3
+5 7 4
+Sample Output :
+even
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= parseInt(userInput[0]);
+   let b=userInput[1].split(" ");
+   let val=0;
+   for(let i=0;i<a;i++){
+     val+=b[i];  
+   }
+if(val%2===0){
+    console.log("even");
+}else{
+    console.log("odd");
+}
+});
+------------------------------------------------------------------------------------
