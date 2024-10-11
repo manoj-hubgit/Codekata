@@ -527,3 +527,40 @@ if(val%2===0){
 }
 });
 ------------------------------------------------------------------------------------
+19) Given a string convert string into lower case
+
+
+Input Description:
+Given a string
+
+Output Description:
+Print string into lower case
+
+Sample Input :
+Guvi Geek
+Sample Output :
+guvi geek
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split(" ");
+  let arr=[];
+  for(let i=0;i<a.length;i++){
+      arr.push(a[i].toLowerCase());
+     
+  }
+  console.log(arr.join(" "));
+});
+------------------------------------------------------------------------------------
