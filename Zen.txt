@@ -564,3 +564,34 @@ inp.on("close", () => {
   console.log(arr.join(" "));
 });
 ------------------------------------------------------------------------------------
+
+20) Given a string reverse the string
+Input Description:
+Given a string
+
+Output Description:
+Print string into reverse
+
+Sample Input :
+guvi geek
+Sample Output :
+geek guvi
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split(" ");
+  console.log(a.reverse().join(" "));
+});
+------------------------------------------------------------------------------------
