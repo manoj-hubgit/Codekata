@@ -629,3 +629,42 @@ inp.on("close", () => {
   console.log(a[0]);
 });
 ------------------------------------------------------------------------------------
+
+23) Given a number n followed by n numbers add the even number in an array
+Input Description:
+0<n<100 Given a number n Followed by n number in next line
+
+Output Description:
+Print the sum of even numbers in an array
+
+Sample Input :
+6
+5 7 4 4 6 8
+Sample Output :
+22
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+ let b=userInput[1].split(" ").map(Number);
+  let num=0;
+for(let i=0;i<a;i++){
+    if(b[i]%2===0){
+        num+=b[i];
+    }
+}
+console.log(num)
+});
+------------------------------------------------------------------------------------
