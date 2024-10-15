@@ -668,3 +668,34 @@ for(let i=0;i<a;i++){
 console.log(num)
 });
 ------------------------------------------------------------------------------------
+
+25) Given number n print the square root of the number n note n is a perfect square number
+Input Description:
+You will given a number n 0<n<=100
+
+Output Description:
+print the square root of the number n
+
+Sample Input :
+16
+Sample Output :
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a= parseInt(userInput[0]);
+    console.log(Math.sqrt(a));
+});
+------------------------------------------------------------------------------------
