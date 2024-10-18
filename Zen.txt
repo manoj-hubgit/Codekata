@@ -767,3 +767,80 @@ inp.on("close", () => {
     console.log(a.join(" "));
 });
 ------------------------------------------------------------------------------------
+
+28) Given a number n followed by n numbers short the n number in descending order 
+
+ 
+
+
+Input Description:
+0<n<100 Given a number n Followed by n number in next line
+
+Output Description:
+Print the n number in descending order
+
+Sample Input :
+6
+5 7 4 4 6 8
+Sample Output :
+4 4 5 6 7 8
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a= userInput[1].split(" ").sort((a,b)=>b-a);
+    console.log(a.join(" "));
+});
+------------------------------------------------------------------------------------
+
+29) Given a numbers n  followed by x and y array of n numbers add the array x and y and print the numbers
+
+
+Input Description:
+0<n<100 Given a number n Followed by n number in next line Followed by n number in next line
+
+Output Description:
+Print added n numbers
+
+Sample Input :
+6
+5 7 4 4 6 8
+1 2 3 5 1 1
+Sample Output :
+6 9 7 9 7 9
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=parseInt(userInput[0]);
+    let num1=userInput[1].split(" ").map(Number);
+    let num2=userInput[2].split(" ").map(Number);
+    let arr=[];
+    for(let i=0;i<a;i++){
+        arr.push(num1[i]+num2[i]);
+    }
+    console.log(arr.join(" "));
+});
+------------------------------------------------------------------------------------
