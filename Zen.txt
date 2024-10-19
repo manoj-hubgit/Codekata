@@ -844,3 +844,42 @@ inp.on("close", () => {
     console.log(arr.join(" "));
 });
 ------------------------------------------------------------------------------------
+
+31) Given a number n,a,b and c Find the number n is divisible by a,b,c if divisible print yes else print no
+Input Description:
+Given number n,a,b and c separated by a space 0<n<1000 0<a<1000 0<b<1000 0<c<1000
+
+Output Description:
+Print yes or no
+
+Sample Input :
+3 5 8 9
+Sample Output :
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0].split(" ").map(Number);
+   let b= a[0];
+   let c=a[1];
+   let d=a[2];
+   let e=a[3]; 
+      if(b%c===0 && b%d===0 && b%e===0 ) {
+          console.log("yes");
+   }else{
+       console.log("no");
+   }
+});
+------------------------------------------------------------------------------------
