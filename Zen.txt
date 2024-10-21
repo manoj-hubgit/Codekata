@@ -914,3 +914,38 @@ inp.on("close", () => {
     console.log(Math.pow(a[0],a[1]));
 });
 ------------------------------------------------------------------------------------
+
+50) Given a string reverse the words in the string
+Input Description:
+Given a string
+
+Output Description:
+Print string into reverse the words in the string
+
+Sample Input :
+guvi geek
+Sample Output :
+ivug keeg
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+    let a=userInput[0].split(" ");
+    let arr=[];
+    for(let i=0;i<a.length;i++){
+        arr.push(a[i].split("").reverse().join(""));
+    }
+    console.log(arr.join(" "));
+});
+------------------------------------------------------------------------------------
