@@ -915,6 +915,40 @@ inp.on("close", () => {
 });
 ------------------------------------------------------------------------------------
 
+47) Given a string find the length of the string without space
+Input Description:
+Given a string
+
+Output Description:
+Print length in number
+
+Sample Input :
+guvi geek
+Sample Output :
+8
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+    let a=userInput[0].split(" ");
+    let val=0;
+    for(let i=0;i<a.length;i++){
+        val+=a[i].length;
+    }
+    console.log(val);
+});
+------------------------------------------------------------------------------------
+
 50) Given a string reverse the words in the string
 Input Description:
 Given a string
