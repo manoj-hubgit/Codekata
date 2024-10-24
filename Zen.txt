@@ -915,6 +915,50 @@ inp.on("close", () => {
 });
 ------------------------------------------------------------------------------------
 
+39) Given a numbers n and m followed by n*m numbers in matrix format print the sum of the elements in the matrix the element which is even number
+Input Description:
+You will given a number n and m followed by n*m numbers in matrix format . 0<n<100 0,m<100
+
+Output Description:
+print the sum of the elements in the matrix the element which is even number
+
+Sample Input :
+3 3
+1 2 3
+4 5 6
+7 8 9
+Sample Output :
+20
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+  let a= userInput[0].split(" ").map(Number);
+  let first=a[0];
+  let second=a[1];
+  let arr=[];
+  let sum=0;
+  for(let i=1;i<=first;i++){
+      for(let j=0;j<second;j++){
+          let val=userInput[i].split(" ").map(Number);
+         if(val[j]%2===0){
+             sum+=val[j];
+         }}}
+  console.log(sum);
+});
+------------------------------------------------------------------------------------
+
 43) Given a numbers n followed by n*n numbers in matrix format print the sum of the numbers in the row
 Input Description:
 You will given a number n followed by n*m numbers in matrix format .
