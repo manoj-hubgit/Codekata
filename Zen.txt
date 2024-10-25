@@ -915,6 +915,40 @@ inp.on("close", () => {
 });
 ------------------------------------------------------------------------------------
 
+38) Given a number n followed by n numbers Print the 2nd  smallest number in an array
+Input Description:
+0<n<100 Given a number n Followed by n number in next line
+
+Output Description:
+Print the 2nd smallest number in an array
+
+Sample Input :
+6
+5 7 4 4 6 8
+Sample Output :
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+    let a=parseInt(userInput[0]);
+    let num=userInput[1].split(" ").map(Number).sort((a,b)=>a-b);
+  let unique=[...new Set(num)]; //set helps to remove duplicates
+    console.log(unique[1]);
+});
+------------------------------------------------------------------------------------
+
 39) Given a numbers n and m followed by n*m numbers in matrix format print the sum of the elements in the matrix the element which is even number
 Input Description:
 You will given a number n and m followed by n*m numbers in matrix format . 0<n<100 0,m<100
