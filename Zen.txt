@@ -527,9 +527,51 @@ if(val%2===0){
 }
 });
 ------------------------------------------------------------------------------------
+
+18)  Given a string find the number of uppercase letters and lowercase letters
+
+
+Input Description:
+Given a string
+
+Output Description:
+Print the number of uppercase and lowercase
+
+Sample Input :
+Guvi Geek
+Sample Output :
+2 6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => { 
+let a=userInput[0].split(" ");
+let upper=0;
+let lower=0;
+for(let i=0;i<a.length;i++){
+    let word=a[i].split("");
+    for(j=0;j<word.length;j++){
+        if(word[j]===word[j].toUpperCase()){
+            upper+=1;
+        }else{
+            lower+=1;
+        }}}
+console.log(upper, lower);
+});
+------------------------------------------------------------------------------------
+
 19) Given a string convert string into lower case
-
-
 Input Description:
 Given a string
 
@@ -716,7 +758,6 @@ Sample Output :
 8
 
 CODE:
-// Getting input via STDIN
 const readline = require("readline");
 
 const inp = readline.createInterface({
