@@ -1472,6 +1472,37 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+122) Given a string S of length N, write a program that would reverse every word in the string.
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+Hello World
+OUTPUT
+olleH dlroW
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+  let a= userInput[0].split(" ");
+  let arr=[];
+  for(let i=0;i<a.length;i++){
+      arr.push(a[i].split("").reverse().join(""));
+  }
+  console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 138) Given a string S of length N, reverse every word in place.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
