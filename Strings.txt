@@ -1503,6 +1503,35 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+130) Given a number N followed by N numbers. Find the largest number which can be formed from the given numbers and print it.
+NOTE: Each number should be used exactly once.
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+5
+5 6 7 8 9
+OUTPUT
+98765
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => { 
+ let num = userInput[1].split(" ").sort((a,b)=>b-a).join("");
+ console.log(num);
+});
+---------------------------------------------------------------------------------------------
+
 138) Given a string S of length N, reverse every word in place.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
