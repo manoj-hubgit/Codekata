@@ -1532,6 +1532,35 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+134) Given two numbers S1 and S2 represented as strings, return multiplication of the numbers as a string.
+NOTE: The numbers can be arbitrarily large and are nonnegative.
+Sample Testcase :
+INPUT
+2 10
+OUTPUT
+20
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+ let a=userInput[0].split(" ").map(Number);
+ let first=a[0];
+ let sec = a[1];
+ console.log(first*sec);
+});
+---------------------------------------------------------------------------------------------
+
 138) Given a string S of length N, reverse every word in place.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
