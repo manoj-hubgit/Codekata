@@ -1629,6 +1629,40 @@ if(istrue){
 });
 ---------------------------------------------------------------------------------------------
 
+141) Given a string S of length N, reverse the words at odd positions.
+Input Size: 1 <= N <= 100000
+Sample Testcase :
+INPUT
+This is an example for this question
+OUTPUT
+sihT is na example rof this noitseuq
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+ let a=userInput[0].split(" ");
+ let arr=[];
+ for(let i=0;i<a.length;i++){
+     if(i%2===0){
+         arr.push(a[i].split("").reverse().join(""));
+     }else{
+         arr.push(a[i]);
+     }}
+ console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 143) Given a string S convert each characters of the string into ASCII values and print the sum of the numbers.
 Input Size : |s| <= 100000
 Sample Testcase :
