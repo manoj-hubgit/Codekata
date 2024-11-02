@@ -1751,8 +1751,48 @@ console.log(l.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
-14)
+168) Given 2 strings S and A find the longest common substring.If no common substring is found print '-1'
+Input Size : |s| <= 1000, |A| <= 1000
+Sample Testcase :
+INPUT
+codekata code
+OUTPUT
+code
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+ let a=userInput[0].split(" ");
+ let first=a[0].split("");
+ let sec=a[1].split("");
+ let size=0;
+ let arr=[];
+ if(first.length>sec.length){
+     size=first.length;
+ }else{
+     size=sec.length;
+ }
+ for(let i=0;i<size;i++){
+     if(first[i]===sec[i]){
+         arr.push(first[i]);
+     }else{
+         break;
+     }}
+ if(arr.length===0){
+     console.log(-1);
+ }else{
+    console.log(arr.join(""));
+ }
+});
 ---------------------------------------------------------------------------------------------
