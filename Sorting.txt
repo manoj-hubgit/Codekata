@@ -1,0 +1,298 @@
+1) Mr.Stark wants to order the employee ids, which are recorded in a 2D matrix, in ascending order. He wants to do it so as to allot a new id to a person who joins as a fresher. You are the CTO of the Stark industries and you are asked by Mr.Stark to sort the data.
+Input Description:
+Dimensions of the matrix m and n, followed by the elements of the matrix.
+
+Output Description:
+Matrix sorted in ascending order
+
+Sample Input :
+3 3
+87 21 34
+89 32 78
+12 23 45
+Sample Output :
+12 21 23
+32 34 45
+78 87 89
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ").map(Number);
+let row=a[0];
+let col=a[1];
+let arr=[];
+let ans=[];
+let k=0;
+for(let i=1;i<=row;i++){
+arr.push(...userInput[i].split(" "));
+}
+arr.sort();
+for(let i=0;i<row;i++){
+    for(let j=0;j<col;j++){
+        ans.push(arr[k]);
+       k++; 
+    }
+    console.log(ans.join(" "));
+    ans=[];
+}
+});
+---------------------------------------------------------------------------------------------
+
+6) Mr. Kanga had a PhD in Heap Algorithms. Today, he was given a list of strings in random order. 
+Help him sort the list in increasing order(lexicographically increasing) using heap sort.
+Input Description:
+The first line is an integer N denoting the number of strings. The next line contains N space separated strings containing lower case English Alphabets.
+
+Output Description:
+Print N space separated strings in increasing order.
+
+Sample Input :
+2
+bag axe
+Sample Output :
+axe bag
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let b=userInput[1].split(" ").sort();
+    console.log(b.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+11) Given 2 numbers N,K and an array of N integers, find if the element K exists in the array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5 2
+1 2 3 4 5
+OUTPUT
+yes
+HINT: Read about Binary Search
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=userInput[0].split(" ");
+ let total=a[0];
+ let check=a[1];
+ let val=userInput[1].split(" ");
+ let count=0;
+ for(let i=0;i<total;i++){
+     if(check==val[i]){
+         console.log("yes");
+         count+=1;
+         break;
+     }}
+ if(count===0){
+     console.log("no")
+ }
+});
+---------------------------------------------------------------------------------------------
+
+12) Ram is the CEO of an MNC. He wants to order the employee salaries in ascending order 
+so that he can do a salary hike based on the salary values of employees. 
+He selects you to do the task of sorting the salaries. Sort the salaries in ascending order 
+and pass on the information to Ram.
+
+Input Description:
+Number of employees followed by the salaries of employees.
+
+Output Description:
+Salaries sorted in ascending order.
+
+Sample Input :
+8
+7000 8000 6500 1200 4000 2800 3000 5230
+Sample Output :
+1200 2800 3000 4000 5230 6500 7000 8000
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0];
+  let b =userInput[1].split(" ").sort(" ").join(" ");
+  console.log(b);
+});
+---------------------------------------------------------------------------------------------
+
+14) Ria is a 5 year old girl. Her mother wants to teach her how to sort words in the same 
+order that they appear in a dictionary. 
+She decides to write a program to sort a given set of strings based on their alphabetical order. 
+Help Ria’s mother to complete the program.
+
+Input Description:
+A set of N strings
+
+Output Description:
+Alphabetically sorted set of strings
+
+Sample Input :
+3
+InfinityWar EndGame Avengers
+Sample Output :
+Avengers EndGame InfinityWar
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let num=userInput[0];
+let word=userInput[1].split(" ").sort().join(" ");
+  console.log(word);
+});
+---------------------------------------------------------------------------------------------
+
+15) Merge Sort follows the rule of Divide and Conquer to sort a given set of numbers/elements, 
+recursively, hence consuming less time.
+
+In Merge Sort, the given unsorted array with N  elements, is divided into N subarrays, 
+each having one element, because a single element is always sorted in itself. 
+Then, it repeatedly merges these subarrays, to produce new sorted subarrays, and in the end, 
+one complete sorted array is produced.
+
+The concept of Divide and Conquer involves three steps:
+
+Divide the problem into multiple small problems.
+Conquer the subproblems by solving them. The idea is to break down the problem into atomic subproblems, 
+where they are actually solved.
+Combine the solutions of the subproblems to find the solution of the actual problem.
+
+You have to sort the given array of integer values in merge sort manner.
+
+Input Description:
+Given an integer 'n' which indicates the length of array and followed by space separated ‘n’ integer 
+values.
+
+Where 1<=n<=100 and 1<=A[i]<=10000.
+
+Output Description:
+Print the resultant sorted array by using merge sort method.
+
+where 1<=A[i]<=10000
+
+Sample Input :
+8
+14 7 3 12 9 11 6 2
+Sample Output :
+2 3 6 7 9 11 12 14
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+let b=userInput[1].split(" ").map(Number);
+
+  console.log(b.sort((a,b)=>a-b).join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+24) Iron Man wants to extract an infinity stone from a safe. The safe is protected by a 
+password and Iron Man knows the clue to the password which is “sum one and two when sorted 
+they are true”. Decode the clue from the test case and help Iron Man open the safe.
+
+Input Description:
+Size of the array followed by the elements of the array
+
+Output Description:
+Sum of 2 specific elements in the array.
+
+Sample Input :
+5
+9 8 3 2 1
+Sample Output :
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let b=userInput[1].split(" ").map(Number);
+    b.sort((a,b)=>a-b);
+    console.log(b[0]+b[1]);
+});
+---------------------------------------------------------------------------------------------
+
+1) 
+
+CODE:
+
+---------------------------------------------------------------------------------------------
