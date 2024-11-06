@@ -84,6 +84,49 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+9) Bucket sort is a comparison sort algorithm that operates on elements by dividing them into different
+buckets and then sorting these buckets individually. 
+Each bucket is sorted individually using a separate sorting algorithm 
+or by applying the bucket sort algorithm recursively. 
+Bucket sort is mainly useful when the input is uniformly distributed over a range.
+
+You have to sort the given array of integer values in Bucket sort manner.
+
+Input Description:
+Given an integer 'n' which indicates the length of array and followed by space separated ‘n’ integer values.
+
+Where 1<=n<=100 and 1<=A[i]<=10000.
+
+Output Description:
+Print the resultant sorted array by using bucket sort method.
+
+where 1<=A[i]<=10000.
+
+Sample Input :
+8
+27 24 4 49 8 37 22 44
+Sample Output :
+4 8 22 24 27 37 44 49
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= userInput[1].split(" ");
+console.log(a.sort((a,b)=>a-b).join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 10) Radix sort is one of the sorting algorithms used to sort a list of integer numbers in order. 
 In radix sort algorithm, a list of integer numbers will be sorted based on the digits of individual 
 numbers. Sorting is performed from least significant digit to the most significant digit.
