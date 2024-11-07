@@ -1796,3 +1796,41 @@ inp.on("close", () => {
  }
 });
 ---------------------------------------------------------------------------------------------
+
+179) Given a number N and N strings of length atmost M, print the longest common prefix.
+Input Size : 1<=N, M<=100000
+Example:
+INPUT
+2
+Vishal
+Vidharba
+OUTPUT
+Vi
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[1].split("");
+let b=userInput[2].split("");
+let arr=[];
+for(let i=0;i<a.length;i++){
+    if(a[i]===b[i]){
+        arr.push(a[i]);
+    }else{
+        break;
+    }
+}
+console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
