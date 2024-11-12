@@ -1598,10 +1598,37 @@ CODE:
 
 ---------------------------------------------------------------------------------------------
 
-1)
+224) Given a string S of length N, find whether the given string is a palindrome using stack 
+or linked list and print 'yes' otherwise print 'no'.
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+GuviGeek
+OUTPUT
+no
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+let b=a.split("").reverse().join("");
+if(a===b){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
 ---------------------------------------------------------------------------------------------
 
 1)
