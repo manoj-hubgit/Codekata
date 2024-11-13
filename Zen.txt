@@ -1191,3 +1191,42 @@ inp.on("close", () => {
     console.log(arr.join(" "));
 });
 ------------------------------------------------------------------------------------
+
+51)  Given a number n followed by n numbers Print the 2nd  largest number in an array
+
+
+Input Description:
+0<n<100 Given a number n Followed by n number in next line
+
+Output Description:
+Print the second largest number in an array
+
+Sample Input :
+6
+5 7 4 4 6 8
+Sample Output :
+7
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let b=userInput[1].split(" ").map(Number).sort((a,b)=>b-a);
+    for(let i=1;i<a;i++){
+        if(b[0]>b[i]){
+            console.log(b[i]);
+            break;
+        }
+    }
+});
