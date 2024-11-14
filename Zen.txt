@@ -1122,6 +1122,7 @@ inp.on("close", () => {
   }
   console.log(arr.join(" "));
 });
+------------------------------------------------------------------------------------
 
 47) Given a string find the length of the string without space
 Input Description:
@@ -1154,6 +1155,51 @@ inp.on("close", () => {
         val+=a[i].length;
     }
     console.log(val);
+});
+------------------------------------------------------------------------------------
+
+49) Given a number n followed by n numbers Print the index 2nd largest number in an array 
+(1 base index)
+
+Input Description:
+0<n<100 Given a number n Followed by n number in next line
+
+Output Description:
+Print the largest number index in an array
+
+Sample Input :
+6
+5 7 4 4 6 8
+Sample Output :
+2
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let val=userInput[1].split(" ").map(Number);
+    let b=userInput[1].split(" ").map(Number).sort((a,b)=>b-a);
+    let seclar=0;
+    for(let i=1;i<a;i++){
+        if(b[0]>b[i]){
+            seclar=b[i];
+            break;
+        }}
+    for(let i=0;i<a;i++){
+        if(val[i]===seclar){
+            console.log(i+1);
+            break;
+        }}
 });
 ------------------------------------------------------------------------------------
 
