@@ -480,6 +480,51 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+30) You are given a number with duplicate digits your task is to remove the immediate duplicate digits and print the result
+
+
+Input Description:
+You are given a long string of digits
+
+Output Description:
+Print the desired result print -1 if result length is 0
+
+Sample Input :
+1331
+Sample Output :
+11
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split("").map(Number);
+  let arr=[];
+  let val=-1;
+  for(let i=0;i<a.length;i++){
+      if(i>val){
+           if(a[i]!==a[i+1]){
+          arr.push(a[i]);
+      }else{
+          val=i+1;
+      }}}
+  if(arr.length===0){
+      console.log(-1);
+  }else{
+      console.log(arr.join(""));
+  }
+});
+---------------------------------------------------------------------------------------------
 32) Given a number N print a right angled traingle structure with the starting level as single 1 and every immediate proceeding level with 2 more additional ones than the previous level .Repeat the pattern for N levels.
 Input Size : N <= 1000
 Sample Testcase :
