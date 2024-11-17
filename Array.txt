@@ -1369,6 +1369,43 @@ let val=0;
 });
 ---------------------------------------------------------------------------------------------
 
+142) Given a number N and an array of N elements, print the suffix sum of the array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+4
+2 4 4 2
+OUTPUT
+12 10 6 2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= parseInt(userInput[0]);
+let b=userInput[1].split(" ").map(Number);
+let arr=[];
+for(let i=0;i<a;i++){
+    let num=0;
+    for(let j=i;j<a;j++){
+        num+=b[j];
+    }
+    arr.push(num);
+}
+console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 147) Given a number N and array of N integers, print the prefix sum array for each position if it is divisible by 2 else print the element itself.
 Input Size : N <= 10000
 Sample Testcase :
