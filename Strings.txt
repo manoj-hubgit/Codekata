@@ -569,6 +569,40 @@ console.log(a.length);
 });
 ---------------------------------------------------------------------------------------------
 
+33) Given a day, print 'yes' if it is a holiday otherwise print'no'.Assume that weekend days are holidays
+Sample Testcase :
+INPUT
+saturday
+OUTPUT
+yes
+INPUT
+monday
+OUTPUT
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  if(a==="sunday" || a==="saturday"){
+      console.log("yes");
+  }else{
+      console.log("no");
+  }
+});
+---------------------------------------------------------------------------------------------
+
 34) Given a string S, print 'yes' if it is a palindrome or 'no' if it is not a palindrome.
 Sample Testcase :
 INPUT
