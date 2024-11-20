@@ -780,6 +780,7 @@ let arr=[];
  console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
+
 50) Given a sentence S take out the extra spaces.If no extra space is present print the same as output.
 Input Size : |s| <= 100000(complexity O(n))
 Sample Testcase :
@@ -806,6 +807,7 @@ let a=userInput[0];
     console.log(a.trim().replace(/\s+/g,' '));
 });
 ---------------------------------------------------------------------------------------------
+
 52) Given a string S, print the reverse of the string after removing the vowels.If the resulting string is empty print '-1'.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
@@ -840,6 +842,41 @@ if(arr.length===0){
 }else{
     console.log(arr.reverse().join(""));
 }
+});
+---------------------------------------------------------------------------------------------
+
+53) Given a input string S, reverse the given string by appending each character of the string with '-'.
+Input Size : |S| <= 100000
+Sample Testcase :
+INPUT
+codekata
+OUTPUT
+a-t-a-k-e-d-o-c
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("").reverse();
+let arr=[];
+for(let i=0;i<a.length;i++){
+    if(i!==a.length-1){
+        arr.push(a[i]);
+        arr.push("-");
+    }else{
+        arr.push(a[i]);
+    }}
+console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
