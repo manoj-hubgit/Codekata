@@ -1523,20 +1523,16 @@ inp.on("close", () => {
    let R,P,S;
    if(a[0]===a[1]){
        console.log("D");
-   }
-   else if(a[0]==='R' && a[1]==='P' || a[0]==='P' && a[1]==='R')
+   }else if(a[0]==='R' && a[1]==='P' || a[0]==='P' && a[1]==='R')
    {
        console.log("P");
-   }
-    else if(a[0]==='R' && a[1]==='S' || a[0]==='S' && a[1]==='R')
+   }else if(a[0]==='R' && a[1]==='S' || a[0]==='S' && a[1]==='R')
    {
        console.log("R");
-   }
-    else if(a[0]==='R' && a[1]==='P' || a[0]==='P' && a[1]==='R')
+   }else if(a[0]==='R' && a[1]==='P' || a[0]==='P' && a[1]==='R')
    {
        console.log("P");
-   }
-    else if(a[0]==='S' && a[1]==='P' || a[0]==='P' && a[1]==='S')
+   }else if(a[0]==='S' && a[1]==='P' || a[0]==='P' && a[1]==='S')
    {
        console.log("S");
    }
@@ -1580,6 +1576,32 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+103) Given a number N, print the sum of its first and last digit.
+Input Size : |N| <= 10000
+Sample Testcase :
+INPUT
+51233
+OUTPUT
+8
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0].split("").map(Number);
+  console.log(a[0]+a[a.length-1]);
+});
+---------------------------------------------------------------------------------------------
 122) Given a string S of length N, write a program that would reverse every word in the string.
 Input Size : 1 <= N <= 100000
 Sample Testcases :
