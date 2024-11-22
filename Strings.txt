@@ -1602,6 +1602,44 @@ inp.on("close", () => {
   console.log(a[0]+a[a.length-1]);
 });
 ---------------------------------------------------------------------------------------------
+
+104) Given a string S, check whether it contains only the characters 'a' and 'b' or only 'a' or only 'b'
+Input Size : |S| <= 100000
+Sample Testcase :
+INPUT
+aabbaaab
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split("");
+  let istrue=true;
+  for(let i=0;i<a.length;i++){
+      if(a[i]!=="a" && a[i]!=="b"){
+         istrue=false; 
+         break;
+      }}
+  if(istrue){
+      console.log("yes");
+  }else{
+      console.log("no");
+  }
+});
+---------------------------------------------------------------------------------------------
+
 122) Given a string S of length N, write a program that would reverse every word in the string.
 Input Size : 1 <= N <= 100000
 Sample Testcases :
