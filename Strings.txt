@@ -1640,6 +1640,73 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+107) Given a date(DD-MM-YYYY),print the month in words.
+Sample Testcase :
+INPUT
+01-01-2018
+OUTPUT
+January
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split("");
+  let month=[];
+  month.push(a[3]);
+  month.push(a[4]);
+  month=parseInt(month.join(""));
+  switch(month){
+      case 01:
+          console.log("January");
+          break;
+      case 02:
+          console.log("February");
+          break;
+      case 03:
+          console.log("March");
+          break;
+      case 04:
+          console.log("April");
+          break;
+      case 05:
+          console.log("May");
+          break;
+      case 06:
+          console.log("June");
+          break;
+      case 07:
+          console.log("July");
+          break;
+      case 08:
+          console.log("August");
+          break;
+      case 09:
+          console.log("September");
+          break;
+      case 10:
+          console.log("October");
+          break;
+      case 11:
+          console.log("November");
+          break;
+      case 12:
+          console.log("December");
+          break;
+  }
+});
+---------------------------------------------------------------------------------------------
+
 122) Given a string S of length N, write a program that would reverse every word in the string.
 Input Size : 1 <= N <= 100000
 Sample Testcases :
