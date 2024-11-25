@@ -1139,6 +1139,40 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+139) Given an integer N, find if it is divisible by 11
+N >= 1
+1 <= No. of digits in N <= 1000
+Input Description:
+The only line of input contains an integer N
+Output Description:
+Print YES if N is divisible by 11, NO otherwise.
+
+Sample Input :
+1331
+Sample Output :
+YES
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  if(a%11===0){
+      console.log("YES");
+  }else console.log("NO");
+});
+---------------------------------------------------------------------------------------------
+
 140) Given a number N print the right-angled triangle with the top level having N 1's followed by each level with is one 1 lesser.
 Input Size : N <= 1000
 Sample Testcase :
