@@ -823,6 +823,46 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+55) Given 2 numbers N,K print the array after deleting the last K elements.
+Input Size : N,K <= 100000
+Sample Testcase :
+INPUT
+5 4
+1 2 3 4 5
+OUTPUT
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let t= userInput[0].split(" ").map(Number);
+  let a=parseInt(t[0]);
+  let b=parseInt(t[1]);
+  let c=userInput[1].split(" ").reverse().map(Number);
+  let arr=[];
+  for(let i=0;i<a;i++){
+      if(i>=b){
+          arr.push(c[i]);
+      }}
+  if(arr.length===0){
+    console.log(-1);  
+  }else{
+      console.log(arr.reverse().join(" "));
+  }
+});
+---------------------------------------------------------------------------------------------
+
 56) Prateek finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
 
 Input Description:
