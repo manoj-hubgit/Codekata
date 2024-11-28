@@ -898,6 +898,42 @@ console.log(a[0]);
 });
 ---------------------------------------------------------------------------------------------
 
+60) Given a number N followed by N elements, find the second smallest element.
+If it cannot be found then print -1
+Input Size : N <= 100000 (ie do it in O(log n) time complexity)
+Sample Testcase :
+INPUT
+5
+1 2 3 4 5
+OUTPUT
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  let b=userInput[1].split(" ").map(Number).sort((a,b)=>a-b);
+  let c=-1;
+  for(let i=0;i<a;i++){
+      if(b[i]<b[i+1]){
+          c=b[i+1];
+          break;
+      }}
+  console.log(c);
+});
+---------------------------------------------------------------------------------------------
+
 62) Given 2 array of size N and M.merge them in sorted order and print it.
 Input Size : |N||M| <= 100000( O(n))
 Sample Testcase :
