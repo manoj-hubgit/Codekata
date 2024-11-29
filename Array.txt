@@ -1001,6 +1001,39 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+67) Given a string S, print the encoded string by adding 3 to each character(a maps to d,b maps to e,c maps to f and so on).
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+RADAR
+OUTPUT
+UDGDU
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= userInput[0];
+let arr=[];
+for(let i=0;i<a.length;i++){
+   let b=a.charCodeAt(i);
+   let char=((b-65+3)%26)+65;
+   arr.push(String.fromCharCode(char));
+}
+console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+
 68) Given a string S, print the reverse of the string after removing the vowels.If the resulting string is empty print '-1'.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
