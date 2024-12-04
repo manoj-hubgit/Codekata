@@ -1346,6 +1346,44 @@ console.log(n);
 });
 ---------------------------------------------------------------------------------------------
 
+97) Given 2 numbers N and K.Print the number of occurrences of K in N.If K is not found print '-1'.
+Input Size : 1 <= N <= 100000, 0 <= K <= 9
+Sample Testcase :
+INPUT
+1000 0
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split(" ");
+  let n=a[0].split("").map(Number);
+  let k=parseInt(a[1]);
+  let total=0;
+  for(let i=0;i<n.length;i++){
+      if(n[i]===k){
+          total++;
+      }}
+  if(total===0){
+      console.log(-1);
+  }else{
+      console.log(total);
+  }
+});
+---------------------------------------------------------------------------------------------
+
 98) Given a string S, print 'yes' if the strings 'GUVI' and 'GEEK' is present case-sensitively in the string else print 'no'.
 Input Size : 1 <= 100
 Sample Testcase :
