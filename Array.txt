@@ -1527,6 +1527,44 @@ for(let i=0;i<a.length;i++){
 });
 ---------------------------------------------------------------------------------------------
 
+118) Given a number N and an array of N elements, print all elements lesser than N in descending order.If no element found print -1
+Input Size : 1 <= N <= 10000
+Sample Testcase :
+INPUT
+5
+2 14 15 14 3
+OUTPUT
+3 2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  let b= userInput[1].split(" ").map(Number);
+  let arr=[];
+  for(let i=0;i<a;i++){
+      if(b[i]<a){
+          arr.push(b[i]);
+      }}
+  if(arr.length===0){
+      console.log(-1);
+  }else{
+      console.log(arr.sort((a,b)=>b-a).join(" "));
+  }
+});
+---------------------------------------------------------------------------------------------
+
 126) You are given with string of words,we have to arrange them in reverse saturated order.
 Input Description:
 You are given a string ‘s’.
