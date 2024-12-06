@@ -1716,6 +1716,37 @@ let val=0;
 });
 ---------------------------------------------------------------------------------------------
 
+140) Given a range[L,R], print the sum of all the odd numbers within the range(inclusive of L and R).
+Sample Testcase:
+INPUT
+5 10
+OUTPUT
+21
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,k]=userInput[0].split(" ").map(Number);
+let sum=0;
+for(let i=n;i<=k;i++){
+    if(i%2!==0){
+       sum+=i; 
+    }}
+console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
 142) Given a number N and an array of N elements, print the suffix sum of the array.
 Input Size : N <= 100000
 Sample Testcase :
