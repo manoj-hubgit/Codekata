@@ -1858,6 +1858,40 @@ console.log(arr.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
+149) Given a number n and 2 numbers l and r followed by n numbers, find the smallest number in the range [l,r].
+Sample Testcase :
+INPUT
+5 2 4
+1 2 3 4 5
+OUTPUT
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,l,r]=userInput[0].split(" ").map(Number);
+let num=userInput[1].split(" ").map(Number);
+let arr=[];
+for(let i=0;i<n;i++){
+    if(i+1>=l && i+1<=r){
+        arr.push(num[i]);
+    }}
+arr.sort((a,b)=>a-b);
+console.log(arr[0]);
+});
+---------------------------------------------------------------------------------------------
+
 157) Given k sorted arrays of possibly different sizes, merge them and print the sorted output.
 Input Size : N<=100
 Example:
