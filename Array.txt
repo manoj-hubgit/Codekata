@@ -2086,6 +2086,43 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+171) Given a number N, check if the sum of the digits is a Palindrome. Print 'yes' or 'no' accordingly.
+Input Size : 2 <= N <= 1000000000000000000
+Sample Testcases :
+INPUT
+13
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("").map(Number);
+let sum=0;
+for(let i=0;i<a.length;i++){
+    sum+=a[i];
+}
+if(sum>=0 && sum<=9){
+    console.log("yes");
+}else if(sum.toString()===sum.toString().split("").reverse().join("")){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
 194) Given a number N followed by N numbers.Find the smallest number and largest number and print both the indices(1 based indexing).
 Input Size : N <= 100000
 Sample Testcase :
