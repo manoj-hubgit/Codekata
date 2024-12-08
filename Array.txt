@@ -1892,6 +1892,47 @@ console.log(arr[0]);
 });
 ---------------------------------------------------------------------------------------------
 
+151) Given an array N, sort it in ascending order till it reaches kth elements 
+and after that sort it in descending order.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5 2
+4 3 1 2 4
+OUTPUT
+3 4 4 2 1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,l]=userInput[0].split(" ").map(Number);
+let num=userInput[1].split(" ").map(Number);
+let arr1=[];
+let arr2=[];
+for(let i=0;i<n;i++){
+    if(i<l){
+        arr1.push(num[i]);
+    }else(
+        arr2.push(num[i]));
+}
+arr1.sort((a,b)=>a-b);
+arr2.sort((a,b)=>b-a);
+arr1=[...arr1,...arr2];
+console.log(arr1.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 157) Given k sorted arrays of possibly different sizes, merge them and print the sorted output.
 Input Size : N<=100
 Example:
