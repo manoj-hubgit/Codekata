@@ -2123,6 +2123,44 @@ if(sum>=0 && sum<=9){
 });
 ---------------------------------------------------------------------------------------------
 
+178) Given a number n followed by n numbers. Find the numbers which are equal to their index value and print them in sorted order. If no such numbers are present print '-1' without quotes.
+Input Size : 1 <= n <= 100000
+Sample Testcases :
+INPUT
+6
+6 7 3 3 4 5
+OUTPUT
+3 4 5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let b= userInput[1].split(" ").map(Number);
+let arr=[];
+for(let i=0;i<a;i++){
+    if(i===b[i]){
+        arr.push(b[i]);
+    }}
+if(arr.length===0){
+  console.log(-1);  
+}else{
+   console.log(arr.join(" ")); 
+}
+});
+---------------------------------------------------------------------------------------------
+
 194) Given a number N followed by N numbers.Find the smallest number and largest number and print both the indices(1 based indexing).
 Input Size : N <= 100000
 Sample Testcase :
