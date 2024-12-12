@@ -2201,6 +2201,42 @@ if(arr.length===0){
 });
 ---------------------------------------------------------------------------------------------
 
+185) Given two numbers N,K(N>=K) and an array of N elements, write a program to find the Kth largest element.
+Input Size : 1 <= K <= N <= 100000
+Sample Testcases :
+INPUT
+6 2
+1 2 3 4 5 6
+OUTPUT
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,k]=userInput[0].split(" ").map(Number);
+let a=userInput[1].split(" ").map(Number).sort((a,b)=>b-a);
+count=1;
+for(let i=1;i<n;i++){
+    if(a[i]!==a[i-1]){
+      count+=1;  
+       if(count===k) {
+           console.log(a[i]);
+           break;
+       }}}
+});
+---------------------------------------------------------------------------------------------
+
 194) Given a number N followed by N numbers.Find the smallest number and largest number and print both the indices(1 based indexing).
 Input Size : N <= 100000
 Sample Testcase :
