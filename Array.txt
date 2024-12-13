@@ -2237,6 +2237,47 @@ for(let i=1;i<n;i++){
 });
 ---------------------------------------------------------------------------------------------
 
+192) Given 2 numbers N and K and followed by an array of N integers. The given element K is removed from the array and new array is printed. If after removing every occurance of K the array becomes empty, print 'empty' without quotes.
+Example:
+Input: {10,10,20,30,76}, K=10
+Output: {20,20,76}
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5 10
+10 10 20 30 76
+OUTPUT
+20 30 76
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,k]=userInput[0].split(" ").map(Number);
+let a=userInput[1].split(" ").map(Number);
+let arr=[];
+for(let i=0;i<n;i++){
+    if(a[i]!==k){
+        arr.push(a[i]);
+    }}
+if(arr.length===0){
+    console.log("empty");
+}else{
+  console.log(arr.join(" "));  
+}
+});
+---------------------------------------------------------------------------------------------
+
 194) Given a number N followed by N numbers.Find the smallest number and largest number and print both the indices(1 based indexing).
 Input Size : N <= 100000
 Sample Testcase :
