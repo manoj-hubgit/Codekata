@@ -485,6 +485,48 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+20) You are given a string ‘s’. Your task is to find whether string is beautiful or not. A string is said to be beautiful whenever string is made up of only three characters. All the three characters must be distinct. Print true if string is beautiful and false when it is not beautiful
+
+
+Input Description:
+You are given a string
+
+Output Description:
+Print ‘1’ when string is beautiful and ‘0’ when it is not
+
+Sample Input :
+Aab
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0].split("");
+   let arr=[];
+   for(let i=0;i<a.length;i++){
+       if(!arr.includes(a[i])){
+           arr.push(a[i]);
+          }}
+   if(arr.length===3){
+      console.log(1); 
+   }else{
+       console.log(0);
+   }
+});
+---------------------------------------------------------------------------------------------
+
 21) Given a string S, print it after changing the middle element to * (if the length of the string is even, change the 2 middle elements to *).
 Sample Testcase :
 INPUT
