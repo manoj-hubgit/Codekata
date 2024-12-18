@@ -1189,6 +1189,49 @@ for(let i=0;i<a.length;i++){
 });
 ---------------------------------------------------------------------------------------------
 
+64) Given a number N and an array of N strings,Print yes, if all strings have atleast one vowel in them otherwise print no.
+Input Size : N <= 1000
+Sample Testcase :
+INPUT
+5
+code
+overload
+vishal
+sundar
+anish
+OUTPUT
+yes
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let count=0;
+for(let i=1;i<=a;i++){
+    let str= userInput[i];
+    if(/[aeiou]/i.test(str)){
+       count+=1; 
+    }}
+if(count===a){
+   console.log("yes"); 
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
 70) Given a string print reverse all words except the first and last words.
 Sample Testcase :
 INPUT
