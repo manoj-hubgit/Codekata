@@ -1232,6 +1232,39 @@ if(count===a){
 });
 ---------------------------------------------------------------------------------------------
 
+67) Given 2 strings.check if the second string is a substring of the first string.Print 'yes' if there exists a valid substring otherwise print 'no'.
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+codekata code
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ");
+let fir=a[0];
+let sec=a[1];
+if(fir.includes(a[1])){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
 70) Given a string print reverse all words except the first and last words.
 Sample Testcase :
 INPUT
