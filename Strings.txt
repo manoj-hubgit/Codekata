@@ -1326,6 +1326,40 @@ let n=userInput[0].split("").sort((a,b)=>(b-a)).join("");
 console.log(n);
 });
 ---------------------------------------------------------------------------------------------
+
+73) Given a String S and a string P, find if P is a substring of S. Print 'yes' if it is a substring else 'no'.
+Input Size : |s| <= 10000 |p| <= 1000.
+Sample Testcase :
+INPUT
+sundar sun
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split(" ");
+let fir=a[0];
+let sec=a[1];
+if(fir.includes(a[1])){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
 74) Given a string 'S' and a character 'K', find how many times 'K' got repeated in 'S'.If 'K' is not found in 'S' print -1
 Input Size : |s| <= 100000
 Sample Testcase :
