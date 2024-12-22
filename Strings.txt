@@ -1914,6 +1914,40 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+106) Accept a string and find if it is of date format 'dd/mm/yyyy'.
+Sample Testcase :
+INPUT
+01/13/1999
+OUTPUT
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+let date=parseInt(a[0]+a[1]);
+let month=parseInt(a[3]+a[4]);
+let year=parseInt(a[6]+a[7]+a[8]+a[9]);
+
+if(a[2]==="/" && a[5]==="/" && a.length===10 && date>0 && date <=31 && month>0 && month<=12){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
 107) Given a date(DD-MM-YYYY),print the month in words.
 Sample Testcase :
 INPUT
