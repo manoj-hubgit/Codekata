@@ -2104,6 +2104,35 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+135) Given a sequence of strings remove extra spaces in the string(there can be atmost one space between 2 strings).
+Input Size : 1<= N <= 100000
+Sample Testcases :
+INPUT
+aa abba abba
+OUTPUT
+aa abba abba
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+  let a=userInput[0];
+  let newString=a.replace(/\s+/g,' ').trim();
+  console.log(newString);
+});
+---------------------------------------------------------------------------------------------
+
 138) Given a string S of length N, reverse every word in place.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
