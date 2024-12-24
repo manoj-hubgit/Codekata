@@ -1,0 +1,30 @@
+2) How many possible ways are to shuffle given number of playing cards?.
+Input Size : |N| <= 1000000
+Sample Testcase :
+INPUT
+7
+OUTPUT
+5040
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  let num=1;
+  for(let i=a;i>1;i--){
+      num*=i;
+  }
+  console.log(num);
+});
+---------------------------------------------------------------------------------------------
