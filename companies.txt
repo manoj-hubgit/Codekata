@@ -98,3 +98,35 @@ inp.on("close", () => {
       }}
   console.log(c.join(""));
 });
+
+---------------------------------------------------------------------------------------------
+
+51) Divide two given integers A and B without using multiplication, division and mod operator. If it is overflow, return MAX_INT.
+Sample Testcases :
+INPUT
+10 5
+OUTPUT
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let [a,b]=userInput[0].split(" ");
+   let count=0;
+   while(a>0){
+       a-=b;
+       count+=1;
+   }
+   console.log(count);
+});
