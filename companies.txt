@@ -130,3 +130,83 @@ inp.on("close", () => {
    }
    console.log(count);
 });
+
+---------------------------------------------------------------------------------------------
+
+58) Given a linked list(where each node has a character)  remove the duplicate character 
+and maintain the same order.
+Input: H->e->l->l->o->w->o->r->l->d->h->i
+Output:  H->e->l->o->w->r->d->h->i
+
+Explanation:
+The letters l,o are duplicated so it is mentioned only once in the output.
+Note: The characters are case sensitive
+//Node structure in C/C++
+struct Node
+
+{
+
+    int data;
+
+    struct Node *next;
+
+};
+
+//Node class structure
+class LinkedList {
+    static Node head;
+
+    static class Node {
+
+        int data;
+
+        Node next;
+
+        Node(int d) {
+
+            data = d;
+
+            next = null;
+
+        }
+
+    }
+
+Input Description:
+Characters of a String in linked list format
+
+Output Description:
+Characters of a String in linked list format after removing the repeated character
+
+Sample Input :
+H->e->l->l->o->w->o->r->l->d->h->i
+Sample Output :
+ H->e->l->o->w->r->d->h->i
+
+ CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("");
+let arr=[];
+for(let i=0;i<a.length;i+=3){
+    if(!arr.includes(a[i])){
+        if(i!==a.length-1){
+            arr.push(a[i]);
+            arr.push("->");
+        }else{
+            arr.push(a[i]);
+        }}}
+  console.log(arr.join(""));
+});
+ ---------------------------------------------------------------------------------------------
