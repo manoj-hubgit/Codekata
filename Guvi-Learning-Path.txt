@@ -150,8 +150,43 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-1)
+19)  Joseph was going through topic of strings. He learnt about anagrams. 
+But due to some circumstances he forget ,now he hired you to help him in completing the work.
+Your task is to tell whether the two given strings are anagrams
+
+Input Description:
+The first line of the input is a string N, the second line of the input is a string M
+
+Output Description:
+Compare the two string input N and M. Print 1 if they are anagram else print 0.
+
+Sample Input :
+abcd
+cdab
+Sample Output :
+1
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  let b=userInput[1];
+  if(a.length===b.length && a+a.includes(b)){
+    
+          console.log(1);
+  }else{
+      console.log(0);
+  }
+});
 ---------------------------------------------------------------------------------------------
