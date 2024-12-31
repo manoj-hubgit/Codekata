@@ -220,3 +220,36 @@ let b=userInput[1];
 console.log(a.indexOf(b));
 });
 ---------------------------------------------------------------------------------------------
+
+43) Given 2 numbers N and M followed by 2 arrays A an B of sizes N and M. 
+Check if array B is a subset of array A. if yes print 'yes' else print 'no'.
+Input Size : 1 <= N <= 1000000
+Sample Testcases :
+INPUT
+7 6
+1 2 3 4 5 6 7
+3 4 5 6 7 1
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,m]=userInput[0].split(" ").map(Number); 
+let a=new Set(userInput[1].split(" ").map(Number));
+let b=userInput[2].split(" ").map(Number);
+let subset=b.every(ele=>a.has(ele));
+  console.log(subset?"yes":"no");
+});
+---------------------------------------------------------------------------------------------
