@@ -718,10 +718,37 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-21)
+21) Given a number N and an array of N elements, find the Bitwise OR of the array elements.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+2
+2 4
+OUTPUT
+6
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=parseInt(userInput[0]);
+let s=userInput[1].split(" ").map(Number);
+let val=s[0];
+for(let i=0;i<n-1;i++){
+    val=(val | s[i+1]);
+}
+console.log(val);
+});
 ---------------------------------------------------------------------------------------------
 
 22) Given 3 numbers A,B,C print 'yes' if they can form the sides of a scalene triangle else print 'no'.
