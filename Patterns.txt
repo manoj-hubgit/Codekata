@@ -1017,6 +1017,57 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+43) Write a code to generate a square pattern using numbers.
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100.
+
+Output Description:
+Print the number pattern separated with space with the size R.
+
+Sample Input :
+5
+Sample Output :
+5 5 5 5 5
+4 5 5 5 5
+3 4 5 5 5
+2 3 4 5 5
+1 2 3 4 5
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let arr=[];
+
+let start=a;
+for(let i=0;i<a;i++){
+    start=a-i;
+    for(let j=0;j<a;j++){
+        if(start>a){
+            arr.push(a);
+        }else{
+             arr.push(start);
+       start++; 
+        }}
+    console.log(arr.join(" "));
+    arr=[];
+}
+});
+
+---------------------------------------------------------------------------------------------
+
 54) Write a code to generate a half pyramid pattern of mulitples of the given number.
 
 Input Description:
