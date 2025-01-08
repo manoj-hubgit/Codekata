@@ -64,6 +64,42 @@ inp.on("close", () => {
   console.log(total);
 });
 ---------------------------------------------------------------------------------------------
+7) Given a string S ,print the vowels first and then consonants in the same order as they have occurred in the string.
+Input Size : N <= 10000
+Sample Testcase :
+INPUT
+GuVI
+OUTPUT
+uIGV
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0];
+let arr=[];
+for(let i=0;i<n.length;i++){
+    if(n[i]==='a' ||n[i]==='e' ||n[i]==='i' ||n[i]==='o' ||n[i]==='u' ||n[i]==='A' ||n[i]==='E' ||n[i]==='I' ||n[i]==='O' ||n[i]==='U'){
+        arr.push(n[i]);
+    }}
+for(let i=0;i<n.length;i++){
+    if(n[i]!=='a' &&n[i]!=='e' &&n[i]!=='i' &&n[i]!=='o' &&n[i]!=='u' &&n[i]!=='A' &&n[i]!=='E' &&n[i]!=='I' &&n[i]!=='O' &&n[i]!=='U'){
+        arr.push(n[i]);
+    }}
+console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
 
 13) Given a number N followed by a list of N numbers. Write a program to reverse the list and print the list.
 Input Size : 1 <= N <= 10000
