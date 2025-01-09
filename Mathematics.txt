@@ -571,6 +571,49 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+37)  You are given a ‘true’ string. String is called true if weight of string is multiple of 8. 
+Your task is to tell whether a string can be declared True or Not. 
+Weight of string is the sum of ASCII value of Vowel character(s) present in the string.
+Input Description:
+You are given as string ‘s’ in lower cases
+
+Output Description:
+Print 1 for true and 0 for false
+
+Sample Input :
+raja
+Sample Output :
+0
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a=userInput[0];
+   let len=a.split("");
+   len=len.length;
+   let sum=0;
+   for(let i=0;i<len;i++){
+       sum+=a.charCodeAt(i);
+   }
+   if(sum%8===0){
+       console.log(1);
+   }else{
+       console.log(0); 
+   }
+});
+---------------------------------------------------------------------------------------------
+
 39) Given a number N, print the odd digits in the number(space seperated) or print -1 if there is no odd digit in the given number.
 Input Size : N <= 100000
 Sample Testcase :
@@ -1139,6 +1182,132 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+91) How many possible ways are to shuffle given number of playing cards?.
+Input Size : |N| <= 1000000
+Sample Testcase :
+INPUT
+7
+OUTPUT
+5040
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  let num=1;
+  for(let i=a;i>1;i--){
+      num*=i;
+  }
+  console.log(num);
+});
+---------------------------------------------------------------------------------------------
+
+93) Given a number 'N' print the sum of each digit to the power of number of digits in given input.
+Example :
+Input => 1234
+=> ( 1 ^ 4 ) + ( 2 ^ 4 ) + ( 3 ^ 4 ) + ( 4 ^ 4 )
+=> 1 + 16 + 81 + 256
+Output => 354
+N <=100000000000
+Sample Testcase :
+INPUT
+1234
+OUTPUT
+354
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split("").map(Number);
+  let total=0;
+  for(let i=0;i<a.length;i++){
+      total+=Math.pow(a[i],a.length);
+  }
+  console.log(total);
+});
+---------------------------------------------------------------------------------------------
+
+108) Given a range[L,R], print the sum of all the odd numbers within the range(inclusive of L and R).
+Sample Testcase:
+INPUT
+5 10
+OUTPUT
+21
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,k]=userInput[0].split(" ").map(Number);
+let sum=0;
+for(let i=n;i<=k;i++){
+    if(i%2!==0){
+       sum+=i; 
+    }
+}
+console.log(sum);
+});
+ ---------------------------------------------------------------------------------------------
+
+111) Given a number N, print the sum of its first and last digit.
+Input Size : |N| <= 10000
+Sample Testcase :
+INPUT
+51233
+OUTPUT
+8
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0].split("").map(Number);
+  console.log(a[0]+a[a.length-1]);
+});
+---------------------------------------------------------------------------------------------
+
 139) Given an integer N, find if it is divisible by 11
 N >= 1
 1 <= No. of digits in N <= 1000
@@ -1262,5 +1431,81 @@ inp.on("close", () => {
         console.log("no");
     }
     }
+});
+---------------------------------------------------------------------------------------------
+
+148) Given a number N, check if the sum of the digits is a Palindrome. Print 'yes' or 'no' accordingly.
+Input Size : 2 <= N <= 1000000000000000000
+Sample Testcases :
+INPUT
+13
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("").map(Number);
+let sum=0;
+for(let i=0;i<a.length;i++){
+    sum+=a[i];
+}
+if(sum>=0 && sum<=9){
+    console.log("yes");
+}else if(sum.toString()===sum.toString().split("").reverse().join("")){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
+
+---------------------------------------------------------------------------------------------
+
+152) Given a number N, check if the sum of the digits is a Palindrome. Print 'yes' or 'no' accordingly.
+Input Size : 2 <= N <= 1000000000000000000
+Sample Testcases :
+INPUT
+13
+OUTPUT
+yes
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("").map(Number);
+let sum=0;
+for(let i=0;i<a.length;i++){
+    sum+=a[i];
+}
+if(sum>=0 && sum<=9){
+    console.log("yes");
+}else if(sum.toString()===sum.toString().split("").reverse().join("")){
+    console.log("yes");
+}else{
+    console.log("no");
+}
 });
 ---------------------------------------------------------------------------------------------
