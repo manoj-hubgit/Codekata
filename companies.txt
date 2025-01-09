@@ -137,6 +137,34 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+14) Given base(B) and height(H) of a triangle find its area.
+Input Size : N <= 1000000
+Sample Testcase :
+INPUT
+2 4
+OUTPUT
+4
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [a,b]=userInput[0].split(" ").map(Number);
+console.log(1/2*(a*b));
+});
+---------------------------------------------------------------------------------------------
+
 51) Divide two given integers A and B without using multiplication, division and mod operator. If it is overflow, return MAX_INT.
 Sample Testcases :
 INPUT
