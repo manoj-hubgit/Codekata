@@ -1,0 +1,411 @@
+2) You are given given task is to print whether array is ‘majestic’ or not.A ‘majsetic’ 
+array is an array whose sum of first three number is equal to last three number.
+Input Description:
+You are given a number ‘n’,Next line contains ‘n’ space separated
+
+Output Description:
+Print 1 if array is majestic and 0 if it is not
+
+Sample Input :
+7
+1 2 3 4 6 0 0
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n=userInput[0];
+let a=userInput[1].split(" ").map(Number);
+
+let last=a[n-1]+a[n-2]+a[n-3];
+let first=a[0]+a[1]+a[2];
+if(first===last){
+    console.log(1);
+}else{
+    console.log(0);
+}});
+---------------------------------------------------------------------------------------------
+
+4)  Joseph was going through topic of strings. He learnt about anagrams. 
+But due to some circumstances he forget ,now he hired you to help him in completing the work.
+Your task is to tell whether the two given strings are anagrams
+
+Input Description:
+The first line of the input is a string N, the second line of the input is a string M
+
+Output Description:
+Compare the two string input N and M. Print 1 if they are anagram else print 0.
+
+Sample Input :
+abcd
+cdab
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => { 
+  let a=userInput[0];
+  let b=userInput[1];
+  if(a.length===b.length && a+a.includes(b)){
+    
+          console.log(1);
+  }else{
+      console.log(0);
+  }
+});
+---------------------------------------------------------------------------------------------
+
+5) You are given a number n,ranging from 1 to n. Out of which one number is missing. 
+Your task is to print that missing number.
+
+Input Description:
+You are given a number ‘n’.
+
+Output Description:
+Print the missing number.
+
+Sample Input :
+5
+1 3 5 2
+Sample Output :
+4
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let b=userInput[1].split(" ").map(Number);
+    b=b.sort();
+    let val=1;
+    for(let i=0;i<a;i++){
+        if(b[i]!==val){
+            console.log(val);
+            break;
+        }
+        val+=1;
+    }
+});
+---------------------------------------------------------------------------------------------
+
+6) You are provided with a string ‘s’. Your task is to reverse the string using stack Data Structure.
+
+Input Description:
+You are given a string ‘s’.
+
+Output Description:
+Print the reverse string
+
+Sample Input :
+i am jsb
+Sample Output :
+jsb am i
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0];
+  let arr= a.split(" ").reverse();
+  console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+9) Mr. Kanga had a PhD in Heap Algorithms. Today, he was given a list of strings in random order. 
+Help him sort the list in increasing order(lexicographically increasing) using heap sort.
+
+Input Description:
+The first line is an integer N denoting the number of strings. 
+The next line contains N space separated strings containing lower case English Alphabets.
+
+Output Description:
+Print N space separated strings in increasing order.
+
+Sample Input :
+2
+bag axe
+Sample Output :
+axe bag
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let a=userInput[0];
+    let b=userInput[1].split(" ").sort();
+    console.log(b.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+14) Given 2 numbers N and K and followed by an array of N integers. 
+The given element K is removed from the array and new array is printed. 
+If after removing every occurance of K the array becomes empty, print 'empty' without quotes.
+Example:
+Input: {10,10,20,30,76}, K=10
+Output: {20,20,76}
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5 10
+10 10 20 30 76
+OUTPUT
+20 30 76
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,k]=userInput[0].split(" ").map(Number);
+let a=userInput[1].split(" ").map(Number);
+let arr=[];
+for(let i=0;i<n;i++){
+    if(a[i]!==k){
+        arr.push(a[i]);
+    }}
+if(arr.length===0){
+    console.log("empty");
+}else{
+  console.log(arr.join(" "));  
+}
+});
+---------------------------------------------------------------------------------------------
+
+15) Given k sorted arrays of possibly different sizes, merge them and print the sorted output.
+Input Size : N<=100
+Example:
+INPUT
+k = 3
+1 3
+2 4 6
+0 9 10 11
+OUTPUT
+0 1 2 3 4 6 9 10 11
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {;
+  let a = parseInt(userInput[0]);
+  let arr=[]
+  for(let i=1;i<=a;i++){
+      arr.push(...userInput[i].split(" "))
+  }
+arr.sort((a, b) => a - b);
+   console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+17) Given 2 strings S1 and S2. Find if String2 is substring of String1. 
+If it is print the index of the first occurrence. else print -1.
+Input Size : 1<= N <= 100000
+Sample Testcases :
+1)INPUT
+test123string
+123
+OUTPUT
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+let b=userInput[1];
+console.log(a.indexOf(b));
+});
+---------------------------------------------------------------------------------------------
+
+19) You are given with a queue. Your task is to reverse the queue elements and print it.
+
+Input Description:
+You are given a number ‘n’,denoting size of queue, Next line contains s space separated numbers
+
+Output Description:
+Print the reversed queue.
+
+Sample Input :
+6
+1 2 3 4 5 6
+Sample Output :
+6 5 4 3 2 1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   let a= userInput[0];
+   let q=userInput[1].split(" ");
+   q=q.reverse();
+   console.log(q.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+23) Given a number N and array of N integers, print the prefix sum array for each position 
+if it is divisible by 2 else print the element itself.
+Input Size : N <= 10000
+Sample Testcase :
+INPUT
+4
+2 4 4 4
+OUTPUT
+2 6 10 14
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let k=parseInt(userInput[0]);
+let n=userInput[1].split(" ").map(Number);
+let arr=[];
+let val=0;
+for(let i=0;i<k;i++){
+    val+=n[i];
+    if(val%2===0){
+        arr.push(val);
+    }else{
+        arr.push(n[i]); 
+    }}
+console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+25) Given two numbers N,K(N>=K) and an array of N elements, write a program to find the Kth largest element.
+Input Size : 1 <= K <= N <= 100000
+Sample Testcases :
+INPUT
+6 2
+1 2 3 4 5 6
+OUTPUT
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,k]=userInput[0].split(" ").map(Number);
+let a=userInput[1].split(" ").map(Number).sort((a,b)=>b-a);
+count=1;
+for(let i=1;i<n;i++){
+    if(a[i]!==a[i-1]){
+      count+=1;  
+       if(count===k) {
+           console.log(a[i]);
+           break;
+       }}}});
+---------------------------------------------------------------------------------------------
