@@ -1,3 +1,43 @@
+1) Given 2 numbers N,K and an array of N integers, find if the element K exists in the array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5 2
+1 2 3 4 5
+OUTPUT
+yes
+HINT: Read about Binary Search
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=userInput[0].split(" ");
+ let total=a[0];
+ let check=a[1];
+ let val=userInput[1].split(" ");
+ let count=0;
+ for(let i=0;i<total;i++){
+     if(check==val[i]){
+         console.log("yes");
+         count+=1;
+         break;
+     }}
+ if(count===0){
+     console.log("no")
+ }
+});
+---------------------------------------------------------------------------------------------
 2) How many possible ways are to shuffle given number of playing cards?.
 Input Size : |N| <= 1000000
 Sample Testcase :
@@ -26,6 +66,109 @@ inp.on("close", () => {
       num*=i;
   }
   console.log(num);
+});
+---------------------------------------------------------------------------------------------
+
+3) Given the values of a,b and x in the equation ax + b = y. Find the value of y.
+Sample Testcase :
+INPUT
+3 5 2
+OUTPUT
+11
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let d=userInput[0].split(" ");
+ let a= parseInt(d[0]);
+ let b= parseInt(d[1]);
+ let x= parseInt(d[2]);
+ console.log((a*x)+b);
+});
+---------------------------------------------------------------------------------------------
+
+4) Given 2 arrays print 'yes' if they are mirror images of each other,otherwise 'no'.
+Input Size : N <= 1000000
+Sample Testcase :
+INPUT
+4
+1 2 3 4
+4 3 2 1
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let total=userInput[0];
+ let a=userInput[1].split(" ").join("");
+ let b=userInput[2].split(" ").reverse().join("");
+ if(a.length==b.length){
+     if(a==b){
+         console.log("yes");
+     }else{
+         console.log("no");
+     }
+ }
+});
+---------------------------------------------------------------------------------------------
+
+5) Given a string and a number K, change every kth character to uppercase from beginning in string.
+Sample Testcase :
+INPUT
+string 2
+OUTPUT
+sTrInG
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0].split(" ");
+let a=n[0].split("");
+let val=n[1];
+let ans=[]
+let num=0;
+for(let i=0;i<a.length;i++){
+    num+=1;
+    if(num%val===0){
+       ans.push(a[i].toUpperCase()) ;
+    }else{
+       ans.push(a[i]) 
+    }}
+  console.log(ans.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
@@ -101,6 +244,46 @@ console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
+9) Given an array N, sort it in ascending order till it reaches kth elements and after that sort it in descending order.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5 2
+4 3 1 2 4
+OUTPUT
+3 4 4 2 1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,l]=userInput[0].split(" ").map(Number);
+let num=userInput[1].split(" ").map(Number);
+let arr1=[];
+let arr2=[];
+for(let i=0;i<n;i++){
+    if(i<l){
+        arr1.push(num[i]);
+    }else(
+        arr2.push(num[i]));
+}
+arr1.sort((a,b)=>a-b);
+arr2.sort((a,b)=>b-a);
+arr1=[...arr1,...arr2];
+console.log(arr1.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 13) Given a number N followed by a list of N numbers. Write a program to reverse the list and print the list.
 Input Size : 1 <= N <= 10000
 Sample Testcases :
@@ -165,6 +348,248 @@ console.log(1/2*(a*b));
 });
 ---------------------------------------------------------------------------------------------
 
+18) Given a number N print a right angled traingle structure with the starting level as single 1 and every immediate proceeding level with 2 more additional ones than the previous level .Repeat the pattern for N levels.
+Input Size : N <= 1000
+Sample Testcase :
+INPUT
+3
+OUTPUT
+1
+1 1 1
+1 1 1 1 1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a = userInput[0];
+  let arr=[];
+  let num=1;
+  for(let i=0;i<a;i++){
+      for(j=1;j<=num;j++){
+          arr.push(1);
+      }
+      console.log(arr.join(" "));
+      num+=2;
+      arr=[];
+  }});
+---------------------------------------------------------------------------------------------
+
+21) Given a number N and an array of N strings,Print yes, if all strings have atleast one vowel in them otherwise print no.
+Input Size : N <= 1000
+Sample Testcase :
+INPUT
+5
+code
+overload
+vishal
+sundar
+anish
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let count=0;
+for(let i=1;i<=a;i++){
+    let str= userInput[i];
+    if(/[aeiou]/i.test(str)){
+       count+=1; 
+    }}
+if(count===a){
+   console.log("yes"); 
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
+23) Given a number n followed by n numbers. Find the numbers which are equal to their index value and print them in sorted order. If no such numbers are present print '-1' without quotes.
+Input Size : 1 <= n <= 100000
+Sample Testcases :
+INPUT
+6
+6 7 3 3 4 5
+OUTPUT
+3 4 5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let b= userInput[1].split(" ").map(Number);
+let arr=[];
+for(let i=0;i<a;i++){
+    if(i===b[i]){
+        arr.push(b[i]);
+    }}
+if(arr.length===0){
+  console.log(-1);  
+}else{
+   console.log(arr.join(" ")); 
+}
+});
+---------------------------------------------------------------------------------------------
+
+30) Given a string 'S', sort the characters based on the frequency(highest and lowest) and print the resultant string.(Note:If the frequency of different character is same then sort based on alphabetical order).
+Input Size : 1 <= S <= 100000
+Sample Testcases :
+INPUT
+aabbba
+OUTPUT
+aaabbb
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0].split("").sort("");
+console.log(a.join(""));
+});
+---------------------------------------------------------------------------------------------
+
+32) Given a sentence S.check whether it is in camelcase.print 'yes' if it is in camelcase otherwise print 'no'.
+input size : |s| <= 100000
+Sample Testcase :
+INPUT
+CodekataChallenge
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= userInput[0].split("");
+let istrue=true;
+for(let i=1;i<a.length;i++){
+    if(a[i]===a[i].toUpperCase()){
+        console.log("yes");
+        istrue=false;
+        break;
+    }}
+if(istrue){
+    console.log("no");
+}});
+---------------------------------------------------------------------------------------------
+
+43) Given a string S consisting of 2 words reverse the order of two words .
+Input Size : |S| <= 10000000
+Sample Testcase :
+INPUT
+hello world
+OUTPUT
+world hello
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let l=userInput[0].split(" ");
+let temp;
+temp=l[0];
+l[0]=l[1];
+l[1]=temp;
+console.log(l.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+45) Given a string S of length N, find whether the given string is a palindrome using stack or linked list and print 'yes' otherwise print 'no'.
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+GuviGeek
+OUTPUT
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+let b=a.split("").reverse().join("");
+if(a===b){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
 51) Divide two given integers A and B without using multiplication, division and mod operator. If it is overflow, return MAX_INT.
 Sample Testcases :
 INPUT
@@ -195,6 +620,42 @@ inp.on("close", () => {
    console.log(count);
 });
 
+---------------------------------------------------------------------------------------------
+
+55) Given two numbers N,K(N>=K) and an array of N elements, write a program to find the Kth largest element.
+Input Size : 1 <= K <= N <= 100000
+Sample Testcases :
+INPUT
+6 2
+1 2 3 4 5 6
+OUTPUT
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,k]=userInput[0].split(" ").map(Number);
+let a=userInput[1].split(" ").map(Number).sort((a,b)=>b-a);
+count=1;
+for(let i=1;i<n;i++){
+    if(a[i]!==a[i-1]){
+      count+=1;  
+       if(count===k) {
+           console.log(a[i]);
+           break;
+       }}}
+});
 ---------------------------------------------------------------------------------------------
 
 58) Given a linked list(where each node has a character)  remove the duplicate character 
@@ -273,4 +734,43 @@ for(let i=0;i<a.length;i+=3){
         }}}
   console.log(arr.join(""));
 });
+---------------------------------------------------------------------------------------------
+68) Given a number N and N strings of length atmost M, print the longest common prefix.
+Input Size : 1<=N, M<=100000
+Example:
+INPUT
+2
+Vishal
+Vidharba
+OUTPUT
+Vi
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[1].split("");
+let b=userInput[2].split("");
+let arr=[];
+for(let i=0;i<a.length;i++){
+    if(a[i]===b[i]){
+        arr.push(a[i]);
+    }else{
+        break;
+    }}
+console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+  
+  CODE:
  ---------------------------------------------------------------------------------------------
