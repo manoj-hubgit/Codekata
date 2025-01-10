@@ -614,6 +614,44 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+38) Given a number N, print 'yes' if it is composite else print 'no'.
+Sample Testcase :
+INPUT
+123
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let isComposite=false;
+
+for(let i=2;i<=Math.sqrt(a);i++){
+    if(a%i===0){
+        isComposite=true;
+        break;
+    }
+}
+if(isComposite){
+    console.log("yes");
+}else{
+    console.log("no");
+}
+});
+---------------------------------------------------------------------------------------------
+
 39) Given a number N, print the odd digits in the number(space seperated) or print -1 if there is no odd digit in the given number.
 Input Size : N <= 100000
 Sample Testcase :
