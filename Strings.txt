@@ -75,10 +75,49 @@ inp.on("close", () => {
    console.log(c);
 });
 ---------------------------------------------------------------------------------------------
-3)
+3) You are given a number with duplicate digits your task is to remove the immediate 
+duplicate digits and print the result
+Input Description:
+You are given a long string of digits
+
+Output Description:
+Print the desired result print -1 if result length is 0
+
+Sample Input :
+1331
+Sample Output :
+11
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=userInput[0].split("").map(Number);
+  let arr=[];
+  let val=-1;
+  for(let i=0;i<a.length;i++){
+      if(i>val){
+           if(a[i]!==a[i+1]){
+          arr.push(a[i]);
+      }else{
+          val=i+1;
+      }}}
+  if(arr.length===0){
+      console.log(-1);
+  }else{
+      console.log(arr.join(""));
+  }
+});
 ---------------------------------------------------------------------------------------------
 
 4)
@@ -756,6 +795,41 @@ if(rev===a){
 });
 ---------------------------------------------------------------------------------------------
 
+35) Given a string S, print the encoded string by adding 3 to each character
+(a maps to d,b maps to e,c maps to f and so on).
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+RADAR
+OUTPUT
+UDGDU
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= userInput[0];
+let arr=[];
+for(let i=0;i<a.length;i++){
+   let b=a.charCodeAt(i);
+   let char=((b-65+3)%26)+65;
+   arr.push(String.fromCharCode(char));
+}
+console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+
 42) Given a string/sentence remove all the spaces and print the result.
 Input Size : |s| <= 1000000(complexity O(n))
 Sample Testcase :
@@ -930,6 +1004,32 @@ let a=userInput[0];
 });
 ---------------------------------------------------------------------------------------------
 
+51) Given a binary number convert it to hexadecimal.
+Sample Testcase :
+INPUT
+1100100
+OUTPUT
+64
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let num=userInput[0]
+  console.log(parseInt(num,2).toString(16));
+});
+---------------------------------------------------------------------------------------------
+
 52) Given a string S, print the reverse of the string after removing the vowels.If the resulting string is empty print '-1'.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
@@ -999,6 +1099,32 @@ for(let i=0;i<a.length;i++){
         arr.push(a[i]);
     }}
 console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+
+55) Given a binary number convert it into octal format.
+Sample Testcase :
+INPUT
+1100100
+OUTPUT
+144
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  console.log(parseInt(a,2).toString(8));
 });
 ---------------------------------------------------------------------------------------------
 
@@ -1588,6 +1714,44 @@ if(val===2 || val===0){
 });
 ---------------------------------------------------------------------------------------------
 
+89) Given a number N and an array of N elements, print the suffix sum of the array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+4
+2 4 4 2
+OUTPUT
+12 10 6 2
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= parseInt(userInput[0]);
+let b=userInput[1].split(" ").map(Number);
+let arr=[];
+for(let i=0;i<a;i++){
+    let num=0;
+    for(let j=i;j<a;j++){
+        num+=b[j];
+    }
+    arr.push(num);
+}
+console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 90) Find the word having maximum length in a given sentence and print it. If two words are of same length return the first occuring word of max-length.
 Input Size : |s| <= 100000
 Sample Testcase :
@@ -1622,6 +1786,42 @@ else if(a.length<b.length){
 else{
     console.log(a.join(""));
 }
+});
+---------------------------------------------------------------------------------------------
+
+92) Given a number N and an array of N strings, find the lexicographically smallest string.
+Input Size : N <= 1000
+Sample Testcase :
+INPUT
+3
+code
+learn
+practice
+OUTPUT
+code 
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= parseInt(userInput[0]);
+let arr=[];
+for(let i=1;i<=a;i++){
+    arr.push(userInput[i]);
+}
+arr=arr.sort((a,b)=>a-b);
+arr=arr[0];
+console.log(arr);
 });
 ---------------------------------------------------------------------------------------------
 
@@ -1768,6 +1968,42 @@ inp.on("close", () => {
             arr.push(b);
         }
     }
+console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+
+100) Given a string S ,print the vowels first and then consonants in the same order as they have occurred in the string.
+Input Size : N <= 10000
+Sample Testcase :
+INPUT
+GuVI
+OUTPUT
+uIGV
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0];
+let arr=[];
+for(let i=0;i<n.length;i++){
+    if(n[i]==='a' ||n[i]==='e' ||n[i]==='i' ||n[i]==='o' ||n[i]==='u' ||n[i]==='A' ||n[i]==='E' ||n[i]==='I' ||n[i]==='O' ||n[i]==='U'){
+        arr.push(n[i]);
+    }}
+for(let i=0;i<n.length;i++){
+    if(n[i]!=='a' &&n[i]!=='e' &&n[i]!=='i' &&n[i]!=='o' &&n[i]!=='u' &&n[i]!=='A' &&n[i]!=='E' &&n[i]!=='I' &&n[i]!=='O' &&n[i]!=='U'){
+        arr.push(n[i]);
+    }}
 console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
@@ -2046,6 +2282,35 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+127) Given 2 strings S1 and S2. Find if String2 is substring of String1. If it is print the index of the first occurrence. else print -1.
+Input Size : 1<= N <= 100000
+Sample Testcases :
+1)INPUT
+test123string
+123
+OUTPUT
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+let b=userInput[1];
+console.log(a.indexOf(b));
+});
+---------------------------------------------------------------------------------------------
+
 130) Given a number N followed by N numbers. Find the largest number which can be formed from the given numbers and print it.
 NOTE: Each number should be used exactly once.
 Input Size : 1 <= N <= 100000
@@ -2320,6 +2585,38 @@ temp=l[0];
 l[0]=l[1];
 l[1]=temp;
 console.log(l.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
+161) Given a string S of length N, find whether the given string is a palindrome using stack or linked list and print 'yes' otherwise print 'no'.
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+GuviGeek
+OUTPUT
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=userInput[0];
+let b=a.split("").reverse().join("");
+if(a===b){
+    console.log("yes");
+}else{
+    console.log("no");
+}
 });
 ---------------------------------------------------------------------------------------------
 
