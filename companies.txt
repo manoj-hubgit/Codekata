@@ -527,6 +527,41 @@ if(istrue){
 }});
 ---------------------------------------------------------------------------------------------
 
+35) Given a number N followed by N numbers. All the numbers in the given input appear 
+twice except for one number(ie one number appears only once in the given input). 
+Find the number which appears only once.
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+5
+1 2 1 3 2
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let n=userInput[1].split(" ").map(Number).sort((a,b)=>a-b);
+let count=0;
+for(let i=0;i<a;i+=2){
+    if(n[i]!==n[i+1]){
+        console.log(n[i]);
+        count++;
+    }}
+});
+---------------------------------------------------------------------------------------------
 43) Given a string S consisting of 2 words reverse the order of two words .
 Input Size : |S| <= 10000000
 Sample Testcase :
