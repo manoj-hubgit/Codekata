@@ -5,7 +5,7 @@ Each file represents a specific topic or problem, including both the question an
 
 Current Number of Code Solutions
 
-• Total number of coding problems solved: 404
+• Total number of coding problems solved: 405
 
 • Total number of coding problems solved in InputOutput       : 10
 
@@ -29,7 +29,7 @@ Current Number of Code Solutions
 
 • Total number of coding problems solved in Amazon            : 12
 
-• Total number of coding problems solved in Sorting           : 11
+• Total number of coding problems solved in Sorting           : 12
 
 • Total number of coding problems solved in Patterns          : 22
 

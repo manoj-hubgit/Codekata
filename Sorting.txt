@@ -476,8 +476,54 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-1) 
+30) In Counting sort, the frequencies of distinct elements of the array to be sorted is counted 
+and stored in an auxiliary array, by mapping its value as an index of the auxiliary array.
+
+In counting sort,
+
+Take two arrays, Count[] and Result[] and given array is input[].
+Count[] will store the counts of each integer in the given array.
+Update the Count[] so that each index will store the sum till previous step. 
+(Count[i]=Count[i] + Count[i-1]). Now updated Count[] array will reflect the actual position of
+ each integer in Result[].
+Now navigate the input array taking one element at a time, Count[input[i]] will tell 
+you the index position of input[i] in Result[]. When you do that, decrease the 
+count in Count[input[i]] by 1.
+For Example:
+You have to sort the given array of integer values in counting sort manner.
+
+Input Description:
+Given an integer 'n' which indicates the length of array and followed by space separated ‘n’ integer values.
+
+Where 1<=n<=100 and 1<=A[i]<=10000.
+
+Output Description:
+Print the resultant sorted array by using counting sort method.
+
+where 1<=A[i]<=10000.
+
+Sample Input :
+10
+2 1 4 6 7 2 4 1 2 11
+Sample Output :
+1 1 2 2 2 4 4 6 7 11
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let n=userInput[1].split(" ").map(Number).sort((a,b)=>a-b);
+console.log(n.join(" "));
+});
 ---------------------------------------------------------------------------------------------
