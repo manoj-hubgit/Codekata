@@ -1,0 +1,25 @@
+4) Given 2 numbers N,K print the number after performing bitwise left shift 'K' times.
+Input Size : 1 <= N, K <= 1000
+Sample Testcase :
+INPUT
+5 2
+OUTPUT
+20
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [n,k]=userInput[0].split(" ").map(Number);
+console.log(n<<k);
+});
