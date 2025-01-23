@@ -117,3 +117,36 @@ inp.on("close", () => {
   console.log(n>>k);
 });
 ---------------------------------------------------------------------------------------------
+
+10) Given a number N and an array of N elements, find the Bitwise XOR of the array elements.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+2
+2 4
+OUTPUT
+6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n=parseInt(userInput[0]);
+  let a=userInput[1].split(" ").map(Number);
+  let val=a[0];
+  for(let i=1;i<n;i++){
+      val=val^a[i];
+  }
+  console.log(val);
+});
+---------------------------------------------------------------------------------------------
