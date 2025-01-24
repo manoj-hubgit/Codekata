@@ -5,7 +5,7 @@ Each file represents a specific topic or problem, including both the question an
 
 Current Number of Code Solutions
 
-• Total number of coding problems solved: 415
+• Total number of coding problems solved: 416
 
 • Total number of coding problems solved in InputOutput       : 10
 
@@ -35,7 +35,7 @@ Current Number of Code Solutions
 
 • Total number of coding problems solved in Zen               : 35
 
-• Total number of coding problems solved in Bitwise           : 5
+• Total number of coding problems solved in Bitwise           : 6
 
 
 Structure

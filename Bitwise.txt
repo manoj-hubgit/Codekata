@@ -61,6 +61,42 @@ console.log(n<<k);
 
 ---------------------------------------------------------------------------------------------
 
+5) Print the position of first 1 from right to left, in binary representation of an Integer.
+Sample Testcase :
+INPUT
+18
+OUTPUT
+2
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let n=parseInt(userInput[0]);
+let position=1;
+while(n>0){
+    if(n%2===1){
+        console.log(position);
+        break;
+    }
+    n=n/2;
+    position++;
+}
+if(n===0){
+    console.log(-1);
+}
+});
+---------------------------------------------------------------------------------------------
+
 8) Given a number N and an array of N integers, find the maximum of Bitwise OR of all segments.
 Input Size : N <= 100000
 Sample Testcase :
