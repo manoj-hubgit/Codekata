@@ -1341,3 +1341,34 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+41) Given 2 numbers N,M find the GCD of N and M.If it cannot be found for given number(s) then print -1
+Sample Testcase :
+INPUT
+10 5
+OUTPUT
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let [n,k]=userInput[0].split(" ").map(Number);
+    let gcd=1;
+    if(n!==0 && k!==0){
+        for(let i=1;i<=Math.min(n,k) ;i++){
+        if(n%i===0 && k%i===0)gcd=i; 
+    }
+    console.log(gcd);
+    }else console.log(-1); 
+});
+---------------------------------------------------------------------------------------------
