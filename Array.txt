@@ -162,6 +162,45 @@ if(odd.length===0){
 });
 ---------------------------------------------------------------------------------------------
 
+10) You are given with an circular array .Your task is calculate the difference between two consecutive
+ number. And if difference is greater than ‘k’, print 1 else print 0
+Input Description:
+You are given two numbers ‘n’, ’m’. Next line contains n space separated integers.
+
+Output Description:
+Print 1 if the difference is greater than ‘m’.
+
+Sample Input :
+5 15
+50 65 85 98 35
+Sample Output :
+0 1 0 1 0
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let [n,k]=userInput[0].split(" ").map(Number);
+ let a=userInput[1].split(" ").map(Number);
+ let arr=[];
+ for(let i=0;i<n-1;i++){
+     (Math.abs(a[i]-a[i+1])>k)? arr.push(1):arr.push(0);
+ }
+ (Math.abs(a[n-1]-a[0])>k)? arr.push(1): arr.push(0);
+ console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 13) Rajesh and Ram are having a conflict on the maximum marks that they have scored in all the exams conducted in the past year. The one having scored the maximum gets a treat from the other. They decide to go through their test papers and record their highest marks. You are Rajesh’s best friend and as he has tutions to attend, he gives you all his test papers and asks you to find out the maximum marks that he has scored among all the marks in all exams. He promises you a treat if he wins the bet with Ram. Help Rajesh find out his highest marks.
 
 Constraints:
