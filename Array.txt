@@ -688,6 +688,39 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+33) Given a number N, print the sum of squares of all its digits.
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+12
+OUTPUT
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let inputStr = userInput[0].trim();
+  let sum = 0;
+  for (let char of inputStr) {
+    let digit = parseInt(char);
+    sum += digit * digit;
+  }
+  console.log(sum);
+});
+
+---------------------------------------------------------------------------------------------
+
 34) Given a number N print a right angled traingle structure with the starting level as single 1 and every immediate proceeding level with 2 more additional ones than the previous level .Repeat the pattern for N levels.
 Input Size : N <= 1000
 Sample Testcase :
