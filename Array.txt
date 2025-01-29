@@ -798,6 +798,53 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+36) You are given with an array. For each element present in the array your task is to print the next smallest than that number. If it is not smallest print -1
+
+
+Input Description:
+You are given a number ‘n’ representing size of array. And n space separated numbers.
+
+Output Description:
+Print the next smallest number present in array and -1 if no smallest is present
+
+Sample Input :
+7
+10 7 9 3 2 1 15
+Sample Output :
+7 3 3 2 1 -1 -1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let n=userInput[1].split(" ").map(Number);
+let arr=[];
+for(let i=0;i<a;i++){
+    count=0;
+    for(let j=i+1;j<a;j++){
+        if(n[i]>n[j]){
+            arr.push(n[j]);
+            count++;
+            break;
+        }}
+    if(count===0){
+        arr.push(-1);
+    }}
+console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 37) You are given given task is to print whether array is ‘majestic’ or not.A ‘majsetic’ array is an array whose sum of first three number is equal to last three number.
 
 Input Description:
