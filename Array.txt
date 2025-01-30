@@ -886,6 +886,57 @@ if(first===last){
 });
 ---------------------------------------------------------------------------------------------
 
+43) Prakash is bored and wants to spends his time. He starts rolling a die 
+(having the face values as 1, 2, 3, 4, 8, 15, 7, 9) and observes that some of the values keep repeating. Also while rolling n times, some face appear once only. 
+Find the number on its face.
+Constraints
+0 <   N  <= 100
+0 <= A[i] <= 100
+
+
+Input Description:
+The first line contains a positive integer N, denoting the size of the array. The second line contains N positive integers, denoting the face values that appeared when the die was rolled.
+
+Output Description:
+Print out the singly occurring number. print 0 if no numbers are repeating.
+
+Sample Input :
+5
+1 1 2 5 5
+Sample Output :
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=parseInt(userInput[0]);
+let a=userInput[1].split(" ").map(Number).sort((a,b)=>a-b);
+let arr=[];
+let count=1;
+let fir=a[0];
+for(let i=1;i<n;i++){
+    if(fir===a[i]) count++;
+else{
+    if(count===1) arr.push(fir);
+    count=1;
+    fir=a[i];
+}}
+if(arr.length===0) console.log(0);
+else console.log(arr.join(" ")); 
+});
+---------------------------------------------------------------------------------------------
+
 45) Given a string S, print 2 strings such that first string containing all characters in odd position(s) and other containing all characters in even position(s).
 Sample Testcase :
 INPUT
