@@ -1062,6 +1062,54 @@ console.log(b[a-2]);
 });
 ---------------------------------------------------------------------------------------------
 
+47) Your old mobile phone gets broken and so you want to purchase a new smartphone and decide to go 
+through all the online websites to find out which dealer has the best offer for a particular model. 
+You document the prices of N dealers. Dealer ids start from 0 and go up to N.  
+Find out which dealer has the best price for you.
+
+Constraints:
+
+1 <= N <= 100
+1 <= A[] <= 100000
+
+Input Description:
+Number of dealers followed by the price offered by each dealer
+
+Output Description:
+Dealer offering the best price.
+
+Sample Input :
+3
+10000 11200 12030
+Sample Output :
+Dealer0
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let n=userInput[1].split(" ").map(Number);
+let lowest = n[0];
+let val=0;
+  for(let i=1;i<a;i++){
+      if(lowest>n[i])val=i;   
+  }
+  console.log(`Dealer${val}`);
+});
+
+---------------------------------------------------------------------------------------------
 49) Given numbers A,B find A^B.
 Input Size : 1 <= A <= 5 <= B <= 50
 Sample Testcase :
