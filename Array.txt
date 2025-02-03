@@ -653,6 +653,53 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+29) A person saves his monthly saving according to given schema. He saves same amount of money which is equal to the money saved in immediate previous two months. Assume, initially he saved 1000 rupees and in first month he saved another 1000. Your task is to tell how much he had totally saved at the end of ‘n’ months
+
+
+Input Description:
+You will be given a number ‘n’->No. of months
+
+Output Description:
+Print the total savings at the end of ‘n’ months
+
+Sample Input :
+1
+Sample Output :
+2000
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=parseInt(userInput[0]);
+  if (n === 0) {
+    console.log(1000);
+    return;
+  }
+
+let lastSavings=1000;
+let currentSavings=1000;
+let totalSavings=2000;
+for(let i=2;i<=n;i++){
+    let newSavings=lastSavings+currentSavings;
+    totalSavings+=newSavings;
+    lastSavings=currentSavings;
+    currentSavings=newSavings;
+}
+console.log(totalSavings);
+});
+---------------------------------------------------------------------------------------------
+
 30) You are given a number with duplicate digits your task is to remove the immediate duplicate digits and print the result
 
 
