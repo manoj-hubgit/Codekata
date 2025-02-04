@@ -1235,6 +1235,40 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+51) Given a number N and an array of N integers, find the sum of all the negative numbers in the array.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+2
+3 0
+OUTPUT
+0
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let n=userInput[1].split(" ").map(Number);
+let sum=0;
+
+for(let i=0;i<a;i++){
+    if(n[i]<0) sum+=n[i];
+}
+console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
 55) Given 2 numbers N,K print the array after deleting the last K elements.
 Input Size : N,K <= 100000
 Sample Testcase :
