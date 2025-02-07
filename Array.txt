@@ -1698,6 +1698,47 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+76) Given a number N and an array of N elements, find the length of the longest repeating sequence of the elements.If no such sequence is found print -1
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+8
+1 2 2 2 3 4 5 6
+OUTPUT
+3
+
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a=parseInt(userInput[0]);
+  let n=userInput[1].split(" ").map(Number);
+  let arr=[];
+  let count=1;
+  for(let i=0;i<a-1;i++){
+      if(n[i]===n[i+1]){
+          count++;
+      }else{
+          arr.push(count);
+          count=1;
+      }
+  }
+    arr=arr.sort((a,b)=>b-a);
+    arr[0]!==1? console.log(arr[0]) : console.log(-1);
+});
+---------------------------------------------------------------------------------------------
+
 78) Given 2 strings S1 and s2, check whether they are case senitively equal without using any predefined function(case sensitive).If they are not same print 'no'
 Sample Testcase :
 INPUT
