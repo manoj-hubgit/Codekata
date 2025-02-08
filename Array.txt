@@ -1708,7 +1708,7 @@ OUTPUT
 3
 
 CODE:
-// Getting input via STDIN
+
 const readline = require("readline");
 
 const inp = readline.createInterface({
@@ -1737,6 +1737,12 @@ inp.on("close", () => {
     arr=arr.sort((a,b)=>b-a);
     arr[0]!==1? console.log(arr[0]) : console.log(-1);
 });
+---------------------------------------------------------------------------------------------
+77) 
+
+CODE:
+
+
 ---------------------------------------------------------------------------------------------
 
 78) Given 2 strings S1 and s2, check whether they are case senitively equal without using any predefined function(case sensitive).If they are not same print 'no'
@@ -1795,6 +1801,40 @@ inp.on("line", (data) => {
 inp.on("close", () => {
 let a=userInput[0];
     console.log(a.trim().replace(/\s+/g,' '));
+});
+---------------------------------------------------------------------------------------------
+
+82) Given an array of numbers and another number k. Find whether K exists and the number of time k repeats. If it does not exist just print no.
+Input Size : |N| <= 1000000
+Sample Testcase :
+INPUT
+5 3
+3 3 4 4 7
+OUTPUT
+yes 2
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [a,k]=userInput[0].split(" ").map(Number);
+let n=userInput[1].split(" ").map(Number);
+let count=0;
+for(let i=0;i<a;i++){
+    if(n[i]===k){
+        count++;
+    }
+}
+(count===0)?console.log("no"): console.log(`yes ${count}`);
 });
 ---------------------------------------------------------------------------------------------
 
