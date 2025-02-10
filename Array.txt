@@ -1738,10 +1738,41 @@ inp.on("close", () => {
     arr[0]!==1? console.log(arr[0]) : console.log(-1);
 });
 ---------------------------------------------------------------------------------------------
-77) 
+77) Given a number N in decimal convert it into binary value.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5
+OUTPUT
+101
 
 CODE:
+// Getting input via STDIN
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+let a=parseInt(userInput[0]);
+let arr=[];
+while(a>0){
+    arr.push(a%2);
+        a=Math.floor(a/2);
+     
+}
+
+  console.log(arr.reverse().join(""));
+});
 
 ---------------------------------------------------------------------------------------------
 
