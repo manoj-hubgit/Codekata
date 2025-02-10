@@ -1925,10 +1925,39 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-91) 
+91) Given a number N, find the number of ones in its binary representation.
+Sample Testcase :
+INPUT
+276
+OUTPUT
+3
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let arr=[];
+while(a>0){
+    arr.push(a%2);
+        a=Math.floor(a/2);
+}
+let count=0;
+for(let i=0;i<arr.length;i++){
+    if(arr[i]===1) count++; 
+}
+console.log(count);
+});
 ---------------------------------------------------------------------------------------------
 
 92) A number is given as input.Find the maximum number that can be formed using the digits.
