@@ -2018,6 +2018,36 @@ console.log(n);
 });
 ---------------------------------------------------------------------------------------------
 
+93) Given a number N, followed by an array of N elements,print 'yes' if it is a sorted array(either ascending or descending)otherwise print 'no'.
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+3
+2 3 7
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=userInput[1].split(" ").map(Number).join("");
+ let asc=a.split("").sort((a,b)=>a-b).join("");
+ let des=a.split("").sort((a,b)=>b-a).join("");
+ (a===asc || a===des)?console.log("yes"): console.log("no");
+});
+---------------------------------------------------------------------------------------------
+
 97) Given 2 numbers N and K.Print the number of occurrences of K in N.If K is not found print '-1'.
 Input Size : 1 <= N <= 100000, 0 <= K <= 9
 Sample Testcase :
