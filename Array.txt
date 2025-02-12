@@ -2117,6 +2117,35 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+99) Given an array, find the maximum difference between any two elements.
+Input Size : N <= 1000000(complexity O(n) or O(nlogn))
+Sample Testcase :
+INPUT
+5
+1 2 3 4 5
+OUTPUT
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  
+  let a=userInput[1].split(" ").map(Number).sort((a,b)=>a-b);
+  console.log(a[a.length-1]-a[0]);
+});
+---------------------------------------------------------------------------------------------
+
 100) Given a number 'N' print the sum of each digit to the power of number of digits in given input.
 Example :
 Input => 1234
