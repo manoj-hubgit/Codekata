@@ -2333,6 +2333,48 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+119) Given an array of N elements,find the maximum length of increasing continuous sub-array.If it is not found print '-1'.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5
+1 2 3 2 1
+OUTPUT
+3
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  
+let a= parseInt(userInput[0]);
+let b=userInput[1].split(" ").map(Number);
+let arr=[];
+let count=1;
+for(let i=0;i<a-1;i++){
+    if(b[i]<b[i+1]) count++;
+    else{
+        arr.push(count);
+        count=1;
+    }
+}
+arr.push(count);
+arr=arr.sort((a,b)=>b-a);
+(arr[0]===1)? console.log(-1) : console.log(arr[0]);
+});
+---------------------------------------------------------------------------------------------
+
 126) You are given with string of words,we have to arrange them in reverse saturated order.
 Input Description:
 You are given a string ‘s’.
