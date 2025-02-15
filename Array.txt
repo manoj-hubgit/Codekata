@@ -3256,6 +3256,42 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+201) Given a number N, print all prime numbers less than N(in ascending order).
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+10
+OUTPUT
+2 3 5 7
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let arr=[];
+
+for(let i=2;i<a;i++){
+ let isprime=true;
+    for(let j=2;j<i;j++){
+        if(i%j===0) isprime=false;   
+    }
+    if(isprime) arr.push(i);
+}
+console.log(arr.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 210) Given a string S convert each characters of the string into ASCII values and print the sum of the numbers.
 Input Size : |s| <= 100000
 Sample Testcase :
