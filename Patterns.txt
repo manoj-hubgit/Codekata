@@ -1170,6 +1170,56 @@ inp.on("close", () => {
  }});
 ---------------------------------------------------------------------------------------------
 
+48) Write a code to generate a half pyramid number pattern.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100
+
+Output Description:
+Print the number half pyramid pattern based on the given integer R.
+
+Sample Input :
+5
+Sample Output :
+1
+2 4
+1 3 5
+2 4 6 8
+1 3 5 7 9
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=parseInt(userInput[0]);
+ let arr=[];
+ 
+ for(let i=0;i<a;i++){
+     let start=(i%2===0) ? 1 :2;
+     
+     for(let j=0;j<=i;j++){
+         arr.push(start);
+         start+=2;
+     }
+     console.log(arr.join(" "));
+     arr=[];
+ }
+});
+
+---------------------------------------------------------------------------------------------
+
 54) Write a code to generate a half pyramid pattern of mulitples of the given number.
 
 Input Description:
