@@ -34,6 +34,53 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+5) You are provided with a number ’n’. Your task is to tell whether that number is saturated. A saturated number is a number which is made by exactly two digits.
+
+
+Input Description:
+You are given with a number n.
+
+Output Description:
+Print Saturated if it is saturated else it is Unsaturated
+
+Sample Input :
+121
+Sample Output :
+Saturated
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let n=userInput[0];
+let arr=[];
+ for(let i=0;i<n.length;i++){
+     let digit = n[i];
+     if(!arr.includes(digit)) arr.push(n[i]);
+     
+     if (arr.length > 2) {
+      console.log("Unsaturated");
+      return;
+    }
+ }
+   if(arr.length === 2) {
+    console.log("Saturated");
+  } else {
+    console.log("Unsaturated");
+  }
+});
+---------------------------------------------------------------------------------------------
+
 10) You are given a task to tell whether the number is pure or not. A pure number is a number whose sum of digits is multiple of 3.
 
 O(1) time and O(1) space
