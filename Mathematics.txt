@@ -81,6 +81,51 @@ let arr=[];
 });
 ---------------------------------------------------------------------------------------------
 
+7) Simi is learning about palindromic numbers. Her teacher gave him the task to count all palindromic numbers present in that range.Simi has told you about this and want your help. You design an algorithm in order to help simi.
+
+
+Input Description:
+You will be given a number ‘n’
+
+Output Description:
+Print the count of all palindromic numbers till ‘n’(inclusive)
+
+Sample Input :
+5
+Sample Output :
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let n=userInput[0];
+    let count=0;
+    
+    function isPalindrome(num){
+        let str=num.toString();
+        return str===str.split("").reverse().join();
+    }
+    for(let i=1;i<=n;i++){
+        if(isPalindrome(i)){
+            count++;
+        }
+    }
+    console.log(count);
+
+});
+---------------------------------------------------------------------------------------------
+
 10) You are given a task to tell whether the number is pure or not. A pure number is a number whose sum of digits is multiple of 3.
 
 O(1) time and O(1) space
