@@ -349,10 +349,33 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-18) 
+18) Given a number N, find the nearest greater multiple of 10.
+Input Size : N <= 10000
+Sample Testcase :
+INPUT
+3
+OUTPUT
+10
 
 CODE:
+const readline = require("readline");
 
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a = parseInt(userInput[0]);
+let result = Math.ceil(a / 10) * 10;
+console.log(result);
+
+});
 ---------------------------------------------------------------------------------------------
 
 19) Given 3 numbers N , L and R. Print 'yes' if N is between L and R else print 'no'.
