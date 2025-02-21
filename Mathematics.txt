@@ -686,6 +686,39 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+33) Given a number N, find its next immediate greater power of 2(i.e 2^1, 2^2, 2^3...).
+Input Size : N <= 1000
+Sample Testcase :
+INPUT
+4
+OUTPUT
+8
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let n = parseInt(userInput[0]);
+    let power =1;
+    
+    while(power<=n){
+        power*=2;
+    }
+    console.log(power);
+});
+
+---------------------------------------------------------------------------------------------
+
 37)  You are given a ‘true’ string. String is called true if weight of string is multiple of 8. 
 Your task is to tell whether a string can be declared True or Not. 
 Weight of string is the sum of ASCII value of Vowel character(s) present in the string.
