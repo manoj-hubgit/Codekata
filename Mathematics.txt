@@ -719,6 +719,36 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+35) Write a program to calculate the total surface area and volume of cuboid. 
+Input contains three space separated positive integers L, B, H denoting the length, 
+width and height of cuboid respectively.
+Sample Testcase :
+INPUT
+1 2 3
+OUTPUT
+22 6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let [l,w,h]=userInput[0].split(" ").map(Number);
+    let vol=l*w*h;
+    let sur=2*(l*w + w*h + l*h);
+    console.log(sur +" "+vol);
+});
+---------------------------------------------------------------------------------------------
+
 37)  You are given a ‘true’ string. String is called true if weight of string is multiple of 8. 
 Your task is to tell whether a string can be declared True or Not. 
 Weight of string is the sum of ASCII value of Vowel character(s) present in the string.
