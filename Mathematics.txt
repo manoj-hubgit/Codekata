@@ -925,6 +925,39 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+43) Given a number N, check whether it is prime or not. Print 'yes' if it is prime else print 'no'.
+Sample Testcase :
+INPUT
+123
+OUTPUT
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let isprime=true;
+for(let i=2;i<=Math.sqrt(a);i++){
+    if(a%i===0){
+        isprime=false;
+        break;
+    }
+}
+console.log((isprime) ? "yes" : "no" );
+});
+---------------------------------------------------------------------------------------------
+
 44) Given base(B) and height(H) of a triangle find its area.
 Input Size : N <= 1000000
 Sample Testcase :
