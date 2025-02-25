@@ -1279,6 +1279,33 @@ console.log(a[0]);
 });
 ---------------------------------------------------------------------------------------------
 
+57) Given 3 numbers A,B,C find the sum of Arithmetic Series with a=A, d=B and n=C
+Sample Testcase :
+INPUT
+1 1 2
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [a,b,c]=userInput[0].split(" ").map(Number);
+let sum=(c/2)*(2*a+(c-1)*b);
+console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
 62) Given a number N, print its reverse.
 Input Size : n <= 1000
 Sample Testcase :
