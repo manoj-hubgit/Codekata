@@ -1306,6 +1306,37 @@ console.log(sum);
 });
 ---------------------------------------------------------------------------------------------
 
+58) Given a number N, find the factorial of N.
+Input Size : 1 <= N <= 25
+Sample Testcase :
+INPUT
+5
+OUTPUT
+120
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a=parseInt(userInput[0]);
+let val=1;
+for(let i=2;i<=a;i++){
+    val*=i;
+}
+    console.log(val);
+});
+---------------------------------------------------------------------------------------------
+
 62) Given a number N, print its reverse.
 Input Size : n <= 1000
 Sample Testcase :
