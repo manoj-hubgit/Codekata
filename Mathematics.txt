@@ -1337,6 +1337,35 @@ for(let i=2;i<=a;i++){
 });
 ---------------------------------------------------------------------------------------------
 
+59) Given a string S.Validate if a given string is numeric.print 'yes' if it is a numeric otherwise
+print 'no'.
+Sample Testcase :
+INPUT
+guvigeeks
+OUTPUT
+no
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+
+let a=userInput[0];
+let isNumeric= !isNaN(a) && !isNaN(parseFloat(a));
+console.log((isNumeric)?"yes":"no");
+});
+---------------------------------------------------------------------------------------------
+
 62) Given a number N, print its reverse.
 Input Size : n <= 1000
 Sample Testcase :
