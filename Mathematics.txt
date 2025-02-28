@@ -1393,6 +1393,34 @@ let a=userInput[0].split("").reverse().join("");
 });
 ---------------------------------------------------------------------------------------------
 
+77) Given a hexadecimal number convert it into decimal.
+Sample Testcase :
+INPUT
+293
+OUTPUT
+659
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ 
+ 
+let val= parseInt(userInput[0],16);
+console.log(val);
+});
+---------------------------------------------------------------------------------------------
+
 78) Given an array of N elements switch(swap) the element with the adjacent element and print the output.
 Sample Testcase :
 INPUT
