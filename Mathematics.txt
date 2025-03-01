@@ -1556,6 +1556,41 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+83) Given 2 numbers N,K print the value of nPk(P-Permutation).
+Input Size : K <= N <= 10
+Sample Testcase :
+INPUT
+5 2
+OUTPUT
+20
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ 
+let [n,k]=userInput[0].split(" ").map(Number);
+let nfact=1;
+let nminr=1
+for(let i=1;i<=n;i++){
+    nfact*=i;
+}
+for(let i=1;i<=(n-k);i++){
+    nminr*=i;
+}
+console.log(nfact/nminr);
+});
+
 86) Given 3 numbers A,B,C print 'yes' if they can form the sides of a right angled triangle,otherwise 'no'.
 Input Size : A,B,C <= 100000
 Sample Testcase :
