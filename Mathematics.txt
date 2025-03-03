@@ -1657,6 +1657,34 @@ inp.on("close", () => {
       console.log("no")
   }
 });
+
+---------------------------------------------------------------------------------------------
+
+88) Given a number N, check whether it is a power of 2.
+Sample Testcase :
+INPUT
+2048
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let a=parseInt(userInput[0]);
+ if(a>0 && (a&(a-1))===0) console.log("yes");
+ else console.log("no");
+});
 ---------------------------------------------------------------------------------------------
 
 91) How many possible ways are to shuffle given number of playing cards?.
