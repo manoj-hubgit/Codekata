@@ -1754,6 +1754,37 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+95) Given 2 numbers a and B.Print the value of a!/b!.
+Input Size : A,B <= 10000 and A-B <= 5
+Sample Testcase :
+INPUT
+4 2
+OUTPUT
+12
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let [a,b]=userInput[0].split(" ").map(Number);
+ let result = 1;
+ for(let i=a;i>b;i--){
+     result *= i;
+ }
+ console.log(result);
+});
+---------------------------------------------------------------------------------------------
+
 108) Given a range[L,R], print the sum of all the odd numbers within the range(inclusive of L and R).
 Sample Testcase:
 INPUT
