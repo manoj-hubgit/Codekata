@@ -597,6 +597,45 @@ console.log(a.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
+22) You are given a string ‘s’. Your task is to tell whether string is beautiful or not.
+A beautiful string is a string in which String starts with ‘a’ or ‘A’ and 
+middle element is either ‘m’ or ‘M’ and last element is ‘z’or ‘Z’
+
+Input Description:
+You are given a string ‘s’.
+
+Output Description:
+Print 1 if string is beautiful and 0 if it is not
+
+Sample Input :
+Amz
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  
+    let a = userInput[0].split("");
+   if((a[0]==="a" || a[0]==="A") && 
+   (a[Math.floor(a.length/2)]=== "m" || a[Math.floor(a.length/2)]=== "M")
+    && (a[a.length-1]==="z" || a[a.length-1]==="Z")){
+       console.log(1);
+   }else console.log(0);
+});
+---------------------------------------------------------------------------------------------
+
 23)You are given some words all in lower case letters your task is to print them in sorted order.
 
 Input Description:
