@@ -810,6 +810,42 @@ console.log(a.length);
 });
 ---------------------------------------------------------------------------------------------
 
+32) You are given two strings . Your task is to tell whether the pair of strings is panagram.
+A pair of strings are said to be panagram if they both are palindrome and are anagram of each other.
+
+
+Input Description:
+You will be given two strings ‘s1’ and ‘s2’
+
+Output Description:
+Print 1 if they are panagram and 0 if they are not
+
+Sample Input :
+nitin intni
+Sample Output :
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let [a,b] = userInput[0].split(" ");
+     a=a.split("").sort().join("");
+     b=b.split("").sort().join("");
+    console.log((a===b)? 1 : 0 );
+});
+---------------------------------------------------------------------------------------------
+
 33) Given a day, print 'yes' if it is a holiday otherwise print'no'.Assume that weekend days are holidays
 Sample Testcase :
 INPUT
