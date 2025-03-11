@@ -1103,6 +1103,39 @@ inp.on("close", () => {
   console.log(arr.join(""))
 });
 ---------------------------------------------------------------------------------------------
+
+47) Given a string two strings S1 and S2, remove characters from the S1 which are present in the S2.
+If S1 becomes empty then print -1
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+GUVI GEEK
+OUTPUT
+UVI
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let [a,b]= userInput[0].split(" ");
+ let str="";
+ for(let i=0;i<a.length;i++){
+    if(!b.includes(a.charAt(i))) str+=a[i];
+}
+ console.log((str.length===0)? -1 : str);
+});
+---------------------------------------------------------------------------------------------
+
 49) Given a string S, print the 1st and 3rd character of the string (chracter index starts from 1).
 Input Size : 1 <= N <= 100000
 Sample Testcase :
