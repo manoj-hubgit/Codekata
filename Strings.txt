@@ -1547,6 +1547,40 @@ if(count===a){
 });
 ---------------------------------------------------------------------------------------------
 
+65) Given a sentence interchange the between the word 'and'.
+Input Size : |S| <= 1000000
+Sample Testcase :
+INPUT
+jack and jill went up and down to get water
+OUTPUT
+jill and jack went down and up to get water
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= userInput[0].split(" ");
+
+for(let i=0;i<a.length;i++){
+    if(a[i+1]==="and"){
+        [a[i],a[i+2]]=[a[i+2],a[i]];
+        i+=2;
+    }   
+}
+console.log(a.join(" "));
+});
+---------------------------------------------------------------------------------------------
+
 67) Given 2 strings.check if the second string is a substring of the first string.Print 'yes' if there exists a valid substring otherwise print 'no'.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
