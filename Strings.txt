@@ -1581,6 +1581,33 @@ console.log(a.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
+66) Given 2 strings,check whether they have any common characters.If found print 'yes' else print 'no'.
+Input Size : |s| <= 100000(O(n))
+Sample Testcase :
+INPUT
+guvi guvigeeks
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let [a,b]= userInput[0].split(" ");
+  (b.includes(a))?console.log("yes"):console.log("no");
+});
+---------------------------------------------------------------------------------------------
+
 67) Given 2 strings.check if the second string is a substring of the first string.Print 'yes' if there exists a valid substring otherwise print 'no'.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
