@@ -1703,7 +1703,40 @@ console.log(n);
 });
 ---------------------------------------------------------------------------------------------
 
-73) Given a String S and a string P, find if P is a substring of S. Print 'yes' if it is a substring else 'no'.
+72) Given a string S, retain the character(s) once irrespective of number of times it occurs 
+in the given string.
+Input Size : |S| <= 100000
+Sample Testcase :
+INPUT
+aabbaa
+OUTPUT
+ab
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let a= userInput[0].split("");
+  let arr=[];
+  for(let i=0;i<a.length;i++){
+      if(!arr.includes(a[i])) arr.push(a[i]);
+  }
+console.log(arr.join(""));
+});
+---------------------------------------------------------------------------------------------
+
+73) Given a String S and a string P, find if P is a substring of S. Print 'yes' if it is a substring 
+else 'no'.
 Input Size : |s| <= 10000 |p| <= 1000.
 Sample Testcase :
 INPUT
