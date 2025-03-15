@@ -1807,6 +1807,36 @@ if(count===0){
 }
 });
 ---------------------------------------------------------------------------------------------
+
+75) Given a string S of length N, find if it can be a valid Hexadecimal representation of a number.
+If it i0s valid,print 'yes' otherwise print 'no'.
+Input Size : N <= 10000
+Sample Testcase :
+INPUT
+1AE23
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= userInput[0];
+      const hexPattern = /^[0-9A-Fa-f]+$/;
+console.log((hexPattern.test(a))?"yes":"no");
+});
+---------------------------------------------------------------------------------------------
+
 76) Given 2 strings and a number K, check whether they differ exactly by K characters.
 Input Size : |s| <= 100000(complexity O(nlogn) or O(n))
 Sample Testcase :
