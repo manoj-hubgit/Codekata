@@ -1915,6 +1915,45 @@ let val=0;
    }
 });
 ---------------------------------------------------------------------------------------------
+
+81) Given a string 'S' and a character 'K', find at what position the character 'K' occurs for the 
+first time in 'S'.(Assume the index of string starts at 1).If the character is not found in 'S' then 
+print -1
+Input Size : |s| <= 100000
+Sample Testcase :
+INPUT
+codekata a
+OUTPUT
+6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let [a,b]= userInput[0].split(" ");
+a=a.toLowerCase();
+let c=0;
+let isFound=false;
+for(let i=0;i<a.length;i++){
+    c++;
+    if(a.charAt(i)===b){
+        isFound=true;
+    break;
+    }}
+console.log((!isFound)?-1:c);
+});
+---------------------------------------------------------------------------------------------
+
 82) Given a string S, print 'yes' if the strings 'GUVI' and 'GEEK' is present case-sensitively in the string else print 'no'.
 Input Size : 1 <= 100
 Sample Testcase :
