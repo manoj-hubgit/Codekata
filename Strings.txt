@@ -1985,7 +1985,37 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
-85) Given 2 strings S and X print the word position of X in S.(word count starts from 1).If the given word doesn't exists in S print '-1'.
+83) Given a number N, print the sum of the squares of its digits.
+Input Size : 1 <= N <= 1000000000000000000
+Sample Testcase :
+INPUT
+19
+OUTPUT
+82
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let a= userInput[0].split("");
+let sum=0;
+for(let i=0;i<a.length;i++) sum+=a[i]*a[i];
+console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
+85) Given 2 strings S and X print the word position of X in S.(word count starts from 1).
+If the given word doesn't exists in S print '-1'.
 Input Size : 1 <= |s|, |x| <= 1000
 Sample Testcase :
 INPUT
