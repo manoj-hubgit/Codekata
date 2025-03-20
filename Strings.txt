@@ -2852,8 +2852,40 @@ inp.on("close", () => {
   let newString=a.replace(/\s+/g,' ').trim();
   console.log(newString);
 });
----------------------------------------------------------------------------------------------
 
+---------------------------------------------------------------------------------------------
+136) Swagger and Rock are playing a word game. They need to check the two strings use the same 
+base alphabets. Two strings are said to have same base alphabets 
+if they use the same characters to form the word. 
+eg: rescue and curse have same base alphabets - c,e,r,s,u.If it so print 'true' else print 'false'.
+Input Size : |S| <= 1000000
+Sample Testcase :
+INPUT
+rescue curse
+OUTPUT
+true
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ let [a,b]= userInput[0].split(" ");
+ let c=new Set(a);
+ let d=new Set(b);
+ console.log(c.size===d.size && [...c].sort().join("")===[...d].sort().join("")?"true":"false");
+
+});
+---------------------------------------------------------------------------------------------
 138) Given a string S of length N, reverse every word in place.
 Input Size : 1 <= N <= 100000
 Sample Testcase :
