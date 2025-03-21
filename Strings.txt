@@ -3108,7 +3108,51 @@ if(a===b){
 });
 ---------------------------------------------------------------------------------------------
 
-168) Given 2 strings S and A find the longest common substring.If no common substring is found print '-1'
+167) Given an arraylist A of string type which has name#mark1#mark2#mark3 format. 
+Retrieve the name of the student who has scored max marks(total of three).
+for eg: input: {'arun#12#12#12','deepak#13#12#12'}
+output: Deepak
+Input Size : A <= 100000
+Sample Testcase :
+INPUT
+arun#12#12#12
+deepak#13#12#12
+OUTPUT
+deepak
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+
+let maxMark=-1;
+let topStudent="";
+
+for(let record of userInput){
+    let data=record.split("#");
+    let name=data[0];
+     let totalMarks = parseInt(data[1]) + parseInt(data[2]) + parseInt(data[3]);
+     if (totalMarks > maxMark) {
+      maxMark = totalMarks;
+      topStudent = name;
+    }
+}
+ console.log(topStudent);
+});
+---------------------------------------------------------------------------------------------
+
+168) Given 2 strings S and A find the longest common substring.If no common substring is 
+found print '-1'
 Input Size : |s| <= 1000, |A| <= 1000
 Sample Testcase :
 INPUT
