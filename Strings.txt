@@ -3197,6 +3197,35 @@ inp.on("close", () => {
  }
 });
 ---------------------------------------------------------------------------------------------
+174)Given a string S, check whether the given string is an anagram of the string “dhoni”. 
+Anagram of a given string is a permutation of the set of characters present in the string. 
+For example for the string “baba” aabb and baab are anagrams while aaab and bacd are not.
+Input Size : |S|<=100000
+Example:
+INPUT
+inohd
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+const target="dhoni";
+const s=userInput[0];
+console.log((target.split("").sort().join("")===s.split("").sort().join("")) ?"yes":"no");
+});
+---------------------------------------------------------------------------------------------
 
 179) Given a number N and N strings of length atmost M, print the longest common prefix.
 Input Size : 1<=N, M<=100000
