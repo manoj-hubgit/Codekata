@@ -207,7 +207,8 @@ inp.on("close", () => {
   console.log(total);
 });
 ---------------------------------------------------------------------------------------------
-7) Given a string S ,print the vowels first and then consonants in the same order as they have occurred in the string.
+7) Given a string S ,print the vowels first and then consonants in the same order as 
+they have occurred in the string.
 Input Size : N <= 10000
 Sample Testcase :
 INPUT
@@ -244,7 +245,8 @@ console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
-9) Given an array N, sort it in ascending order till it reaches kth elements and after that sort it in descending order.
+9) Given an array N, sort it in ascending order till it reaches kth elements and after that 
+sort it in descending order.
 Input Size : N <= 100000
 Sample Testcase :
 INPUT
@@ -284,7 +286,41 @@ console.log(arr1.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
-13) Given a number N followed by a list of N numbers. Write a program to reverse the list and print the list.
+10) Given a number N and array of N integers, print the difference between the indices of smallest
+and largest number(if there are multiple occurances, consider the first occurance).
+Input Size : |N| <= 1000000
+Sample Testcase :
+INPUT
+5
+3 5 4 4 7
+OUTPUT
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+   const arr = userInput[1].split(" ").map(Number);
+   let min=Math.min(...arr);
+   let max=Math.max(...arr);
+   let minIndex = arr.indexOf(min);
+    let maxIndex = arr.indexOf(max);
+    console.log(maxIndex-minIndex);
+});
+---------------------------------------------------------------------------------------------
+
+13) Given a number N followed by a list of N numbers. Write a program to reverse the list 
+and print the list.
 Input Size : 1 <= N <= 10000
 Sample Testcases :
 INPUT
@@ -348,7 +384,9 @@ console.log(1/2*(a*b));
 });
 ---------------------------------------------------------------------------------------------
 
-18) Given a number N print a right angled traingle structure with the starting level as single 1 and every immediate proceeding level with 2 more additional ones than the previous level .Repeat the pattern for N levels.
+18) Given a number N print a right angled traingle structure with the starting level as single 1 
+and every immediate proceeding level with 2 more additional ones than the previous level .
+Repeat the pattern for N levels.
 Input Size : N <= 1000
 Sample Testcase :
 INPUT
@@ -385,7 +423,8 @@ inp.on("close", () => {
   }});
 ---------------------------------------------------------------------------------------------
 
-21) Given a number N and an array of N strings,Print yes, if all strings have atleast one vowel in them otherwise print no.
+21) Given a number N and an array of N strings,Print yes, if all strings have atleast 
+one vowel in them otherwise print no.
 Input Size : N <= 1000
 Sample Testcase :
 INPUT
@@ -427,7 +466,8 @@ if(count===a){
 });
 ---------------------------------------------------------------------------------------------
 
-23) Given a number n followed by n numbers. Find the numbers which are equal to their index value and print them in sorted order. If no such numbers are present print '-1' without quotes.
+23) Given a number n followed by n numbers. Find the numbers which are equal to their 
+index value and print them in sorted order. If no such numbers are present print '-1' without quotes.
 Input Size : 1 <= n <= 100000
 Sample Testcases :
 INPUT
@@ -465,7 +505,9 @@ if(arr.length===0){
 });
 ---------------------------------------------------------------------------------------------
 
-30) Given a string 'S', sort the characters based on the frequency(highest and lowest) and print the resultant string.(Note:If the frequency of different character is same then sort based on alphabetical order).
+30) Given a string 'S', sort the characters based on the frequency(highest and lowest) 
+and print the resultant string.(Note:If the frequency of different character is same then 
+sort based on alphabetical order).
 Input Size : 1 <= S <= 100000
 Sample Testcases :
 INPUT
@@ -492,7 +534,8 @@ console.log(a.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
-32) Given a sentence S.check whether it is in camelcase.print 'yes' if it is in camelcase otherwise print 'no'.
+32) Given a sentence S.check whether it is in camelcase.print 'yes' if it is in camelcase 
+otherwise print 'no'.
 input size : |s| <= 100000
 Sample Testcase :
 INPUT
@@ -593,7 +636,8 @@ console.log(l.join(" "));
 });
 ---------------------------------------------------------------------------------------------
 
-45) Given a string S of length N, find whether the given string is a palindrome using stack or linked list and print 'yes' otherwise print 'no'.
+45) Given a string S of length N, find whether the given string is a palindrome using stack or 
+linked list and print 'yes' otherwise print 'no'.
 Input Size : 1 <= N <= 100000
 Sample Testcases :
 INPUT
@@ -625,7 +669,8 @@ if(a===b){
 });
 ---------------------------------------------------------------------------------------------
 
-51) Divide two given integers A and B without using multiplication, division and mod operator. If it is overflow, return MAX_INT.
+51) Divide two given integers A and B without using multiplication, division and mod operator. 
+If it is overflow, return MAX_INT.
 Sample Testcases :
 INPUT
 10 5
@@ -657,7 +702,8 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
-55) Given two numbers N,K(N>=K) and an array of N elements, write a program to find the Kth largest element.
+55) Given two numbers N,K(N>=K) and an array of N elements, write a program to find the 
+Kth largest element.
 Input Size : 1 <= K <= N <= 100000
 Sample Testcases :
 INPUT
@@ -771,7 +817,8 @@ for(let i=0;i<a.length;i+=3){
 });
 ---------------------------------------------------------------------------------------------
 
-60) Given 2 numbers N and K followed by N numbers such that sum of two pairs in the N numbers results K value, if it exist print 'yes' otherwise 'no'.
+60) Given 2 numbers N and K followed by N numbers such that sum of two pairs in the N numbers 
+results K value, if it exist print 'yes' otherwise 'no'.
 Input Size : N<=100000
 Example:
 INPUT
@@ -845,6 +892,3 @@ for(let i=0;i<a.length;i++){
 console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
-  
-  CODE:
- ---------------------------------------------------------------------------------------------
