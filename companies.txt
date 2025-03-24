@@ -384,6 +384,37 @@ console.log(1/2*(a*b));
 });
 ---------------------------------------------------------------------------------------------
 
+15) Print the position of first 1 from left to right, in binary representation of product of 2 
+integers after the first one.
+Sample Testcase :
+INPUT
+18 2
+OUTPUT
+4
+CODE:
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+    let[a,b]= userInput[0].split(" ").map(Number);
+    let product=a*b;
+    let binary = product.toString(2);
+    let firstOneIndex = binary.indexOf('1') + 1;
+  let nextOneIndex = binary.indexOf('1', firstOneIndex);
+  console.log(nextOneIndex + 1);
+});
+---------------------------------------------------------------------------------------------
+
 18) Given a number N print a right angled traingle structure with the starting level as single 1 
 and every immediate proceeding level with 2 more additional ones than the previous level .
 Repeat the pattern for N levels.
