@@ -536,6 +536,44 @@ if(arr.length===0){
 });
 ---------------------------------------------------------------------------------------------
 
+27) Given a number N and an array of N elements, print the number of lucky numbers in the array.
+Lucky number: N*I is also present in the array then the number is lucky where N is the number of 
+elements in the array and I is the position of the element.(1 based indexing)
+Input Size : 1 <= N, I <= 100000
+Sample Testcases :
+INPUT
+5
+1 2 3 4 5
+OUTPUT
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+let N=parseInt(userInput[0]);
+let arr=userInput[1].split(" ").map(Number);
+let numSet = new Set(arr);
+let luckyCount=0;
+for (let i = 1; i <= N; i++) {
+    if (numSet.has(N * i)) {
+      luckyCount++;
+    }}
+  console.log(luckyCount);
+
+});
+---------------------------------------------------------------------------------------------
+
 30) Given a string 'S', sort the characters based on the frequency(highest and lowest) 
 and print the resultant string.(Note:If the frequency of different character is same then 
 sort based on alphabetical order).
