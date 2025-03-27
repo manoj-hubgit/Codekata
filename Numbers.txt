@@ -40,6 +40,60 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+8) You are given an array of digits. Your task is to print the digit with maximum frequency.
+
+
+Input Description:
+You are given length of array ’n’,next line contains n space separated numbers.
+
+Output Description:
+Print the number with maximum frequency. If two number have equal freqency prin the number that comes first
+
+Sample Input :
+7
+1 2 3 4 4 4 5
+Sample Output :
+4
+
+code:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+ 
+ let n = parseInt(userInput[0]); // Read the length of the array
+  let arr = userInput[1].split(" ").map(Number);
+
+  let maxFreq = 0;
+  let maxNum = arr[0]; // Store the first number by default
+
+  for (let i = 0; i < n; i++) {
+    let count = 0; // Count occurrences of arr[i]
+
+    for (let j = 0; j < n; j++) {
+      if (arr[i] === arr[j]) {
+        count++;
+      }
+    }
+
+    if (count > maxFreq) {
+      maxFreq = count;
+      maxNum = arr[i];
+    }
+  }
+console.log(maxNum);
+});
+---------------------------------------------------------------------------------------------
+
 12) Prateek finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
 
 Input Description:
