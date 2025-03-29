@@ -100,6 +100,50 @@ for (let i = 0; i < 2 * N; i += 2){
 });
 ---------------------------------------------------------------------------------------------
 
+3) You are given a number ‘n’. Your task is to create the smallest number possible using the 
+digits of number. The number should be of the same length as the orignal input number.
+
+Input Description:
+You are given a number ‘n’,
+
+Output Description:
+Print the smallest possible number of same length
+
+Sample Input :
+123456789123456789
+Sample Output :
+112233445566778899
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let number = userInput[0];
+
+  let sortedDigits = number.split("").sort();
+  if (sortedDigits[0] === "0") {
+    for (let i = 1; i < sortedDigits.length; i++) {
+      if (sortedDigits[i] !== "0") {
+        [sortedDigits[0], sortedDigits[i]] = [sortedDigits[i], sortedDigits[0]];
+        break;
+      }
+    }
+  }
+  console.log(sortedDigits.join(""));
+});
+
+---------------------------------------------------------------------------------------------
+
 6) Mr. Kanga had a PhD in Heap Algorithms. Today, he was given a list of strings in random order. 
 Help him sort the list in increasing order(lexicographically increasing) using heap sort.
 Input Description:
