@@ -972,7 +972,53 @@ inp.on("close", () => {
 });
 ------------------------------------------------------------------------------------
 
-34) Given a number n and m followed by n numbers remove the number m in the n number and print the remaining n number if m is not found print -1
+32) Given a string find the number of special characters if their no special characters print -1
+
+
+Input Description:
+Given a string
+
+Output Description:
+Print number of special characters or -1
+
+Sample Input :
+Guvi Geek
+Sample Output :
+-1
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let val = userInput[0].split(""); 
+  let count = 0;
+
+  for (let i = 0; i < val.length; i++) {
+    if (!((val[i] >= "a" && val[i] <= "z") || 
+          (val[i] >= "A" && val[i] <= "Z") || 
+          (val[i] >= "0" && val[i] <= "9") || 
+          val[i] === " ")) {
+      count++;
+    }
+  }
+  console.log(count !== 0 ? count : -1);
+});
+
+------------------------------------------------------------------------------------
+
+34) Given a number n and m followed by n numbers remove the number m in the n number and 
+print the remaining n number if m is not found print -1
 Input Description:
 0<n<100 Given a number n Followed by n number in next line
 
