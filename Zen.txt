@@ -376,6 +376,53 @@ inp.on("close", () => {
 });
 ------------------------------------------------------------------------------------
 
+12) Given a number n print the three prime number which comes next to number n
+
+
+Input Description:
+0<n<100 Given a number n
+
+Output Description:
+print the three prime number which comes next to number n
+
+Sample Input :
+3
+Sample Output :
+5 7 11
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+inp.on("line", (data) => {
+  let n = parseInt(data);  // Convert input to integer
+
+  let count = 0;
+  let num = n + 1;
+  let result = [];
+  function isPrime(number) {
+    if (number < 2) return false;
+    for (let i = 2; i * i <= number; i++) {
+      if (number % i === 0) return false;
+    }
+    return true;
+  }
+  while (count < 3) {
+    if (isPrime(num)) {
+      result.push(num);
+      count++;
+    }
+    num++;
+  }
+  console.log(result.join(" "));
+  inp.close();
+});
+
+------------------------------------------------------------------------------------
+
 14) Given a number n Find the sum of the digits of number n
 Input Description:
 0<n<1000 Given number n
