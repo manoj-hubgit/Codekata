@@ -1017,6 +1017,44 @@ inp.on("close", () => {
 
 ------------------------------------------------------------------------------------
 
+33) Given a string convert string into camel case
+
+Input Description:
+Given a string
+
+Output Description:
+Print string into camel case
+
+Sample Input :
+guvi geek
+Sample Output :
+guviGeek
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+   let a=userInput[0].split(" ");
+   let arr=[];
+   arr.push(a[0]);
+   for(let i=1;i<a.length;i++){
+      a[i]=a[i].charAt(0).toUpperCase()+a[i].slice(1);
+      arr.push(a[i]);
+   }
+   console.log(arr.join(""));
+});
+------------------------------------------------------------------------------------
+
 34) Given a number n and m followed by n numbers remove the number m in the n number and 
 print the remaining n number if m is not found print -1
 Input Description:
