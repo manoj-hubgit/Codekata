@@ -1451,7 +1451,6 @@ inp.on("close", () => {
 
 51)  Given a number n followed by n numbers Print the 2nd  largest number in an array
 
-
 Input Description:
 0<n<100 Given a number n Followed by n number in next line
 
@@ -1487,3 +1486,44 @@ inp.on("close", () => {
         }
     }
 });
+
+------------------------------------------------------------------------------------
+
+53) Given a string convert string into upper case where their vowel character
+Input Description:
+Given a string
+
+Output Description:
+Print string into upper case
+
+Sample Input :
+guvi geek
+Sample Output :
+gUvI gEEk
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+ 
+inp.on("close", () => {
+ let str=userInput[0];
+ let vowel="aeiou";
+ let result="";
+ 
+ for(let char of str){
+     if(vowel.includes(char)) result+=char.toUpperCase();
+     else result+=char;
+ }
+ console.log(result);
+});
+------------------------------------------------------------------------------------
