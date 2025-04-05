@@ -40,6 +40,45 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+4) You are given with a number ‘n’. You have to count the pair of two numbers a and b 
+such that sum of two numbers are equal to n.
+
+Note:Both numbers lie in range 1<=a,b<n
+
+Input Description:
+You are given a number ‘n’
+
+Output Description:
+Print the number of pairs satisfying above condition
+
+Sample Input :
+5
+Sample Output :
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  
+let n= parseInt(userInput[0]);
+let count=0;
+for(let i=1;i<n;i++) for(let j=1;j<n;j++) if(i+j===n) count++;
+console.log(count);
+});
+
+---------------------------------------------------------------------------------------------
+
 8) You are given an array of digits. Your task is to print the digit with maximum frequency.
 
 
