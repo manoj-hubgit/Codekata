@@ -133,6 +133,59 @@ console.log(maxNum);
 });
 ---------------------------------------------------------------------------------------------
 
+9) Ramesh is given a special series to print,as he has some other work to do.Help ramesh in printing the series.
+
+ 
+
+Note:Observe the series very keenly in examples
+
+
+Input Description:
+You are given a number ‘n’.
+
+Output Description:
+Print the n term of series.
+
+Sample Input :
+6
+Sample Output :
+1 6 120
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const n = parseInt(userInput[0]);
+  const result = [];
+
+  const factorial = (num) => {
+    let fact = 1;
+    for (let i = 1; i <= num; i++) {
+      fact *= i;
+    }
+    return fact;
+  }
+
+  for (let i = 1; i <= n; i += 2) {
+    result.push(factorial(i));
+  }
+
+  console.log(result.join(" "));
+});
+
+---------------------------------------------------------------------------------------------
+
 12) Prateek finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
 
 Input Description:
