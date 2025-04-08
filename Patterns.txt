@@ -1219,6 +1219,74 @@ inp.on("close", () => {
  }});
 ---------------------------------------------------------------------------------------------
 
+Write a code to generate a square pattern using numbers.
+
+
+Input Description:
+Given an integer R indicates number of R*2-1 rows.
+
+Where 1<=R<=100.
+
+Output Description:
+Print the square pyramid number based on the given integer R.
+
+Sample Input :
+5
+Sample Output :
+1
+1 4
+1 4 9
+1 4 9 16
+1 4 9 16 25
+1 4 9 16
+1 4 9
+1 4
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+
+let a=parseInt(userInput[0]);
+let arr=[];
+
+for(let i=1;i<=a;i++){
+    let inc=3;
+    let start=1;
+    for(let j=1;j<=i;j++){
+      arr.push(start);
+      start+=inc;
+      inc+=2;
+    }
+    console.log(arr.join(" "));
+    arr=[];
+}
+for(let i=a-1;i>=1;i--){
+    let inc=3;
+    let start=1;
+    for(let j=1;j<=i;j++){
+      arr.push(start);
+      start+=inc;
+      inc+=2;
+    }
+    console.log(arr.join(" "));
+    arr=[];
+}
+});
+
+---------------------------------------------------------------------------------------------
+
 48) Write a code to generate a half pyramid number pattern.
 
 Input Description:
