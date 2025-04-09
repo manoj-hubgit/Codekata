@@ -482,6 +482,51 @@ for(let i=0;i<a.length;i++){
 console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
+
+40) Given a string, find the length of the longest substring without repeating characters.
+Input Size : |S|<=1000
+Example:
+INPUT
+abcabcccdd
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+let userInput = [];
+
+inp.on("line", function(data) {
+  userInput.push(data.trim());
+});
+
+inp.on("close", function() {
+  let str = userInput[0];
+  let longest = 0;
+  for (let i = 0; i < str.length; i++) {
+    let currentString = ""; // to store characters without repeating
+
+    for (let j = i; j < str.length; j++) {
+      let char = str[j];
+      if (currentString.includes(char)) {
+        break;
+      } else {
+        currentString += char; // add character to current string
+      }
+    }
+    if (currentString.length > longest) {
+      longest = currentString.length;
+    }
+  }
+  console.log(longest); // Print the final answer
+});
+
+---------------------------------------------------------------------------------------------
+
 43) Given 2 numbers N and M followed by 2 arrays A an B of sizes N and M. 
 Check if array B is a subset of array A. if yes print 'yes' else print 'no'.
 Input Size : 1 <= N <= 1000000
