@@ -994,3 +994,55 @@ for(let i=0;i<a.length;i++){
 console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
+
+83) Given a number N and an array of N elements, find the number of triplets ai < aj < ak (i < j < k) in the array.Don't change the given sequence and if it is not possible to form triplet print '-1'.
+Input Size : 3<=N<=1000
+Example:
+INPUT:
+4
+1 2 3 4
+OUTPUT:
+4
+
+CODE: 
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+let userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data.trim());
+});
+
+inp.on("close", () => {
+  const n = parseInt(userInput[0]);
+  const arr = userInput[1].split(" ").map(Number);
+
+  if (n < 3) {
+    console.log(-1);
+    return;
+  }
+
+  let totalTriplets = 0;
+
+  for (let j = 1; j < n - 1; j++) {
+    let countLeft = 0;
+    let countRight = 0;
+
+    for (let i = 0; i < j; i++) {
+      if (arr[i] < arr[j]) countLeft++;
+    }
+
+    for (let k = j + 1; k < n; k++) {
+      if (arr[k] > arr[j]) countRight++;
+    }
+
+    totalTriplets += countLeft * countRight;
+  }
+  console.log(totalTriplets > 0 ? totalTriplets : -1);
+});
+
+---------------------------------------------------------------------------------------------
