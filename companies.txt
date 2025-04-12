@@ -995,6 +995,49 @@ console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
+71) Given a number N, find the sum of prime numbers that end with 3 from 2 to N.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+5
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const N = parseInt(userInput[0]);
+  let sum = 0;
+
+  function isPrime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+
+  for (let i = 2; i <= N; i++) {
+    if (isPrime(i) && i % 10 === 3) {
+      sum += i;
+    }
+  }
+
+  console.log(sum);
+});
+---------------------------------------------------------------------------------------------
+
 75) Maxwell wants to buy an apartment in a new house at Line Avenue of Metropolis. 
 The house has n apartments that are numbered from 1 to n and are arranged in a row. 
 Two apartments are adjacent if their indices differ by 1. 
