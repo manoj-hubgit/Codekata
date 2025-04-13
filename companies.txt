@@ -995,6 +995,45 @@ console.log(arr.join(""));
 });
 ---------------------------------------------------------------------------------------------
 
+69) Once detective saikat was solving a murder case. While going to the crime scene he took the stairs and saw that a number is written on every stair. He found it suspicious and decides to remember all the numbers that he has seen till now. While remembering the numbers he found that he can find some pattern in those numbers. So he decides that for each number on the stairs he will note down the sum of all the numbers previously seen on the stairs which are smaller than the present number. Calculate the sum of all the numbers written on his notes diary.
+Input Size : 1<=N<=1000
+Example:
+INPUT
+3
+1 2 3
+OUTPUT
+4(0+1+1+2)
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const N = parseInt(userInput[0]);
+  const nums = userInput[1].split(' ').map(Number);
+
+  let total = 0;
+
+  for (let i = 0; i < N; i++) {
+    let current = nums[i];
+    for (let j = 0; j < i; j++) {
+      if (nums[j] < current) total += nums[j];
+    }
+  }
+  console.log(total);
+});
+
+---------------------------------------------------------------------------------------------
+
 71) Given a number N, find the sum of prime numbers that end with 3 from 2 to N.
 Input Size : N <= 100000
 Sample Testcase :
