@@ -958,6 +958,55 @@ if(count==0){
 }
 });
 ---------------------------------------------------------------------------------------------
+
+65) Given a number N, How many ways are there to represent it as sum of 2 primes.
+Input Size : 1 <= N <= 1000
+Sample Testcase :
+INPUT
+10
+OUTPUT
+2
+Explanation:(7+3),(5+5)
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const N = parseInt(userInput[0]);
+
+  // Function to check if a number is prime
+  function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  }
+
+  let count = 0;
+
+  for (let i = 2; i <= N / 2; i++) {
+    let j = N - i;
+    if (isPrime(i) && isPrime(j)) {
+      count++;
+    }
+  }
+
+  console.log(count);
+});
+
+---------------------------------------------------------------------------------------------
+
 68) Given a number N and N strings of length atmost M, print the longest common prefix.
 Input Size : 1<=N, M<=100000
 Example:
