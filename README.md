@@ -19,7 +19,7 @@ Current Number of Code Solutions
 
 • Total number of coding problems solved in Basics            : 37
 
-• Total number of coding problems solved in Companies         : 32
+• Total number of coding problems solved in Companies         : 33
 
 • Total number of coding problems solved in Looping           : 13
 

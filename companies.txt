@@ -959,6 +959,57 @@ if(count==0){
 });
 ---------------------------------------------------------------------------------------------
 
+63) Write a program to give the following output for the given string S of size N.(character containing even number of occurences should be elaborated else print the same format)
+Eg 1: Input: a1b10
+Output: a1bbbbbbbbbb
+Eg: 2: Input: b3c6d15
+Output: b3ccccccd15
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+a1b10
+OUTPUT
+a1bbbbbbbbbb
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const input = userInput[0];
+  let result = "";
+  let i = 0;
+
+  while (i < input.length) {
+    const char = input[i];
+    i++;
+
+    let numStr = "";
+    while (i < input.length && !isNaN(input[i])) {
+      numStr += input[i];
+      i++;
+    }
+
+    const count = parseInt(numStr);
+    
+    if (count % 2 === 0) result += char.repeat(count);
+    else result += char + count;
+    
+  }
+  console.log(result);
+});
+
+---------------------------------------------------------------------------------------------
+
 65) Given a number N, How many ways are there to represent it as sum of 2 primes.
 Input Size : 1 <= N <= 1000
 Sample Testcase :
