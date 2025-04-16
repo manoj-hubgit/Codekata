@@ -958,6 +958,48 @@ if(count==0){
 }
 });
 ---------------------------------------------------------------------------------------------
+61) Given a number N, obtain the smallest number after deleting K digits from N.
+Input Size : 1<=N<=100000
+Example:
+INPUT
+213 1
+OUTPUT
+13
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let [numStr, kStr] = userInput[0].split(" ");
+  let k = parseInt(kStr);
+  let stack = [];
+
+  for (let digit of numStr) {
+    while (stack.length && k > 0 && stack[stack.length - 1] > digit) {
+      stack.pop();
+      k--;
+    }
+    stack.push(digit);
+  }
+  while (k > 0) {
+    stack.pop();
+    k--;
+  }
+  let result = stack.join("").replace(/^0+/, "") || "0";
+  console.log(result);
+});
+
+---------------------------------------------------------------------------------------------
 
 63) Write a program to give the following output for the given string S of size N.(character containing even number of occurences should be elaborated else print the same format)
 Eg 1: Input: a1b10
