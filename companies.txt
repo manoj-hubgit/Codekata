@@ -804,6 +804,59 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+54) Given a string S of length N, rearrange the letters in the string to form a new 
+string X which is lexicographically greater than current string
+(If many answers are possible, output lexicographically smallest one). 
+If no string exists print '-1'.
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+hello
+OUTPUT
+helol
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data.trim());
+});
+
+inp.on("close", () => {
+  const s = userInput[0].split('');
+  const n = s.length;
+
+  let i = n - 2;
+  while (i >= 0 && s[i] >= s[i + 1]) {
+    i--;
+  }
+
+  if (i === -1) {
+    console.log("-1");
+    return;
+  }
+
+  let j = n - 1;
+  while (s[j] <= s[i]) {
+    j--;
+  }
+
+  [s[i], s[j]] = [s[j], s[i]];
+
+  const left = s.slice(0, i + 1);
+  const right = s.slice(i + 1).reverse();
+
+  const result = [...left, ...right].join('');
+  console.log(result);
+});
+---------------------------------------------------------------------------------------------
+
 55) Given two numbers N,K(N>=K) and an array of N elements, write a program to find the 
 Kth largest element.
 Input Size : 1 <= K <= N <= 100000
