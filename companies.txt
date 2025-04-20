@@ -707,6 +707,47 @@ for(let i=0;i<a;i+=2){
     }}
 });
 ---------------------------------------------------------------------------------------------
+
+36) Given a number N followed by N numbers(negative or positive) print the maximum sum of 
+any subarray of the array.
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+7
+1 2 3 4 5 6 7
+OUTPUT
+28
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const N = parseInt(userInput[0]);
+  const arr = userInput[1].split(" ").map(Number);
+
+  let maxCurrent = arr[0];
+  let maxGlobal = arr[0];
+
+  for (let i = 1; i < N; i++) {
+    maxCurrent = Math.max(arr[i], maxCurrent + arr[i]);
+    maxGlobal = Math.max(maxGlobal, maxCurrent);
+  }
+
+  console.log(maxGlobal);
+});
+
+---------------------------------------------------------------------------------------------
+
 43) Given a string S consisting of 2 words reverse the order of two words .
 Input Size : |S| <= 10000000
 Sample Testcase :
