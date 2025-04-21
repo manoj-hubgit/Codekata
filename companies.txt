@@ -672,6 +672,54 @@ if(istrue){
 }});
 ---------------------------------------------------------------------------------------------
 
+Given a number N followed by N numbers. Out of these N numbers some of them are repeated. Write a program to find the number which is repeated and print the repeated numbers in sorted order. If no numbers are repeated print "unique".
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+7
+1 2 3 2 3 4 3
+OUTPUT
+2 3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data.trim());
+});
+
+inp.on("close", () => {
+  const N = parseInt(userInput[0]);
+  const arr = userInput[1].split(" ").map(Number);
+  
+  const countMap = {};
+  const repeated = [];
+
+  for (let num of arr) {
+    countMap[num] = (countMap[num] || 0) + 1;
+  }
+
+  for (let key in countMap) {
+    if (countMap[key] > 1) {
+      repeated.push(Number(key));
+    }
+  }
+
+  if (repeated.length === 0) {
+    console.log("unique");
+  } else {
+    repeated.sort((a, b) => a - b);
+    console.log(repeated.join(" "));
+  }
+});
+
+---------------------------------------------------------------------------------------------
 35) Given a number N followed by N numbers. All the numbers in the given input appear 
 twice except for one number(ie one number appears only once in the given input). 
 Find the number which appears only once.
