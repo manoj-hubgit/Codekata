@@ -536,6 +536,61 @@ if(arr.length===0){
 });
 ---------------------------------------------------------------------------------------------
 
+24) Given a number N, find the smallest number which is greater than N with the same digits in N. 
+If N is the greatest digit print 'impossible'.
+Input Size : 1 <= N <= 1000000000000000000
+Sample Testcases :
+INPUT
+123
+OUTPUT
+132
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data.trim());
+});
+
+inp.on("close", () => {
+  let digits = userInput[0].split('').map(Number);
+  let i = digits.length - 2;
+
+  while (i >= 0 && digits[i] >= digits[i + 1]) {
+    i--;
+  }
+
+  if (i < 0) {
+    console.log("impossible");
+    return;
+  }
+
+  let j = digits.length - 1;
+  while (digits[j] <= digits[i]) {
+    j--;
+  }
+
+  [digits[i], digits[j]] = [digits[j], digits[i]];
+
+  let left = i + 1;
+  let right = digits.length - 1;
+  while (left < right) {
+    [digits[left], digits[right]] = [digits[right], digits[left]];
+    left++;
+    right--;
+  }
+
+  console.log(digits.join(''));
+});
+
+---------------------------------------------------------------------------------------------
+
 27) Given a number N and an array of N elements, print the number of lucky numbers in the array.
 Lucky number: N*I is also present in the array then the number is lucky where N is the number of 
 elements in the array and I is the position of the element.(1 based indexing)
