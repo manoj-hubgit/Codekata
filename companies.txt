@@ -454,6 +454,42 @@ inp.on("close", () => {
   }});
 ---------------------------------------------------------------------------------------------
 
+19) Given 2 numbers A,B. Print the GCD of A! and B!.
+Sample Testcase :
+INPUT
+4 2
+OUTPUT
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const [A, B] = userInput[0].split(" ").map(Number);
+  const minVal = Math.min(A, B);
+
+  function factorial(n) {
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+      result *= i;
+    }
+    return result;
+  }
+
+  console.log(factorial(minVal));
+});
+---------------------------------------------------------------------------------------------
+
 21) Given a number N and an array of N strings,Print yes, if all strings have atleast 
 one vowel in them otherwise print no.
 Input Size : N <= 1000
