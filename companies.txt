@@ -490,6 +490,56 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+20) Given a string 'S' print the substring of maximum length which is not a palindrome.
+If more than one solution is possible print the solution which you obtained by 
+performing elimination at the end of the string
+Input Size : 1 <= length <= 1000
+Sample Testcases :
+INPUT
+ababababa
+OUTPUT
+abababab
+INPUT
+hello
+OUTPUT
+hello
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let s = userInput[0];
+  const isPalindrome = (str) => {
+    return str === str.split('').reverse().join('');
+  };
+
+  if (!isPalindrome(s)) {
+    console.log(s);
+    return;
+  }
+
+
+  for (let i = s.length - 1; i > 0; i--) {
+    let substr = s.substring(0, i); 
+    if (!isPalindrome(substr)) {
+      console.log(substr);
+      return;
+    }
+  }
+  console.log(s.substring(0, s.length - 1));
+});
+
+---------------------------------------------------------------------------------------------
+
 21) Given a number N and an array of N strings,Print yes, if all strings have atleast 
 one vowel in them otherwise print no.
 Input Size : N <= 1000
