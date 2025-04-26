@@ -583,6 +583,64 @@ if(count===a){
 });
 ---------------------------------------------------------------------------------------------
 
+Given 2 numbers N,K and N arrays each of size K, print the elements that have appeared in 
+all arrays,if any element are not same print '-1'.
+Input Size : 2 <= N, K <= 100000
+Sample Testcases :
+INPUT
+2 3
+1 0 2
+0 8 7
+OUTPUT
+0
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let [n, k] = userInput[0].split(" ").map(Number);
+
+  let arrays = [];
+  for (let i = 1; i <= n; i++) {
+    arrays.push(userInput[i].split(" ").map(Number));
+  }
+
+  let countMap = new Map();
+
+  for (let arr of arrays) {
+    let tempSet = new Set(arr);
+    for (let num of tempSet) {
+      countMap.set(num, (countMap.get(num) || 0) + 1);
+    }
+  }
+
+  let result = [];
+  for (let [key, val] of countMap) {
+    if (val === n) {
+      result.push(key);
+    }
+  }
+
+  if (result.length === 0) {
+    console.log(-1);
+  } else {
+    result.sort((a, b) => a - b); // Optional: to print in ascending order
+    console.log(result.join(" "));
+  }
+});
+
+---------------------------------------------------------------------------------------------
+
 23) Given a number n followed by n numbers. Find the numbers which are equal to their 
 index value and print them in sorted order. If no such numbers are present print '-1' without quotes.
 Input Size : 1 <= n <= 100000
