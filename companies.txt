@@ -954,7 +954,8 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
-Given a number N followed by N numbers. Out of these N numbers some of them are repeated. Write a program to find the number which is repeated and print the repeated numbers in sorted order. If no numbers are repeated print "unique".
+34) Given a number N followed by N numbers. Out of these N numbers some of them are repeated. 
+Write a program to find the number which is repeated and print the repeated numbers in sorted order. If no numbers are repeated print "unique".
 Input Size : 1 <= N <= 100000
 Sample Testcase :
 INPUT
@@ -1002,6 +1003,60 @@ inp.on("close", () => {
 });
 
 ---------------------------------------------------------------------------------------------
+
+36) There is one meeting room in Flipkart. There are n meetings in the form of (S [ i ], 
+F [ i ]) where S [ i ] is start time of meeting i and F [ i ] is finish time of 
+meeting i Given a number N followed by 2 arrays S and F of sizes N and N, 
+What is the maximum number of meetings that can be accommodated in the meeting 
+room assuming the room can only accommodate one meeting at a time.
+Input Size : 1 <= N <= 100000
+Sample Testcases :
+INPUT
+3
+10 12 30
+20 25 30
+OUTPUT
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let N = parseInt(userInput[0]);
+  let S = userInput[1].split(' ').map(Number); // Start times
+  let F = userInput[2].split(' ').map(Number); // Finish times
+
+  let meetings = [];
+  for (let i = 0; i < N; i++) {
+    meetings.push({ start: S[i], end: F[i] });
+
+  meetings.sort((a, b) => a.end - b.end);
+
+  let count = 1; 
+  let lastEnd = meetings[0].end;
+
+  for (let i = 1; i < N; i++) {
+    if (meetings[i].start > lastEnd) {
+      count++;
+      lastEnd = meetings[i].end;
+    }
+  }
+
+  console.log(count);
+});
+
+---------------------------------------------------------------------------------------------
+
 35) Given a number N followed by N numbers. All the numbers in the given input appear 
 twice except for one number(ie one number appears only once in the given input). 
 Find the number which appears only once.
