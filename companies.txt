@@ -1290,6 +1290,7 @@ inp.on("close", () => {
   console.log(minDist);
 });
 
+---------------------------------------------------------------------------------------------
 
 51) Divide two given integers A and B without using multiplication, division and mod operator. 
 If it is overflow, return MAX_INT.
@@ -1451,6 +1452,57 @@ for(let i=1;i<n;i++){
            break;
        }}}
 });
+---------------------------------------------------------------------------------------------
+
+57) Given a string of length N, find the longest palindromic substring.
+Input Size : 1 <= N <= 1000
+Sample Testcase :
+INPUT
+DIEHEIDI
+OUTPUT
+DIEHEID
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data.trim());
+});
+
+inp.on("close", () => {
+  const s = userInput[0];
+  let start = 0, end = 0;
+
+  const expandFromCenter = (left, right) => {
+    while (left >= 0 && right < s.length && s[left] === s[right]) {
+      left--;
+      right++;
+    }
+    return [left + 1, right - 1];
+  };
+
+  for (let i = 0; i < s.length; i++) {
+    let [l1, r1] = expandFromCenter(i, i);
+    if (r1 - l1 > end - start) {
+      start = l1;
+      end = r1;
+    }
+
+    let [l2, r2] = expandFromCenter(i, i + 1);
+    if (r2 - l2 > end - start) {
+      start = l2;
+      end = r2;
+    }
+  }
+  console.log(s.substring(start, end + 1));
+});
+
 ---------------------------------------------------------------------------------------------
 
 58) Given a linked list(where each node has a character)  remove the duplicate character 
