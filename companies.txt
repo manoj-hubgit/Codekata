@@ -1763,6 +1763,57 @@ inp.on("close", () => {
 });
 
 ---------------------------------------------------------------------------------------------
+66) Check whether the given 4 points form a square or not.
+Example:
+INPUT
+10 10
+10 20
+20 20
+20 10
+OUTPUT
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data.trim());
+});
+
+inp.on("close", () => {
+  const points = userInput.map(line => line.split(" ").map(Number));
+
+  function distSq(p1, p2) {
+    return (p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2;
+  }
+
+  let dists = [];
+  for (let i = 0; i < 4; i++) {
+    for (let j = i + 1; j < 4; j++) {
+      dists.push(distSq(points[i], points[j]));
+    }
+  }
+
+  dists.sort((a, b) => a - b);
+
+  const isSquare = (
+    dists[0] > 0 &&                       
+    dists[0] === dists[1] &&
+    dists[1] === dists[2] &&
+    dists[2] === dists[3] &&               
+    dists[4] === dists[5] &&               
+    dists[4] > dists[0]                    
+  );
+
+  console.log(isSquare ? "yes" : "no");
+});
+---------------------------------------------------------------------------------------------
 
 68) Given a number N and N strings of length atmost M, print the longest common prefix.
 Input Size : 1<=N, M<=100000
