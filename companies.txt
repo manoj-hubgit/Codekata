@@ -1934,6 +1934,61 @@ inp.on("close", () => {
 });
 ---------------------------------------------------------------------------------------------
 
+74) You are given a string s consisting of lowercase Latin letters. 
+Character c is called k-dominant iff each substring of s with length at least k 
+contains this character c. You have to find minimum k such that there exists at least 
+one k-dominant character.
+Input Size : |S|<=10000
+INPUT
+abacaba
+OUTPUT
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const s = userInput[0];
+  const n = s.length;
+  const map = new Map();
+
+  for (let i = 0; i < n; i++) {
+    if (!map.has(s[i])) {
+      map.set(s[i], []);
+    }
+    map.get(s[i]).push(i);
+  }
+
+  let minK = Infinity;
+
+  for (let [char, positions] of map.entries()) {
+    // Add -1 and n to handle boundaries
+    positions.unshift(-1);
+    positions.push(n);
+
+    let maxGap = 0;
+    for (let i = 1; i < positions.length; i++) {
+      maxGap = Math.max(maxGap, positions[i] - positions[i - 1]);
+    }
+
+    minK = Math.min(minK, maxGap);
+  }
+
+  console.log(minK);
+});
+
+---------------------------------------------------------------------------------------------
+
 75) Maxwell wants to buy an apartment in a new house at Line Avenue of Metropolis. 
 The house has n apartments that are numbered from 1 to n and are arranged in a row. 
 Two apartments are adjacent if their indices differ by 1. 
