@@ -2030,6 +2030,94 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+78) The Romans have attacked again. This time they are much more than the Persians but Shapur is ready to defeat them. He says: 'A lion is never afraid of a hundred sheep'.
+
+Nevertheless Shapur has to find weaknesses in the Roman army to defeat them. So he gives the army a weakness number.
+
+In Shapur's opinion the weakness of an army is equal to the number of triplets i, j, k such that i < j < k and ai > aj > ak where ax is the power of man standing at position x. The Roman army has one special trait — powers of all the people in it are distinct.
+
+Help Shapur find out how weak the Romans are.
+
+The first line of input contains a single number n, the number of men in Roman army. Next line contains n different positive integers powers of men in the Roman army.
+Input Size : N<=100000
+Example:
+INPUT
+3
+3 2 1
+OUTPUT
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const n = parseInt(userInput[0]);
+  const arr = userInput[1].split(" ").map(Number);
+
+  if (n < 3) {
+    console.log(0);
+    return;
+  }
+
+  let weaknessCount = 0;
+  const sortedArr = [...arr].sort((a, b) => a - b);
+  const rankMap = new Map();
+  sortedArr.forEach((val, idx) => rankMap.set(val, idx + 1));
+
+  const size = n + 2;
+  const bit1 = new Array(size).fill(0);
+  const bit2 = new Array(size).fill(0);
+
+  const update = (bit, index, value) => {
+    while (index < size) {
+      bit[index] += value;
+      index += index & -index;
+    }
+  };
+
+  const query = (bit, index) => {
+    let sum = 0;
+    while (index > 0) {
+      sum += bit[index];
+      index -= index & -index;
+    }
+    return sum;
+  };
+
+  const smallerBefore = new Array(n).fill(0);
+  const smallerAfter = new Array(n).fill(0);
+
+  for (let i = 0; i < n; i++) {
+    const rank = rankMap.get(arr[i]);
+    smallerBefore[i] = query(bit1, size - 1) - query(bit1, rank);
+    update(bit1, rank, 1);
+  }
+
+  for (let i = n - 1; i >= 0; i--) {
+    const rank = rankMap.get(arr[i]);
+    smallerAfter[i] = query(bit2, rank - 1);
+    update(bit2, rank, 1);
+  }
+
+  for (let i = 0; i < n; i++) {
+    weaknessCount += smallerBefore[i] * smallerAfter[i];
+  }
+  console.log(weaknessCount);
+});
+
+---------------------------------------------------------------------------------------------
+
 83) Given a number N and an array of N elements, find the number of triplets ai < aj < ak (i < j < k) in the array.Don't change the given sequence and if it is not possible to form triplet print '-1'.
 Input Size : 3<=N<=1000
 Example:
