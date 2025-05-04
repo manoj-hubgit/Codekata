@@ -2118,6 +2118,56 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+79) Given 2 strings X and Y convert X to Y as cheaply as possible. Let the cost of insertion, 
+deletion and updation be 1. Print the minimum cost.
+Input Size : 1<= N<=1000
+Example:
+INPUT
+codekata code
+OUTPUT
+4
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let [X, Y] = userInput[0].split(" ");
+  const m = X.length;
+  const n = Y.length;
+
+  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+  for (let i = 0; i <= m; i++) {
+    for (let j = 0; j <= n; j++) {
+      if (i === 0) {
+        dp[i][j] = j; // insert all characters of Y
+      } else if (j === 0) {
+        dp[i][j] = i; // remove all characters of X
+      } else if (X[i - 1] === Y[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1]; // characters match, no cost
+      } else {
+        dp[i][j] = 1 + Math.min(
+          dp[i - 1][j],     // deletion
+          dp[i][j - 1],     // insertion
+          dp[i - 1][j - 1]  // replacement
+        );
+      }
+    }
+  }
+  console.log(dp[m][n]);
+});
+
+---------------------------------------------------------------------------------------------
+
 83) Given a number N and an array of N elements, find the number of triplets ai < aj < ak (i < j < k) in the array.Don't change the given sequence and if it is not possible to form triplet print '-1'.
 Input Size : 3<=N<=1000
 Example:
