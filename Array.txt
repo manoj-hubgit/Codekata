@@ -3441,6 +3441,52 @@ if(a===b){
 });
 ---------------------------------------------------------------------------------------------
 
+228) Find the count k by which array has been rotated in the rotated sorted array. Given a number N followed 2 arrays A and B of length N. Find the amount K by which the array has been rotated.
+Input Size : N <= 100000
+Sample Testcase :
+INPUT
+4
+4 3 2 5
+3 2 5 4
+OUTPUT
+1
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data.trim());
+});
+
+inp.on("close", () => {
+  const N = parseInt(userInput[0]);
+  const A = userInput[1].split(" ").map(Number);
+  const B = userInput[2].split(" ").map(Number);
+
+  for (let k = 0; k < N; k++) {
+    let rotated = A.slice(k).concat(A.slice(0, k));
+    let match = true;
+    for (let i = 0; i < N; i++) {
+      if (rotated[i] !== B[i]) {
+        match = false;
+        break;
+      }
+    }
+    if (match) {
+      console.log(k);
+      return;
+    }
+  }
+});
+
+---------------------------------------------------------------------------------------------
+
 243) Alternate sorting:Given a number N followed by array of N elements,sort the array in such a way that the first number is the first maximum and second number is the 1st minimum 3rd number isthe 2nd maximum and so on.
 Input Size : N <= 100000
 Sample Testcase :
