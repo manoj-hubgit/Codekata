@@ -3487,6 +3487,52 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+237) You are given an array 'a' of size N. Your task is to print the array one element in a line in the decreasing order of number of ones in its binary representation. In case of two numbers having same number of ones, the bigger number in its decimal representation comes first.
+Input Size : N<=10000
+Example:
+INPUT
+5
+31 14 15 7 2
+OUTPUT
+31
+15
+14
+7
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let N = parseInt(userInput[0]);
+  let arr = userInput[1].split(" ").map(Number);
+
+  arr.sort((a, b) => {
+    const onesA = a.toString(2).split('1').length - 1;
+    const onesB = b.toString(2).split('1').length - 1;
+
+    if (onesA !== onesB) {
+      return onesB - onesA; // more 1's first
+    } else {
+      return b - a; // bigger number first
+    }
+  });
+
+  arr.forEach(num => console.log(num));
+});
+
+---------------------------------------------------------------------------------------------
+
 243) Alternate sorting:Given a number N followed by array of N elements,sort the array in such a way that the first number is the first maximum and second number is the 1st minimum 3rd number isthe 2nd maximum and so on.
 Input Size : N <= 100000
 Sample Testcase :
