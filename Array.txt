@@ -3533,6 +3533,46 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+238) Given an amount A(integer) find the number of currency notes required to make the amount up in the most optimal way. The available denominations are 1000,500,100,50,10,1. The question is set in PRE-DEMONITISATION era so 1000 rupee notes are available :)
+eg: rs 689 (* currency notes are 500,100,50,10,1 )
+500+100+50+(3*10)+(9*1)
+count=15
+Input Size : N <= 100000000
+Sample Testcase :
+INPUT
+689
+OUTPUT
+15
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+let userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let A = parseInt(userInput[0]);
+  let denominations = [1000, 500, 100, 50, 10, 1];
+  let count = 0;
+
+  for (let note of denominations) {
+    let numNotes = Math.floor(A / note);
+    count += numNotes;
+    A = A % note;
+  }
+
+  console.log(count);
+});
+
+---------------------------------------------------------------------------------------------
+
 243) Alternate sorting:Given a number N followed by array of N elements,sort the array in such a way that the first number is the first maximum and second number is the 1st minimum 3rd number isthe 2nd maximum and so on.
 Input Size : N <= 100000
 Sample Testcase :
