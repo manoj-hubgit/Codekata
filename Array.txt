@@ -3573,6 +3573,44 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+240) Given three numbers L,R,N, print the count of numbers with occurences of the number N in [L,R].
+Input Size : 1 <= L,R,N <= 100000
+Sample Testcase :
+INPUT
+10 130 11
+OUTPUT
+11
+Explanation: 11,110,111,112....119
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let [L, R, N] = userInput[0].split(" ").map(Number);
+  let target = N.toString();
+  let count = 0;
+
+  for (let i = L; i <= R; i++) {
+    if (i.toString().includes(target)) {
+      count++;
+    }
+  }
+
+  console.log(count);
+});
+
+---------------------------------------------------------------------------------------------
+
 243) Alternate sorting:Given a number N followed by array of N elements,sort the array in such a way that the first number is the first maximum and second number is the 1st minimum 3rd number isthe 2nd maximum and so on.
 Input Size : N <= 100000
 Sample Testcase :
