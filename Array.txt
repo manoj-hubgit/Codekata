@@ -3611,6 +3611,44 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+241) There are n stairs, a person standing at the bottom wants to reach the top. 
+The person can climb either 1 stair or 2 stairs at a time. 
+Given a number N Count the number of ways, the person can reach the top.
+Input Size : N <= 100
+Sample Testcase :
+INPUT
+3
+OUTPUT
+3
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const N = parseInt(userInput[0]);
+
+  const ways = Array(N + 1).fill(0);
+  ways[0] = 1;
+  ways[1] = 1; 
+  for (let i = 2; i <= N; i++) {
+    ways[i] = ways[i - 1] + ways[i - 2];
+  }
+
+  console.log(ways[N]);
+});
+
+---------------------------------------------------------------------------------------------
+
 243) Alternate sorting:Given a number N followed by array of N elements,sort the array in such a way that the first number is the first maximum and second number is the 1st minimum 3rd number isthe 2nd maximum and so on.
 Input Size : N <= 100000
 Sample Testcase :
