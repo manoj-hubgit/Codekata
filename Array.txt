@@ -3758,6 +3758,66 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+247) Given an array of size N, find the minimum number of swaps required to sort the array.
+
+
+Input Description:
+Size of the array followed by the elements of the array
+
+Output Description:
+Minimum number of swaps required
+
+Sample Input :
+4
+4 3 2 1
+Sample Output :
+2
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin,
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const n = parseInt(userInput[0]);
+  const arr = userInput[1].split(" ").map(Number);
+  const arrPos = arr.map((val, idx) => [val, idx]);
+  arrPos.sort((a, b) => a[0] - b[0]);
+
+  const visited = new Array(n).fill(false);
+  let swaps = 0;
+
+  for (let i = 0; i < n; i++) {
+    if (visited[i] || arrPos[i][1] === i) {
+      continue;
+    }
+    let cycleSize = 0;
+    let j = i;
+
+    while (!visited[j]) {
+      visited[j] = true;
+      j = arrPos[j][1];
+      cycleSize++;
+    }
+
+    if (cycleSize > 0) {
+      swaps += (cycleSize - 1);
+    }
+  }
+
+  console.log(swaps);
+});
+
+---------------------------------------------------------------------------------------------
+
 253) Given a number N and N strings of length atmost M, print the longest common prefix.
 Input Size : 1<=N, M<=100000
 Example:
