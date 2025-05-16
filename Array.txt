@@ -3818,6 +3818,65 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+248) Jack is fond of numbers. He has given an array.He has to find the maximum length of sub array such that sum of elements in that sub array gives output 0.He is in little trouble, help him in finding solution
+
+
+Input Description:
+You are given an integer ‘n’ denoting the number of elements in array.Next line contains n space separated integers
+
+Output Description:
+Print the max length of that array with sum 0 and print -1 if not possible
+
+Sample Input :
+6
+-4 3 1 0 0 6
+Sample Output :
+5
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const n = parseInt(userInput[0]);
+  const arr = userInput[1].split(" ").map(Number);
+
+  let sum = 0;
+  let maxLen = 0;
+  const map = new Map();
+
+  for (let i = 0; i < n; i++) {
+    sum += arr[i];
+
+    if (sum === 0) {
+      maxLen = i + 1;
+    }
+
+    if (map.has(sum)) {
+      maxLen = Math.max(maxLen, i - map.get(sum));
+    } else {
+      map.set(sum, i);
+    }
+  }
+
+  if (maxLen === 0) {
+    console.log(-1);
+  } else {
+    console.log(maxLen);
+  }
+});
+
+---------------------------------------------------------------------------------------------
+
 253) Given a number N and N strings of length atmost M, print the longest common prefix.
 Input Size : 1<=N, M<=100000
 Example:
