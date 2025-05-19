@@ -2112,3 +2112,85 @@ if(sum>=0 && sum<=9){
 }
 });
 ---------------------------------------------------------------------------------------------
+
+190) Bob has a strange counter. At the first second, t = 1, it displays the number 3. At each subsequent second, the number displayed by the counter decrements by 1. The counter counts down in cycles. In the second after the counter counts down to 1, the number becomes 2x the initial number for that countdown cycle and then continues counting down from the new initial number in a new cycle. The diagram shows the counter values for each time t in the first three cycles.Find the value corresponding to the given time t.
+Input Size : t<=100000
+Example:
+INPUT
+4
+OUTPUT
+6
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  let t = parseInt(userInput[0]);
+
+  let cycleStart = 1;
+  let value = 3;
+
+  while (t >= cycleStart + value) {
+    cycleStart += value;
+    value *= 2;
+  }
+
+  console.log(value - (t - cycleStart));
+});
+
+---------------------------------------------------------------------------------------------
+192) ind the man who will survive. There is a scenario that only one person will survive. ‘N’ person will stand in a circle. Initially first person will be holding the gun. You are given with number ‘k’. The person who is holding the gun has to count to ‘k’ starting from him and shoot the person at which k ends and then pass the gun to next alive person. Your task is to find the place where you will survive.
+
+
+Input Description:
+Two numbers – ‘N’ and ‘k’
+
+Output Description:
+Find the place where you will be safe (indexing at 1)
+
+Sample Input :
+2
+1
+Sample Output :
+2
+
+CODE:
+
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const N = parseInt(userInput[0]);
+  const K = parseInt(userInput[1]);
+
+  function josephus(n, k) {
+    let res = 0;
+    for (let i = 2; i <= n; i++) {
+      res = (res + k) % i;
+    }
+    return res + 1; // Convert to 1-based index
+  }
+
+  console.log(josephus(N, K));
+});
+
+---------------------------------------------------------------------------------------------
