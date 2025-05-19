@@ -3877,6 +3877,56 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+250) Rohan’s teacher wants to teach him about permuting the numbers.He is given an assignment,in which he is given a number,His task is to print the sum of all permutations that can be made up using those digits.
+
+
+Input Description:
+You are given a number
+
+Output Description:
+Your task is to print the sum of all permutations of number.
+
+Sample Input :
+18
+Sample Output :
+99
+
+CODE: 
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const numberStr = userInput[0];
+  const digits = numberStr.split('').map(Number);
+  const n = digits.length;
+
+  const factorial = (num) => {
+    let fact = 1;
+    for (let i = 2; i <= num; i++) {
+      fact *= i;
+    }
+    return fact;
+  };
+
+  const digitSum = digits.reduce((a, b) => a + b, 0);
+  const repeatingOnes = Number('1'.repeat(n));
+  const totalPermutations = factorial(n - 1);
+
+  const result = totalPermutations * digitSum * repeatingOnes;
+  console.log(result);
+});
+
+---------------------------------------------------------------------------------------------
+
 253) Given a number N and N strings of length atmost M, print the longest common prefix.
 Input Size : 1<=N, M<=100000
 Example:
