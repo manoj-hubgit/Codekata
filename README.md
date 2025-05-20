@@ -5,13 +5,13 @@ Each file represents a specific topic or problem, including both the question an
 
 Current Number of Code Solutions
 
-• Total number of coding problems solved: 529
+• Total number of coding problems solved: 530
 
 • Total number of coding problems solved in InputOutput       : 10
 
 • Total number of coding problems solved in Absolute Biginner : 30
 
-• Total number of coding problems solved in Array             : 104
+• Total number of coding problems solved in Array             : 105
 
 • Total number of coding problems solved in Mathematics       : 63
 

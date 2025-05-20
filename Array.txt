@@ -3649,6 +3649,63 @@ inp.on("close", () => {
 
 ---------------------------------------------------------------------------------------------
 
+242) Bala is the CEO of a company and decides to reward a few hardworking employees with an extra bonus.  He wants to find out the number of employees who are working parallely on two different projects and give them a bonus. The ids of employees working on a particular project are stored in an array.Given two arrays project1 and project2, find out whether the employees working on project2 are a subset of employees working on project1.
+
+Constraints:
+
+1 <= project1[i], project2[j] <= 100
+
+ 
+
+
+Input Description:
+First line denotes the number of employees working on project 1. Second line contains the employee ids of the employees working on project 1. Third line denotes the number of employees working on project 2 and 4th line contains employee ids of the employees working on project 2.
+
+Output Description:
+(yes/no) Whether the second array is a subset of the first array.
+
+Sample Input :
+3
+1 2 3
+2
+1 2
+Sample Output :
+yes
+
+CODE:
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  const n1 = parseInt(userInput[0]); // number of employees in project1
+  const project1 = userInput[1].split(" ").map(Number);
+  const n2 = parseInt(userInput[2]); // number of employees in project2
+  const project2 = userInput[3].split(" ").map(Number);
+
+  const set1 = new Set(project1);
+  let isSubset = true;
+
+  for (let emp of project2) {
+    if (!set1.has(emp)) {
+      isSubset = false;
+      break;
+    }
+  }
+
+  console.log(isSubset ? "yes" : "no");
+});
+
+---------------------------------------------------------------------------------------------
+
 243) Alternate sorting:Given a number N followed by array of N elements,sort the array in such a way that the first number is the first maximum and second number is the 1st minimum 3rd number isthe 2nd maximum and so on.
 Input Size : N <= 100000
 Sample Testcase :
